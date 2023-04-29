@@ -7,21 +7,24 @@
     <title>Formulaire d'inscription</title>
     <link rel="stylesheet" href="css/style.css">
 <body>
-    <form action="inscription.php" method="post" id="formulaire">
-        <label for="prenom">Prénom: </label>
-        <input type="text" name="prenom" id="prenom" required/>
-        <label for="nom">Nom: </label>
-        <input type="text" name="nom" id="nom" required/>
-        <label for="naissance">Date de naissance:</label>
-        <input type="date" id="naissance" name="date_naissance"
-       value="2007-07-22"
-       min="1997-01-01" max="2007-12-31" required/>
-       <label for="mail">Email:</label>
-       <input type="email" name="mail" id="mail" required>
-       <label for="mdp">Mot de passe:</label>
-       <input type="password" name="mdp" id="mdp" required>
-        <button type="submit">S'inscrire</button>
-    </form>
+    <div class="intro">
+        <img src="LOGOS_JEUNES_6,4,pdpres.png" alt="LOGOS_JEUNES_6">
+        <h1>Bienvenue sur la page d'inscription en tant que jeune.</h1>
+    </div>
+    <div id="formulaire">
+        <form action="inscription.php" method="post">
+            <input type="text" name="prenom" id="prenom" placeholder="Prénom" required/>
+            <input type="text" name="nom" id="nom" placeholder="Nom de famille" required/>
+            <label for="naissance">Date de naissance:</label>
+            <input type="date" id="naissance" name="date_naissance"
+           value="2007-07-22"
+           min="1997-01-01" max="2007-12-31" required/>
+           <input type="email" name="mail" id="mail" placeholder="Mail" required>
+           <input type="password" name="mdp" id="mdp" placeholder= "Mot de passe" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </div>
+    
 </head>
 </body>
 </html>

@@ -1,17 +1,22 @@
 body{
     background: linear-gradient(0.25turn, white,lightgrey);
-}
-
-label ~ input{
-    background-attachment: fixed;
-    display: grid;
-}
-label{
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     color: #0d005f;
 }
-input {
-    border-radius: 20px;
+.intro{
+    margin: 10% 10%;
+}
+#formulaire{
+    background-color: rgb(253, 253, 253);
+    line-height: 30px;
+    margin: 20%;
+    position: absolute;
+    top: 50%;
+}
+input{
+    display: grid;
+    line-height: 2em;
     border: 1px, solid, black;
     background-color: aliceblue;
-}
+    border-radius: 5px;
+}   
