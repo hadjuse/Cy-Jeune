@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="corps">
+        <div class="intro">
+            <img src="LOGOS_JEUNES_6,4,pdpres.png" alt="LOGOS_JEUNES_6">
+            <h1>Bienvenue sur la page d'inscription en tant que jeune.</h1>
+        </div>
+        <div class="formulaire">
+            <form action="inscription.php" method="post">
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom" required />
+                <input type="text" name="nom" id="nom" placeholder="Nom de famille" required />
+                <label for="naissance">Date de naissance:</label>
+                <input type="date" id="naissance" name="date_naissance" value="2007-07-22" min="1997-01-01"
+                    max="2007-12-31" required />
+                <input type="email" name="mail" id="mail" placeholder="Mail" required>
+                <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" required>
+                <div class="inscription_connection">
+                    <button type="submit" value="inscription">S'inscrire</button>
+                    <button type="button">Se connecter</button>
+                </div>
+        </div>
+        
+        </form>
+    </div>    
+</body>
+
+</html>
