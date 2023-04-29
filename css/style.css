@@ -3,20 +3,36 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
     color: #0d005f;
 }
-.intro{
-    margin: 10% 10%;
+.corps{
+    background-color: rgb(252, 252, 252);
+    width: 99%;
+    height: 500px;
+    padding-right: 1%;
 }
-#formulaire{
-    background-color: rgb(253, 253, 253);
+.intro{
+    margin: auto;
+    width:fit-content;
+    height: fit-content;
+}
+.formulaire{
     line-height: 30px;
-    margin: 20%;
-    position: absolute;
-    top: 50%;
+    margin: 75px 1212px 0px 680px;
+    padding: auto;
+    background-color: azure;
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex; /*Voir à quoi sert display flex*/
 }
 input{
+    margin-top: 7%;
     display: grid;
     line-height: 2em;
-    border: 1px, solid, black;
     background-color: aliceblue;
-    border-radius: 5px;
+    border-bottom: 2px solid #1237db; 
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    
 }   
