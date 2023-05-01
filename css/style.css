@@ -59,12 +59,14 @@ h1{
     line-height: 30px;
     margin: 75px 1212px 0px 680px;
     padding: auto;
-    background-color: rgb(247, 247, 247);
+    background-color:white;
     width: 500px;
     height: 500px;
     align-items: center;
     justify-content: center;
     display: flex;
+    border: solid 1px #db12ca;
+    padding: auto;
 }
 input{
     margin-top: 7%;
