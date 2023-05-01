@@ -9,11 +9,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <! banderole avec le nom de la page que la quelle on se situe>
+    <div id="banderole">
+        <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"    ></a>
+        <b>Pour faire de l'engagement une valeur</b>
+    </div>
+<! onglet de navigation entre les differentes pages>
+    <div id="navigation">
+        <a href="pagejeune.html" id="jeunes">JEUNES</a>
+        <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+        <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+        <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
+    </div>
     <div class="corps">
-        <div class="intro">
-            <img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png" alt="LOGOS_JEUNES_6">
-            <h1>Bienvenue sur la page d'inscription en tant que jeune.</h1>
-        </div>
         <div class="formulaire">
             <form action="inscription.php" method="post">
                 <input type="text" name="prenom" id="prenom" placeholder="Prénom" required />
@@ -29,7 +37,8 @@
                 </div>
         </div>
         </form>
-    </div>    
+    </div>
+        
 </body>
 
 </html>

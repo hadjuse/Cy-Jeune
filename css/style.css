@@ -1,18 +1,57 @@
-body{
-    background: linear-gradient(0.25turn, white,lightgrey);
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-    color: #0d005f;
+body {
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1vw;
+}
+
+#banderole {
+    color: white;
+    margin: -7px;
+    margin-bottom: 0px;
+    background: radial-gradient(white, lightgrey);
+}
+#banderole b {
+    margin-top: 1em;
+    margin-left: 20vw;
+    font-size: 4em;
+    text-decoration: none;
+    float: right;
+    position: fixed;
+}
+
+#banderole img {
+    width: 14em;
+}
+#jeunes {
+    color: rgb(225, 7, 7);
+    text-decoration: none;
+    padding: 1%;
+}
+#navigation {
+    background: radial-gradient(white, lightgrey);
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.5em;
+    top: 0%;
+}
+#referent {
+    color: rgb(19, 202, 19);
+    text-decoration: none;
+    padding: 1%;
+}
+
+#consultant {
+    color: rgb(34, 140, 186);
+    text-decoration: none;
+    padding: 1%;
 }
 .corps{
     background-color: rgb(252, 252, 252);
     width: 99%;
     height: 500px;
     padding-right: 1%;
-}
-.intro{
-    margin: auto;
-    width:fit-content;
-    height: fit-content;
 }
 .formulaire{
     line-height: 30px;
@@ -23,7 +62,7 @@ body{
     height: 500px;
     align-items: center;
     justify-content: center;
-    display: flex; /*Voir à quoi sert display flex*/
+    display: flex;
 }
 input{
     margin-top: 7%;
@@ -35,4 +74,4 @@ input{
     border-left: none;
     border-right: none;
     
-}   
+}
