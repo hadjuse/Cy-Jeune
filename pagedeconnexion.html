@@ -9,27 +9,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <! banderole avec le nom de la page que la quelle on se situe>
+    <div id="banderole">
+        <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+        <b>Pour faire de l'engagement une valeur</b>
+    </div>
+<! onglet de navigation entre les differentes pages>
+    <div id="navigation">
+        <a href="pagejeune.html" id="jeunes">JEUNES</a>
+        <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+        <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+        <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
+    </div>
+    <h1 align="center">Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
     <div class="corps">
-        <div class="intro">
-            <img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png" alt="LOGOS_JEUNES_6">
-            <h1>Bienvenue sur la page d'inscription en tant que jeune.</h1>
-        </div>
         <div class="formulaire">
             <form action="inscription.php" method="post">
-                <input type="text" name="prenom" id="prenom" placeholder="Prénom" required />
-                <input type="text" name="nom" id="nom" placeholder="Nom de famille" required />
+                <p>Prénom:<input type="text" name="prenom" id="prenom" placeholder="Prénom" required /></p>
+                <p>Nom:<input type="text" name="nom" id="nom" placeholder="Nom de famille" required /></p>
                 <label for="naissance">Date de naissance:</label>
                 <input type="date" id="naissance" name="date_naissance" value="2007-07-22" min="1997-01-01"
                     max="2007-12-31" required />
-                <input type="email" name="mail" id="mail" placeholder="Mail" required>
-                <input type="password" name="mdp" id="mdp" placeholder="Mot de passe" required>
+                <p>Mail</p><input type="email" name="mail" id="mail" placeholder="Mail" required>
+                <p>Mot de passe</p><input type="password" name="mdp" id="mdp" placeholder="Mot de passe" required>
                 <div class="inscription_connection">
                     <button type="submit" value="inscription">S'inscrire</button>
                     <button type="button">Se connecter</button>
                 </div>
         </div>
         </form>
-    </div>    
+    </div>   
 </body>
-
 </html>
