@@ -10,6 +10,7 @@ body {
     margin-bottom: 0px;
     background: radial-gradient(white, lightgrey);
     display: grid;
+    background-attachment: fixed;
 }
 #banderole b {
     margin-top: 1em;
@@ -17,7 +18,7 @@ body {
     font-size: 4em;
     text-decoration: none;
     float: right;
-    position: fixed;
+    position: relative;
 }
 #banderole img {
     width: 14em;
@@ -53,7 +54,6 @@ h1{
     background-color: rgb(252, 252, 252);
     width: 99%;
     height: 500px;
-    padding-right: 1%;
 }
 .formulaire{
     line-height: 30px;
@@ -66,10 +66,9 @@ h1{
     justify-content: center;
     display: flex;
     border: solid 1px #db12ca;
-    padding: auto;
+    padding: 1%;
 }
 input{
-    margin-top: 7%;
     display: grid;
     line-height: 2em;
     background-color: aliceblue;
