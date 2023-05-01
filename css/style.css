@@ -9,6 +9,7 @@ body {
     margin: -7px;
     margin-bottom: 0px;
     background: radial-gradient(white, lightgrey);
+    display: grid;
 }
 #banderole b {
     margin-top: 1em;
@@ -18,7 +19,6 @@ body {
     float: right;
     position: fixed;
 }
-
 #banderole img {
     width: 14em;
 }
@@ -41,11 +41,13 @@ body {
     text-decoration: none;
     padding: 1%;
 }
-
 #consultant {
     color: rgb(34, 140, 186);
     text-decoration: none;
     padding: 1%;
+}
+h1{
+    color: #db12ca;
 }
 .corps{
     background-color: rgb(252, 252, 252);
@@ -57,7 +59,7 @@ body {
     line-height: 30px;
     margin: 75px 1212px 0px 680px;
     padding: auto;
-    background-color: azure;
+    background-color: rgb(247, 247, 247);
     width: 500px;
     height: 500px;
     align-items: center;
@@ -69,9 +71,11 @@ input{
     display: grid;
     line-height: 2em;
     background-color: aliceblue;
-    border-bottom: 2px solid #1237db; 
+    border-bottom: 2px dotted #db12ca; 
     border-top: none;
     border-left: none;
-    border-right: none;
-    
+    border-right: none; 
+}
+p{
+    color: #db12ca;
 }
