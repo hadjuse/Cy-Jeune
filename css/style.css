@@ -24,7 +24,15 @@ body {
     width: 14em;
 }
 #jeunes {
-    color: rgb(225, 7, 7);
+    text-decoration: none;
+    padding: 1%;
+}
+a[id="jeunes"]:hover{
+    background-color: #db12ca;
+    color: white;
+}
+#partenaires {
+    color: rgb(92, 104, 92);
     text-decoration: none;
     padding: 1%;
 }
@@ -55,21 +63,21 @@ h1{
     width: 99%;
     height: 500px;
 }
-.formulaire{
+form{
     line-height: 30px;
-    margin: 75px 1212px 0px 680px;
-    padding: auto;
+    margin: auto;
+    margin-top: 5%;
+    padding: 10%;
     background-color:white;
-    width: 500px;
-    height: 500px;
+    width: 750px;
+    height: 750px;
     align-items: center;
     justify-content: center;
-    display: flex;
+    display: grid;
     border: solid 1px #db12ca;
     padding: 1%;
 }
 input{
-    display: grid;
     line-height: 2em;
     background-color: aliceblue;
     border-bottom: 2px dotted #db12ca; 
@@ -77,6 +85,8 @@ input{
     border-left: none;
     border-right: none; 
 }
-p{
+label.left{
     color: #db12ca;
+    text-align: left;
+    vertical-align: top;
 }
