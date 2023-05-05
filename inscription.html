@@ -8,7 +8,6 @@
     <title>Page d'inscription Jeune</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
     <! banderole avec le nom de la page que la quelle on se situe>
         <div id="banderole">
@@ -23,7 +22,7 @@
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
     <div class="corps">
-            <form action="php/inscription.php" method="post">
+            <form action="/php/inscription.php" method="post">
                 <label for="prenom" class="left">Prénom: </label>
                 <input type="text" name="prenom" id="prenom" placeholder="Prénom" size="40" maxlength="30"
                     required /><br>
@@ -31,18 +30,17 @@
                 <input type="text" name="nom" id="nom" placeholder="Nom de famille" size="40" maxlength="30"
                     required /><br>
 
-                <label for="naissance" class="left">Date de naissance:</label> <input type="date" id="naissance"
+                <label for="naissance">Date de naissance:</label> <input type="date" id="naissance"
                     name="date_naissance" value="2007-07-22" min="1997-01-01" max="2007-12-31" required /> <br>
 
                 <label for="mail" class="left">Mail:</label><input type="email" name="mail" id="mail" placeholder="Mail"
                     size="40" maxlength="30" required><br>
                 <label for="mdp" class="left">Mot de passe:</label><input type="password" name="mdp" id="mdp"
                     placeholder="Mot de passe" size="40" maxlength="30" required><br>
-                <label for="réseau" class="left" size="40" maxlength="30">Réseau social:</label><input type="text" name="réseau" id="réseau"><br>
-                <button type="submit">Inscription</button>
-                <button type="button">Connexion</button>
+                <label for="reseau" class="left" size="40" maxlength="30">Réseau social:</label><input type="text" name="reseau" id="reseau"><br>
+                <button type="submit" name="submit">Inscription</button>
+                <button type="button" name="connexion">Connexion</button>
         </form>
     </div>
 </body>
-
 </html>
