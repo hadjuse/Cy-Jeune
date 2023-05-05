@@ -115,7 +115,7 @@ input {
     border-right: none;
 }
 
-label.left {
+label {
     color: #db12ca;
     text-align: left;
     vertical-align: top;
