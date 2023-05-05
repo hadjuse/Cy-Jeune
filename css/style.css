@@ -27,10 +27,27 @@ body {
     text-decoration: none;
     padding: 1%;
 }
+
 a[id="jeunes"]:hover{
     background-color: #db12ca;
     color: white;
 }
+
+a[id="referent"]:hover{
+    background-color: #09ac4d;
+    color: white;
+}
+
+a[id="consultant"]:hover{
+    background-color: rgb(34, 140, 186);
+    color: white;
+}
+
+a[id="partenaires"]:hover{
+    background-color: rgb(92, 104, 92);
+    color: white;
+}
+
 #partenaires {
     color: rgb(92, 104, 92);
     text-decoration: none;
