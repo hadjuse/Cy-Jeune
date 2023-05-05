@@ -37,7 +37,12 @@
                     size="40" maxlength="30" required><br>
                 <label for="mdp" class="left">Mot de passe:</label><input type="password" name="mdp" id="mdp"
                     placeholder="Mot de passe" size="40" maxlength="30" required><br>
-                <label for="reseau" class="left" size="40" maxlength="30">Réseau social:</label><input type="text" name="reseau" id="reseau"><br>
+                <select name="reseau" id="reseau">
+                    <optgroup label="réseau">
+                        <option value="Linkdln">Linkdln</option>
+                        <option value="instagram">instagram</option>
+                    </optgroup>
+                </select><br>
                 <button type="submit" name="submit">Inscription</button>
                 <button type="button" name="connexion">Connexion</button>
         </form>

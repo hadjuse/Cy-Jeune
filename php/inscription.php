@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
   $date_naissance = $_POST['date_naissance'];
   $mail = $_POST['mail'];
   $mdp = $_POST['mdp'];
-  $reseau = $_POST['réseau'];
+  $reseau = $_POST['reseau'];
 
   // Crée un tableau associatif avec les données de l'utilisateur
   $utilisateur = array(
