@@ -1,8 +1,5 @@
 <?php
-// Vérifie si le formulaire a été soumis
-if (isset($_POST['submit'])) {
-
-  // Récupère les données du formulaire
+if (isset($_POST['submit'])){
   $prenom = $_POST['prenom'];
   $nom = $_POST['nom'];
   $date_naissance = $_POST['date_naissance'];
@@ -20,32 +17,23 @@ if (isset($_POST['submit'])) {
     'reseau' => $reseau
   );
 
-  // Charge le contenu du fichier JSON existant (s'il existe)
-  $utilisateurs = array();
-  if (file_exists('utilisateurs.json')) {
-    $utilisateurs_json = file_get_contents('utilisateurs.json');
-    $utilisateurs = json_decode($utilisateurs_json, true);
-  }
+  // Charger le contenu actuel du fichier JSON
+  $json = file_get_contents('utilisateurs.json');
+  $data = json_decode($json, true);
 
-  // Ajoute le nouvel utilisateur au tableau existant
-  array_push($utilisateurs, $utilisateur);
-  // Encode le tableau en JSON
-  $utilisateurs_json = json_encode($utilisateurs, JSON_PRETTY_PRINT);
+  // Récupérer le tableau des utilisateurs
+  $utilisateurs = $data['utilisateurs'];
 
-  // Écrit le contenu JSON dans le fichier
-  file_put_contents('utilisateurs.json', $utilisateurs_json);
-  foreach ($utilisateurs as $utilisateur){
-    if ($mail == $utilisateur['mail'] || $prenom == $utilisateurs['mdp']){
-      {
-        echo "<script>alert(\"Mail ou mot de passe déjà utiliser.\")</script>";
-      }
-        header("location:../inscription.html");
-        break;
-    }
-    else{
-      // Redirection vers la page de connexion
-      header("location:../connexion.html");
-    }
-  }
+  // Ajouter le nouvel utilisateur au tableau des utilisateurs
+  $utilisateurs[] = $utilisateur;
+
+  // Mettre à jour le tableau des utilisateurs dans le tableau complet
+  $data['utilisateurs'] = $utilisateurs;
+
+  // Convertir le tableau associatif en JSON
+  $json = json_encode($data, JSON_PRETTY_PRINT);
+
+  // Écrire le JSON dans un fichier
+  file_put_contents('utilisateurs.json', $json);
 }
 ?>
