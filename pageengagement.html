@@ -8,16 +8,30 @@
 </head>
 <style>
     body{
+        
         color:grey;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 1vw;
+        background: radial-gradient( at center, white 80%,gray 120%);
+        height: 100vh;
     }
 /* banderole avec le nom de la page sur laquelle on est*/
 #banderole{
     color: white;
-        margin: -7px;
+        margin: -8px;
         margin-bottom: 0px;
         background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);    
+    }
+    a{
+        text-decoration: none;
+        color: gray;
+    }
+    .form{
+        font-size: 1.2em;
+        float: right;
+        margin-left: 85vw;
+        position: absolute;
+        margin-top: -8.5vw;
     }
     #banderole img{
         width: 14em;
@@ -26,7 +40,6 @@
         margin-top: 1em;
         margin-left: 20vw;
         font-size:4em;
-        text-decoration: none;
         float: right;
         position: absolute  ;
     }
@@ -168,7 +181,9 @@ h1 {
 <body>
 <! banderole avec le nom de la page que la quelle on se situe>
     <div id="banderole">
-        <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+        <a href="page0.html" ><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+        <p class="form"><a href="inscription.html" >inscription</a>
+        <a href="connexion.html">connexion</a></p>
         <b>Pour faire de l'engagement une valeur</b>
     </div>
 <! onglet de navigation entre les differentes pages>
@@ -179,7 +194,6 @@ h1 {
         <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
     </div>
 <! corps de la page avec les informations>
-    <div id="ecriture">
             <div id="textg"><h1>De quoi s’agit-il ?</h1><b>D’une opportunité : </b>celle qu’un engagement quelqu’il soit puisse être considérer
             à sa juste valeur ! <br>Tout eexpérience est source d’enrichissement et doit d’être reconnu largement.<br> Elle révèle un potentiel,
             l’expression d’un savoir-être à concrétiser.
@@ -193,7 +207,7 @@ h1 {
             <div id="textd">A vous, employeurs, recruteurs en ressources humaines, repré-sentants d’organismes de formation, qui recevez 
                 ces jeunes, pour un emploi, un stage, un cursus de qualification, pour qui le savoir-être constitue le premier fondement 
                 de toute capacité humaine.<br><br><h4> Cet engagement est une ressource à valoriser au fil d'un parcours en 3 étapes :</h4></div>
-    </div>
+    
     <a href="pagejeune.html" class="tableau"><table id="tab1"  cellspacing="0" cellpadding="10"><tr id="rose" ><td>1ère étape la valorisation</td></tr>
             <tr id="rose2"><td>Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</td></tr></table></a>
     <a href="pagereferent.html" class="tableau"><table id="tab2" cellspacing="0" cellpadding="10"><tr id="vert" ><td>2ème étape la confirmation</td></tr>
