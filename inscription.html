@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'inscription Jeune</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <! banderole avec le nom de la page que la quelle on se situe>
+        <div id="banderole">
+            <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+            <b>Pour faire de l'engagement une valeur</b>
+        </div>
+        <! onglet de navigation entre les differentes pages>
+            <div id="navigation">
+                <a href="pagejeune.html" id="jeunes">JEUNES</a>
+                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
+            </div>
+    <div class="corps">
+            <form action="/php/inscription.php" method="post">
+                <label for="prenom" class="left">Prénom: </label>
+                <input type="text" name="prenom" id="prenom" placeholder="Prénom" size="40" maxlength="30"
+                    required /><br>
+                <label for="nom" class="left">Nom:</label>
+                <input type="text" name="nom" id="nom" placeholder="Nom de famille" size="40" maxlength="30"
+                    required /><br>
+
+                <label for="naissance">Date de naissance:</label> <input type="date" id="naissance"
+                    name="date_naissance" value="2007-07-22" min="1997-01-01" max="2007-12-31" required /> <br>
+
+                <label for="mail" class="left">Mail:</label><input type="email" name="mail" id="mail" placeholder="Mail"
+                    size="40" maxlength="30" required><br>
+                <label for="mdp" class="left">Mot de passe:</label><input type="password" name="mdp" id="mdp"
+                    placeholder="Mot de passe" size="40" maxlength="30" required><br>
+                <select name="reseau" id="reseau">
+                    <optgroup label="réseau">
+                        <option value="Linkdln">Linkdln</option>
+                        <option value="instagram">instagram</option>
+                    </optgroup>
+                </select><br>
+                <button type="submit" name="submit">Inscription</button>
+                <button type="button" name="connexion">Connexion</button>
+        </form>
+    </div>
+</body>
+</html>

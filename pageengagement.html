@@ -17,7 +17,7 @@
     color: white;
         margin: -7px;
         margin-bottom: 0px;
-        background:radial-gradient(white, lightgrey);    
+        background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);    
     }
     #banderole img{
         width: 14em;
@@ -28,11 +28,11 @@
         font-size:4em;
         text-decoration: none;
         float: right;
-        position: fixed;
+        position: absolute  ;
     }
 /* volet de navigation*/
     #navigation{
-        background:radial-gradient(white,lightgrey) ;
+        background:radial-gradient( 150px at 150px ,white -30%, lightgrey);  
         margin-left: 30%;
         margin-right: 30%;
         padding: 1%;
@@ -41,7 +41,7 @@
         top:0%;
     }
     #jeunes{
-        color:rgb(225, 7, 7);
+        color:#e6007e;
         text-decoration: none;
         padding: 1%;
     }
@@ -89,24 +89,26 @@ h1 {
 .tableau{
     text-decoration: none;
     color:grey;
+    text-align: center;
 }
 /*tableau rose*/
 #tab1{
-    bottom: 7%;
+
     width:14%;
-    border: 4px solid #e6007e;
-    left: 27vw;
-    position: absolute;
-    height: 26vh;
+    border: 3px solid #e6007e;
+    left:27vw;
+    position:absolute;
+    height: 13vw;
+    margin-top: 22vw;
+    float: left;
 }
 #rose{
-    height:5%;
     background: linear-gradient(0.25turn, rgba(255, 255, 255, 0.536),#e6007e);
     color: white;
     text-align: center;
     background-color: #e6007e;
     font-size: 1.5em;
-    height: 12vh;
+    height: 6vw;
 }
 #rose2{
     background: linear-gradient(0.25turn, rgba(255, 255, 255, 0.674),rgb(255, 225, 239));
@@ -116,22 +118,21 @@ h1 {
 }
 /*tableau bleu*/
 #tab3{
-    border: 4px solid #009fe3;
+    border: 3px solid #009fe3;
     left: 63vw;
-    float:left;
     position: absolute;
-    bottom: 7%;
     width:14%;
-    height: 26vh;
+    height: 13vw;
+    margin-top: 22vw;
+    float: left;
 }
 #bleu{
-    height:5%;
     background: linear-gradient(0.25turn, rgba(255, 255, 255, 0.536),#009fe3);
     color: white;
     text-align: center;
     background-color: #009fe3;
     font-size: 1.5em;
-    height: 13vh;
+    height: 6vw;
 }
 #bleu2{
     background: linear-gradient(0.25turn, rgba(255, 255, 255, 0.674),#c1e7fa);
@@ -141,16 +142,16 @@ h1 {
 }
 /*tableau vert*/
 #tab2{
-    bottom: 7%;
     width:14%;
-    border: 4px solid #c5d40e;
-    float:left;
+    border: 3px solid #c5d40e;
     left: 45vw;
     position: absolute;
-    height: 26vh;
+    height: 13vw;
+    margin-top: 22vw;
+    float: left;
 }
 #vert{
-    height: 12vh;
+    height: 6ww;
     background: linear-gradient(0.25turn, #c5d40e,#13a538);
     color: white;
     text-align: center;
@@ -167,7 +168,7 @@ h1 {
 <body>
 <! banderole avec le nom de la page que la quelle on se situe>
     <div id="banderole">
-        <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"    ></a>
+        <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
         <b>Pour faire de l'engagement une valeur</b>
     </div>
 <! onglet de navigation entre les differentes pages>
@@ -193,11 +194,11 @@ h1 {
                 ces jeunes, pour un emploi, un stage, un cursus de qualification, pour qui le savoir-être constitue le premier fondement 
                 de toute capacité humaine.<br><br><h4> Cet engagement est une ressource à valoriser au fil d'un parcours en 3 étapes :</h4></div>
     </div>
-    <a href="pagejeune.html" class="tableau"><table id="tab1" border="1" cellspacing="0" cellpadding="10"><tr id="rose" ><td>1ère étape la valorisation</td></tr>
+    <a href="pagejeune.html" class="tableau"><table id="tab1"  cellspacing="0" cellpadding="10"><tr id="rose" ><td>1ère étape la valorisation</td></tr>
             <tr id="rose2"><td>Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</td></tr></table></a>
-    <a href="pagereferent.html" class="tableau"><table id="tab2" border="1" cellspacing="0" cellpadding="10"><tr id="vert" ><td>2ème étape la confirmation</td></tr>
+    <a href="pagereferent.html" class="tableau"><table id="tab2" cellspacing="0" cellpadding="10"><tr id="vert" ><td>2ème étape la confirmation</td></tr>
         <tr id="vert2"><td>Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune.</td></tr></table></a>
-            <a href="pageconsultant.html" class="tableau"><table id="tab3" border="1" cellspacing="0" cellpadding="10"><tr id="bleu" ><td>3ème étape la consultation</td>
+            <a href="pageconsultant.html" class="tableau"><table id="tab3" cellspacing="0" cellpadding="10"><tr id="bleu" ><td>3ème étape la consultation</td>
             </tr><tr id="bleu2"><td>Validez cet engagement en prenant en compte sa valeur.</td></tr></table></a>
 </body>
 </html>
