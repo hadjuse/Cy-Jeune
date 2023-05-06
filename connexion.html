@@ -26,12 +26,10 @@
                 <h1>Connexion</h1>
             </center>
             <form action="/php/Jeune.php" method="post">
-                <label for="prenom">Prénom:</label>
-                <input type="text" name="prenom" id="prenom" placeholder="Prénom" size="40" maxlength="30"
-                    required /><br>
-                <label for="nom">Nom:</label>
-                <input type="text" name="nom" id="nom" placeholder="Nom de famille" size="40" maxlength="30"
-                    required /><br>
+                <label for="mail">Mail de connexion:</label>
+                <input type="email" name="mail" id="mail" placeholder="Mail de connexion"><br>
+                <label for="mdp">Mot de passe:</label>
+                <input type="password" name="mdp" id="mdp"><br>
                 <button type="submit" name="submit">Connexion</button>
             </form>
 </body>

@@ -8,6 +8,7 @@
     <title>Page d'inscription Jeune</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <! banderole avec le nom de la page que la quelle on se situe>
         <div id="banderole">
@@ -21,31 +22,43 @@
                 <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
-    <div class="corps">
-            <form action="/php/inscription.php" method="post">
-                <label for="prenom" class="left">Prénom: </label>
-                <input type="text" name="prenom" id="prenom" placeholder="Prénom" size="40" maxlength="30"
-                    required /><br>
-                <label for="nom" class="left">Nom:</label>
-                <input type="text" name="nom" id="nom" placeholder="Nom de famille" size="40" maxlength="30"
-                    required /><br>
+            <div class="corps">
+                <form action="/php/inscription.php" method="post">
+                    <label for="prenom">Prénom: </label>
+                    <input type="text" name="prenom" id="prenom" placeholder="Prénom" size="40" maxlength="30"
+                        required /><br>
+                    <label for="nom">Nom:</label>
+                    <input type="text" name="nom" id="nom" placeholder="Nom de famille" size="40" maxlength="30"
+                        required /><br>
 
-                <label for="naissance">Date de naissance:</label> <input type="date" id="naissance"
-                    name="date_naissance" value="2007-07-22" min="1997-01-01" max="2007-12-31" required /> <br>
+                    <label for="naissance">Date de naissance:</label> <input type="date" id="naissance"
+                        name="date_naissance" value="2007-07-22" min="1997-01-01" max="2007-12-31" required /> <br>
 
-                <label for="mail" class="left">Mail:</label><input type="email" name="mail" id="mail" placeholder="Mail"
-                    size="40" maxlength="30" required><br>
-                <label for="mdp" class="left">Mot de passe:</label><input type="password" name="mdp" id="mdp"
-                    placeholder="Mot de passe" size="40" maxlength="30" required><br>
-                <select name="reseau" id="reseau">
-                    <optgroup label="réseau">
-                        <option value="Linkdln">Linkdln</option>
-                        <option value="instagram">instagram</option>
-                    </optgroup>
-                </select><br>
-                <button type="submit" name="submit">Inscription</button>
-                <button type="button" name="connexion">Connexion</button>
-        </form>
-    </div>
+                    <label for="mail">Mail:</label><input type="email" name="mail" id="mail" placeholder="Mail"
+                        size="40" maxlength="30" required><br>
+                    <label for="mdp">Mot de passe:</label><input type="password" name="mdp" id="mdp"
+                        placeholder="Mot de passe" size="40" maxlength="30" required><br>
+                    <select name="reseau" id="reseau">
+                        <optgroup label="réseau">
+                            <option value="Linkdln">Linkdln</option>
+                            <option value="instagram">instagram</option>
+                        </optgroup>
+                    </select><br>
+                    <button type="submit" name="submit">Inscription</button>
+                    <button type="button" name="connexion" onclick="verification()">Connexion</button>
+                </form>
+                <script>
+                    function verification() {
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function () {
+                            if (this.readyState == 4 && this.status == 200) {
+                                alert("ça marge");
+                            }
+                        }
+                        xhttp.send();
+                    }
+                </script>
+            </div>
 </body>
+
 </html>

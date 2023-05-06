@@ -29,14 +29,23 @@ if (isset($_POST['submit'])) {
 
   // Ajoute le nouvel utilisateur au tableau existant
   array_push($utilisateurs, $utilisateur);
-
   // Encode le tableau en JSON
   $utilisateurs_json = json_encode($utilisateurs, JSON_PRETTY_PRINT);
 
   // Écrit le contenu JSON dans le fichier
   file_put_contents('utilisateurs.json', $utilisateurs_json);
-
-  // Affiche un message de confirmation
-  echo "Utilisateur ajouté avec succès !";
+  foreach ($utilisateurs as $utilisateur){
+    if ($mail == $utilisateur['mail'] || $prenom == $utilisateurs['mdp']){
+      {
+        echo "<script>alert(\"Mail ou mot de passe déjà utiliser.\")</script>";
+      }
+        header("location:../inscription.html");
+        break;
+    }
+    else{
+      // Redirection vers la page de connexion
+      header("location:../connexion.html");
+    }
+  }
 }
 ?>
