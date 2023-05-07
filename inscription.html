@@ -24,7 +24,7 @@
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <div class="corps">
-                <form action="/php/inscription.php" method="post" id="form-inscription">
+                <form action="php/inscription.php" method="post" id="form-inscription">
                     <label for="prenom" class="left">Prénom: </label>
                     <input type="text" name="prenom" id="prenom" placeholder="" size="40" maxlength="30" required /><br>
                     <label for="nom" class="left">Nom:</label>
@@ -47,12 +47,11 @@
                         </optgroup>
                     </select><br>
                     <button type="submit" name="submit" id="submit"
-                        onclick="verif_mail(); return false;">Inscription</button>
-                    <button type="button" name="connexion" id="connexion">Connexion</button>
+                        onclick="verif_mail()">Inscription</button>
+                    <button type="button" name="connexion" id="connexion" onclick="document.location.href='connexion.html'">Connexion</button>
                 </form>
-                <script src="javascript/inscription.js">
-
-                </script>
+                <!--<script src="javascript/inscription.js">
+                </script>-->
 </body>
 </div>
 </body>

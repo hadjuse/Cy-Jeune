@@ -23,7 +23,6 @@
         exit;
       }
     }
-    echo "ok";
     // Crée un tableau associatif avec les données de l'utilisateur
     $utilisateur = array(
       'prenom' => $prenom,
