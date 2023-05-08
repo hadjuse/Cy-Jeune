@@ -1,6 +1,6 @@
 
 body{
-    background-image:url("/Cy-Jeune/image/pagejeune/logo_page_jeune.jpeg");
+    background-image:url("../image/pagejeune/logo_page_jeune.jpeg");
     background-size: 40%;
     background-position:center;
     background-position-y: 250px;
