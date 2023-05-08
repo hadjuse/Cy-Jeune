@@ -1,0 +1,46 @@
+
+body{
+    background-image:url("/Cy-Jeune/image/pagejeune/logo_page_jeune.jpeg");
+    background-size: 40%;
+    background-position:center;
+    background-position-y: 250px;
+    background-repeat: no-repeat;
+}
+/* banderole avec le nom de la page sur laquelle on est*/
+#banderole{
+    color: white;
+        margin: -8px;
+        margin-bottom: 0px;
+        background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);    
+    }
+#banderole img{
+        width: 14em;
+    }
+#banderole b{
+        margin-top: 1.2em;
+        margin-left: 73vw;
+        font-size:3.5em;
+        position: absolute  ;
+    }
+    /******************************corps***************************/
+
+.corps{
+    text-align: center  ;
+    border:#e6007e solid 2px;
+    border-radius: 7px;
+    color: #e6007e;
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 1.7em;
+    margin-left: 38vw;
+    margin-right: 38vw;
+    padding:1%;
+    background-color: aliceblue;
+}
+
+.corps input{
+    border: none;
+    border-bottom: #e6007e dotted 2px;
+    font-size: 0.5em;
+    background-color: aliceblue;
+}

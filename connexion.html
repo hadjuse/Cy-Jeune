@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css"><!--CSS à modifier-->
+    <link rel="stylesheet" href="css/connexion.css">
     <title>Connexion</title>
 </head>
 
@@ -13,24 +13,16 @@
     <! banderole avec le nom de la page que la quelle on se situe>
         <div id="banderole">
             <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
-            <b>Pour faire de l'engagement une valeur</b>
+            <b>Connexion</b>
         </div>
-        <! onglet de navigation entre les differentes pages>
-            <div id="navigation">
-                <a href="pagejeune.html" id="jeunes">JEUNES</a>
-                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
-                <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
-                <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
-            </div>
-            <center>
-                <h1>Connexion</h1>
-            </center>
+        <div class="corps">
             <form action="/php/Jeune.php" method="post">
-                <label for="mail">Mail de connexion:</label>
-                <input type="email" name="mail" id="mail" placeholder="Mail de connexion"><br>
+                <label for="mail">Mail:</label>
+                <input type="email" name="mail" id="mail" placeholder=""><br>
                 <label for="mdp">Mot de passe:</label>
                 <input type="password" name="mdp" id="mdp"><br>
                 <button type="submit" name="submit">Connexion</button>
             </form>
+        </div>
             <script src="javascript/connexion_jeune.js"></script>
 </html>

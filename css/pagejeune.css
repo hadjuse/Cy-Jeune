@@ -71,42 +71,5 @@ body {
     background-repeat: no-repeat;
 }
 
-h1 {
-    color: #db12ca;
-}
 
-.corps {
-    background-color: rgb(252, 252, 252);
-    width: 99%;
-    height: 500px;
-}
 
-form {
-    line-height: 30px;
-    margin: auto;
-    margin-top: 5%;
-    padding: 10%;
-    background-color: white;
-    width: 750px;
-    height: 750px;
-    align-items: center;
-    justify-content: center;
-    display: grid;
-    border: solid 1px #db12ca;
-    padding: 1%;
-}
-
-input {
-    line-height: 2em;
-    background-color: aliceblue;
-    border-bottom: 2px dotted #db12ca;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-
-label {
-    color: #db12ca;
-    text-align: left;
-    vertical-align: top;
-}

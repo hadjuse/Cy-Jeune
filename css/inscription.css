@@ -1,10 +1,14 @@
 body{
-        
     color:grey;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1vw;
     background: radial-gradient( at center, white 80%,gray 120%);
     height: 100vh;
+    background-image:url("/Cy-Jeune/image/pagejeune/logo_page_jeune.jpeg");
+    background-size: 50%;
+    background-position-x:40vw;
+    background-position-y: 18vw;
+    background-repeat: no-repeat;
 }
 /* banderole avec le nom de la page sur laquelle on est*/
 #banderole{
@@ -13,60 +17,21 @@ color: white;
     margin-bottom: 0px;
     background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);    
 }
-a{
-    text-decoration: none;
-    color: gray;
-}
-.form{
-    font-size: 1.2em;
-    float: right;
-    margin-left: 85vw;
-    position: absolute;
-    margin-top: -8.5vw;
-}
+
 #banderole img{
     width: 14em;
 }
 #banderole b{
     margin-top: 1.2em;
-    margin-left: 20vw;
+    margin-left: 65vw;
     font-size:3.5em;
-    float: right;
     position: absolute  ;
-}
-/* volet de navigation*/
-#navigation{
-    background:radial-gradient( 150px at 150px ,white -30%, lightgrey);  
-    margin-left: 30%;
-    margin-right: 30%;
-    padding: 1%;
-    text-align: center;
-    font-size: 1.4em;
-    top:0%;
-}
-#jeunes{
-    color:#e6007e;
-    text-decoration: none;
-    padding: 1%;
-}
-#referent{
-    color:rgb(19, 202, 19);
-    text-decoration: none;
-    padding: 1%;
-}
-#consultant{
-    color:rgb(34, 140, 186);
-    text-decoration: none;
-    padding: 1%;
-}
-#partenaires{
-    color:rgb(92, 104, 92);
-    text-decoration: none;
-    padding: 1%;
 }
 /******************************corps***************************/
 
+
 .corps{
+    background-color: aliceblue;
     border:#e6007e solid 2px;
     border-radius: 7px;
     color: #e6007e;
@@ -82,9 +47,11 @@ a{
     border: none;
     border-bottom: #e6007e dotted 2px;
     font-size: 0.5em;
+    background-color: aliceblue;
 }
 
 .corps select{
     text-align: center;
     font-size: 0.6em;
+    
 }
