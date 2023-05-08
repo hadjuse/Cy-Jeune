@@ -1,42 +1,52 @@
 <?php
-// Vérifie si le formulaire a été soumis
-if (isset($_POST['submit'])) {
+  if (isset($_POST['submit'])){
 
-  // Récupère les données du formulaire
-  $prenom = $_POST['prenom'];
-  $nom = $_POST['nom'];
-  $date_naissance = $_POST['date_naissance'];
-  $mail = $_POST['mail'];
-  $mdp = $_POST['mdp'];
-  $reseau = $_POST['reseau'];
+    //On récupère les infos d'utilisateurs
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['nom'];
+    $date_naissance = $_POST['date_naissance'];
+    $mail = $_POST['mail'];
+    $mdp = $_POST['mdp'];
+    $reseau = $_POST['reseau'];
 
-  // Crée un tableau associatif avec les données de l'utilisateur
-  $utilisateur = array(
-    'prenom' => $prenom,
-    'nom' => $nom,
-    'date_naissance' => $date_naissance,
-    'mail' => $mail,
-    'mdp' => $mdp,
-    'reseau' => $reseau
-  );
+    // Charger le contenu actuel du fichier JSON
+    $json = file_get_contents('utilisateurs.json');
+    $data = json_decode($json, true);
 
-  // Charge le contenu du fichier JSON existant (s'il existe)
-  $utilisateurs = array();
-  if (file_exists('utilisateurs.json')) {
-    $utilisateurs_json = file_get_contents('utilisateurs.json');
-    $utilisateurs = json_decode($utilisateurs_json, true);
+    // Récupérer le tableau des utilisateurs
+    $utilisateurs = $data['utilisateurs'];
+
+    // On vérifie maintenant si le mail entré par l'utilisateur existe déjà dans la base de données ou pas.
+    foreach ($utilisateurs as $utilisateur){
+      if ($utilisateur["mail"] == $mail){
+        echo "exist";
+        exit;
+      }
+    }
+    echo "ok";
+    // Crée un tableau associatif avec les données de l'utilisateur
+    $utilisateur = array(
+      'prenom' => $prenom,
+      'nom' => $nom,
+      'date_naissance' => $date_naissance,
+      'mail' => $mail,
+      'mdp' => $mdp,
+      'reseau' => $reseau
+    );
+
+    // Ajouter le nouvel utilisateur au tableau des utilisateurs
+    $utilisateurs[] = $utilisateur;
+
+    // Mettre à jour le tableau des utilisateurs dans le tableau complet
+    $data['utilisateurs'] = $utilisateurs;
+
+    // Convertir le tableau associatif en JSON
+    $json = json_encode($data, JSON_PRETTY_PRINT);
+
+    // Écrire le JSON dans un fichier
+    file_put_contents('utilisateurs.json', $json);
+
+    // Rediriger l'utilisateur vers une autre page
+    header("location: ../connexion.html");
   }
-
-  // Ajoute le nouvel utilisateur au tableau existant
-  array_push($utilisateurs, $utilisateur);
-
-  // Encode le tableau en JSON
-  $utilisateurs_json = json_encode($utilisateurs, JSON_PRETTY_PRINT);
-
-  // Écrit le contenu JSON dans le fichier
-  file_put_contents('utilisateurs.json', $utilisateurs_json);
-
-  // Affiche un message de confirmation
-  echo "Utilisateur ajouté avec succès !";
-}
 ?>
