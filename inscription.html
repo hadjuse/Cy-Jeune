@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'inscription Jeune</title>
     <link rel="stylesheet" href="css/inscription.css">
-
+    <script src="javascript/inscription.js">
+    </script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <div class="corps">
-                <form action="/php/inscription.php" method="post" id="form-inscription">
+                <form action="php/inscription.php" method="post" id="form-inscription">
                     <label for="prenom" class="left">Prénom: </label>
                     <input type="text" name="prenom" id="prenom" placeholder="" size="40" maxlength="30" required /><br>
                     <label for="nom" class="left">Nom:</label>
@@ -34,8 +35,7 @@
                         name="date_naissance" value="2007-07-22" min="1997-01-01" max="2007-12-31" required /> <br>
 
                     <label for="mail" class="left">Mail:</label><input type="email" name="mail" id="mail" placeholder=""
-                        size="40" maxlength="30" required>
-                    <span id="error"></span>
+                        size="40" maxlength="30" required> 
                     <br><!--Cette balise p est en lien avec le programme ajax qui vérifie si l'email qu'on souhaite soumettre est déjà dans la base de donnée-->
                     <label for="mdp" class="left">Mot de passe:</label><input type="password" name="mdp" id="mdp"
                         placeholder="" size="40" maxlength="30" required><br>
@@ -46,13 +46,12 @@
                             <option value="LinkedIn">LinkedIn</option>
                         </optgroup>
                     </select><br>
-                    <button type="submit" name="submit" id="submit"
-                        onclick="verif_mail(); return false;">Inscription</button>
-                    <button type="button" name="connexion" id="connexion">Connexion</button>
+                    <button type="submit" name="submit" id="submit" onsubmit="verif_mail()"
+                        >Inscription</button>
+                    <button type="button" name="connexion" id="connexion" onclick="document.location.href='connexion.html'">Connexion</button>
                 </form>
-                <script src="javascript/inscription.js">
-
-                </script>
+                <span id="error"></span>
+                
 </body>
 </div>
 </body>

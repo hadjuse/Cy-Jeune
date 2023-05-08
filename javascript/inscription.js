@@ -1,17 +1,17 @@
 function verif_mail() {
-  var email = document.getElementById("mail").value;
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", "php/inscription.php", true);
-  xhttp.onreadystatechange = function () {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-          if (this.responseText === "exist") {
-              document.getElementById("error").innerHTML = this.responseText;
-          } else {
-              document.getElementById("error").innerHTML = "";
-              document.querySelector("form").submit();
-          }
+        if (this.responseText == "exist") {
+          document.getElementById("error").innerHTML = "L'email existe déjà";
+          return false; // empêcher le formulaire de se soumettre
+        }
       }
-  };
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("email=" + email);
-}
+    };
+    var form = document.getElementById("form-inscription");
+    var formData = new FormData(form);
+    xhr.open("POST", "../php/inscription.php", true);
+    xhr.send(formData);
+    return true; // permettre le formulaire de se soumettre si l'e-mail n'existe pas
+  }
+  

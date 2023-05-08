@@ -1,0 +1,28 @@
+{
+    "utilisateurs": [
+        {
+            "prenom": "Hadj",
+            "nom": "Rabearimanana",
+            "date_naissance": "2007-07-22",
+            "mail": "rabearimananahadj@gmail.com",
+            "mdp": "ZFA",
+            "reseau": "Facebook"
+        },
+        {
+            "prenom": "zegzrg",
+            "nom": "Rabearimanana",
+            "date_naissance": "2007-07-22",
+            "mail": "rabearimananadj@gmail.com",
+            "mdp": "zae",
+            "reseau": "Facebook"
+        },
+        {
+            "prenom": "zegzrg",
+            "nom": "Rabearimanana",
+            "date_naissance": "2007-07-22",
+            "mail": "rabeariqsegrmananadj@gmail.com",
+            "mdp": "qihugiozehgzioegrhuzioer",
+            "reseau": "Facebook"
+        }
+    ]
+}
