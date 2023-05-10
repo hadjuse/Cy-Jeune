@@ -23,7 +23,8 @@
     font-size:2em;
     text-decoration: none;
     float: right;
-    position: absolute  ;
+    position: absolute;
+    display: contents;
 }
 /* volet de navigation*/
 #navigation{
@@ -72,4 +73,25 @@ body {
 }
 
 
+#corps{
+    background-color: white;
+    border:#e6007e solid 2px;
+    border-radius: 7px;
+    color: #e6007e;
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 1.7em;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    padding:1%;
+}
+
+#carree{
+    border: none;
+    border-bottom: #e6007e dotted 2px;
+    font-size: 0.5em;
+    background-color: aliceblue;
+    font-size: 0.8em;
+    color: black;
+}
 

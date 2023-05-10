@@ -31,7 +31,10 @@ if (isset($_POST['submit'])){
     'date_naissance' => $date_naissance,
     'mail' => $mail,
     'mdp' => $mdp,
-    'reseau' => $reseau
+    'reseau' => $reseau,
+    'engagement' => null,
+    'duree' => null,
+    'savoir_etre' => array()
   );
 
   // Ajouter le nouvel utilisateur au tableau des utilisateurs

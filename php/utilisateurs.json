@@ -6,47 +6,21 @@
             "date_naissance": "2007-07-22",
             "mail": "rabearimananahadj@gmail.com",
             "mdp": "ZFA",
-            "reseau": "Facebook"
+            "reseau": "Facebook",
+            "engagement": null,
+            "duree": null,
+            "savoir_etre": []
         },
         {
-            "prenom": "zegzrg", 
+            "prenom": "th\u00e9o",
             "nom": "Rabearimanana",
             "date_naissance": "2007-07-22",
-            "mail": "rabearimananadj@gmail.com",
-            "mdp": "zae",
-            "reseau": "Facebook"
-        },
-        {
-            "prenom": "zegzrg",
-            "nom": "Rabearimanana",
-            "date_naissance": "2007-07-22",
-            "mail": "rabeariqsegrmananadj@gmail.com",
-            "mdp": "qihugiozehgzioegrhuzioer",
-            "reseau": "Facebook"
-        },
-        {
-            "prenom": "Flavio",
-            "nom": "MARTINS SOARES",
-            "date_naissance": "2007-07-22",
-            "mail": "bezrzr@gmil.com",
-            "mdp": "fezfzzef",
-            "reseau": "Facebook"
-        },
-        {
-            "prenom": "Flavio",
-            "nom": "MARTINS SOARES",
-            "date_naissance": "2007-07-22",
-            "mail": "dqadzaz@aaa",
-            "mdp": "gfeaafa",
-            "reseau": "Facebook"
-        },
-        {
-            "prenom": "Flavio",
-            "nom": "MARTINS SOARES",
-            "date_naissance": "2007-07-22",
-            "mail": "dzadadzaaz@aaaa",
-            "mdp": "adzadeazda",
-            "reseau": "Facebook"
+            "mail": "rabearimananhadj@gmail.com",
+            "mdp": "a",
+            "reseau": "Facebook",
+            "engagement": null,
+            "duree": null,
+            "savoir_etre": []
         }
     ]
 }

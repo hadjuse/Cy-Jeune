@@ -1,24 +1,43 @@
+
 <?php
     session_start();
+    function logout(){
+        setcookie("engagement", null, time()+60*60*24);
+        setcookie("duree", $utilisateur['duree'], time()+60*60*24);
+        setcookie("savoir_etre", "qzefg", time()+60*60*24);
+    }
     if (isset($_POST['submit'])){
         
         // On récupère les infos d'utilisateurs
         $mail = $_POST['mail'];
-        $mdp = $_POST['mdp'];
+        $mdp = $_POST['mdp'];    
         // Charger le contenu actuel du fichier JSON
         $json = file_get_contents('utilisateurs.json');
         $data = json_decode($json, true);
         
         $utilisateurs = $data['utilisateurs'];
         
-        // verifie si l'utilisateur existe et initialie une session et un cookie pour l'utilisateurs
+        // verifie si l'utilisateur existe et initialie une session et des cookie pour l'utilisateur
         $utilisateurs_trouve = false;
         foreach($utilisateurs as $utilisateur){
             if ($mail === $utilisateur['mail'] && $mdp === $utilisateur['mdp']){
-                $_SESSION['login'] = $utilisateur['prenom'];      
-                setcookie("login", $utilisateur["prenom"], time()+60*60*24);
+
+                // on initialise les sessions dont on veut simplement afficher le temps de la visite
+                $_SESSION['mail'] = $utilisateur['mail'];
+                $_SESSION['nom'] = $utilisateur['nom'];
+                $_SESSION['prenom'] = $utilisateur['prenom'];
+
+                // On initialise des cookies de l'utilisateur pour une durée de 24h
+                setcookie("engagement", $utilisateur['engagement'], time()+60*60*24);
+                setcookie("duree", $utilisateur['duree'], time()+60*60*24);
+                setcookie("savoir_etre", "qzefg", time()+60*60*24);
+                $utilisateurs_trouve = true; 
                 break;
             }
+        }
+        if ($utilisateurs_trouve == false){
+            echo "Utilisateur non trouvé";
+            exit;
         }
         //$response = array('connexion' => $utilisateurs_trouve);
         //echo json_encode($response); 
@@ -34,12 +53,14 @@
     <link rel="stylesheet" href="../css/pagejeune.css">
 </head>
 <body>
+
 <!--banderole avec le nom de la page que la quelle on se situe-->
         <div id="banderole">
             <a href="../page0.html"><img src="../image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
             <b id="Jeune">JEUNE</b>
             <b id="engagement">Je donne de la valeur à mon engagement</b>
         </div>
+
         <!--onglet de navigation entre les differentes pages-->
             <div id="navigation">
                 <a href="../php/Jeune.php" id="jeunes">JEUNES</a>
@@ -47,12 +68,51 @@
                 <a href="../pageconsultant.html" id="consultant">CONSULTANT</a>
                 <a href="../pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
-            <h1 align="center">Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
-    <h1>
-        <?php
-        $session_utilisateur = $_SESSION['login'];      
-        echo $session_utilisateur;
-        ?>
-    </h1>
+        <h1 align="center">Récapitulatif de votre compte</h1>
+
+    <div id="corps">
+        <p>Nom:
+            <div id="carree">
+                <?php
+                    $session_nom = $_SESSION['nom'];
+                    echo $session_nom;
+                ?>
+            </div>
+        </p>
+        <p>Prenom:
+            <div id="carree">
+                <?php
+                    $session_prenom = $_SESSION['prenom'];
+                    echo $session_prenom;
+                ?>
+            </div>
+            
+        </p>
+        <p>mail:
+            <div id="carree">
+                <?php
+                    $session_mail = $_SESSION['mail'];
+                    echo $session_mail;
+                ?>    
+            </div>  
+        </p>
+        <p>MON ENGAGEMENT:
+            <div id="carree">
+                <?php
+                    $cookie_engagement = $_COOKIE['engagement'];
+                    echo $cookie_engagement;
+                ?>    
+            </div>
+            
+        </p>
+        <p>Durée engagement:
+            <div id="carree">
+                <?php
+                    $cookie_duree = $_COOKIE['duree'];
+                    echo $cookie_duree;
+                ?>    
+            </div>
+        </p>
+    </div>            
 </body>
 </html>
