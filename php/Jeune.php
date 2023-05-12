@@ -21,17 +21,17 @@
         $utilisateurs_trouve = false;
         foreach($utilisateurs as $utilisateur){
             if ($mail === $utilisateur['mail'] && $mdp === $utilisateur['mdp']){
-
                 // on initialise les sessions dont on veut simplement afficher le temps de la visite
                 $_SESSION['mail'] = $utilisateur['mail'];
                 $_SESSION['nom'] = $utilisateur['nom'];
                 $_SESSION['prenom'] = $utilisateur['prenom'];
 
                 // On initialise des cookies de l'utilisateur pour une durée de 24h
-                setcookie("engagement", $utilisateur['engagement'], time()+60*60*24);
-                setcookie("duree", $utilisateur['duree'], time()+60*60*24);
-                setcookie("savoir_etre", "qzefg", time()+60*60*24);
-                $utilisateurs_trouve = true; 
+                /*
+                setcookie("engagement", "", time()+60*60*24);
+                setcookie("duree", "", time()+60*60*24);
+                setcookie("savoir_etre", "qzefg", time()+60*60*24);*/
+                $utilisateurs_trouve = true;
                 break;
             }
         }
@@ -70,7 +70,7 @@
             </div>
         <h1 align="center">Récapitulatif de votre compte</h1>
 
-    <div id="corps">
+    <div class="corps">
         <p>Nom:
             <div id="carree">
                 <?php
@@ -96,7 +96,7 @@
                 ?>    
             </div>  
         </p>
-    <a href="modification_jeune.php"><p>Cliquez ici pour ajouter une nouvelle demande</p></a>
+    <div ><a href="../pageJeune.html" id="nouv"><p class="btn-grad">Cliquez ici pour ajouter une nouvelle demande</p></a></div>
     </div>            
 </body>
 </html>
