@@ -16,9 +16,9 @@
             <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
             <b id="Jeune">JEUNE</b>
             <b id="engagement">Je donne de la valeur à mon engagement</b>
-            
+
         </div>
-        
+
         <! onglet de navigation entre les differentes pages>
             <div id="navigation">
                 <a href="pagejeune.html" id="jeunes">JEUNES</a>
@@ -27,8 +27,15 @@
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <h1 align="center">Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
-            <div class="form"><a href="inscription.html" >inscription</a>
-            <a href="connexion.html">connexion</a></div>
+            <div class="corps">
+                <form action="php/modification_jeune.php" method="get" id="form-inscription">
+                    <label for="engagement">MON ENGAGAGEMENT:</label>
+                    <input type="text" name="engagement" id="engagement" required><br>
+                    <label for="duree">Durée d'engagement:</label>
+                    <input type="text" name="duree" id="duree" required> <br>
+                    <button type="submit" name="submit" id="submit" class="btn-grad">Ajout d'une nouvelle demande</button>
+                </form>
+            </div>
 </body>
 
 </html>
