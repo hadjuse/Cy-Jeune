@@ -7,8 +7,12 @@
             "mail": "rabearimananahadj@gmail.com",
             "mdp": "a",
             "reseau": "Facebook",
-            "engagement": [],
-            "duree": [],
+            "engagement": [
+                "Football"
+            ],
+            "duree": [
+                1
+            ],
             "savoir_etre": []
         }
     ]

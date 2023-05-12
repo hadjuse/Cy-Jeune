@@ -30,7 +30,7 @@
                 /*
                 setcookie("engagement", "", time()+60*60*24);
                 setcookie("duree", "", time()+60*60*24);
-                setcookie("savoir_etre", "qzefg", time()+60*60*24);*/
+                setcookie("savoir_etre", "qzefg", time()+60*60*24);*/   
                 $utilisateurs_trouve = true;
                 break;
             }
