@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engagement</title>
+</head>
+<style>
+    body {
+        color: grey;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    /* banderole avec le nom de la page sur laquelle on est*/
+    #banderole {
+        color: white;
+        margin: -7px;
+        margin-bottom: 0px;
+        background: radial-gradient(white, lightgrey);
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #banderole img {
+        width: 14em;
+    }
+
+    #banderole p {
+        text-align: right;
+        color: rgb(19, 202, 19);
+        font-size: 4em;
+ 
+    }
+
+    /* volet de navigation*/
+    #navigation {
+        background: radial-gradient(white, lightgrey);
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 1%;
+        text-align: center;
+
+        top: 0%;
+    }
+
+    #jeunes {
+        color: rgb(225, 7, 7);
+        text-decoration: none;
+        padding: 1%;
+    }
+
+    #referent {
+        color: rgb(19, 202, 19);
+        text-decoration: none;
+        padding: 1%;
+    }
+
+    #consultant {
+        color: rgb(34, 140, 186);
+        text-decoration: none;
+        padding: 1%;
+    }
+
+    #partenaires {
+        color: rgb(92, 104, 92);
+        text-decoration: none;
+        padding: 1%;
+    }
+
+    #contenu .tete{
+        color:  rgb(19, 202, 19);
+        padding: 0 25% 0 25%;
+        text-align: center;
+    }
+
+    #description #commentaire{
+        display: block;
+        flex-direction: column;
+
+        }
+
+    #description #commentaire .head{
+        border: 1px solid black;
+        color: brown;
+
+    }
+
+    #description #commentaire .body{
+        border: 8px blue solid;
+        color: red;
+        margin-top: -30px;
+    }
+
+
+</style>
+
+<body>
+    <!-- banderole avec le nom de la page que la quelle on se situe -->
+        <div id="banderole">
+            <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+            <p>Réfrent</p>
+        </div>
+        <!-- onglet de navigation entre les differentes pages -->
+            <div id="navigation">
+                <a href="pagejeune.html" id="jeunes">JEUNES</a>
+                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
+            </div>
+            <!-- corps de la page avec les informations -->
+            <div id="description">
+                <h1>De quoi s’agit-il ?</h1>
+                <p><b>D’une opportunité : </b>celle qu’un engagement quelqu’il soit
+                puisse être considérer
+                à sa juste valeur ! Tout expérience est source d’enrichissement et doit d’être reconnu
+                largement. Elle révèle un potentiel,
+                l’expression d’un savoir-être à concrétiser.</p>
+            </div>
+
+            <div id="contenu">
+                <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
+                <div id="description">
+                    <form> 
+                    <div id="commentaire">
+                        <p class="head">COMMENTAIRES</p> <br>
+                            <p class="body">Martin s’est très rapidement intégré à  notre équipe ! </p>
+                    </div>
+
+                    </form>
+                </div>
+
+            </div>
+                    
+</body>
+
+</html>
