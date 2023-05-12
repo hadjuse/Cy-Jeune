@@ -94,4 +94,11 @@ body {
     font-size: 0.8em;
     color: black;
 }
-
+a {
+        border: none;
+        border-bottom: #e6007e dotted 2px;
+        font-size: 0.5em;
+        background-color: aliceblue;
+        font-size: 0.8em;
+        color: #e6007e;
+}

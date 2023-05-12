@@ -96,23 +96,7 @@
                 ?>    
             </div>  
         </p>
-        <p>MON ENGAGEMENT:
-            <div id="carree">
-                <?php
-                    $cookie_engagement = $_COOKIE['engagement'];
-                    echo $cookie_engagement;
-                ?>    
-            </div>
-            
-        </p>
-        <p>Durée engagement:
-            <div id="carree">
-                <?php
-                    $cookie_duree = $_COOKIE['duree'];
-                    echo $cookie_duree;
-                ?>    
-            </div>
-        </p>
+    <a href="modification_jeune.php"><p>Cliquez ici pour ajouter une nouvelle demande</p></a>
     </div>            
 </body>
 </html>

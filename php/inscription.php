@@ -32,8 +32,8 @@ if (isset($_POST['submit'])){
     'mail' => $mail,
     'mdp' => $mdp,
     'reseau' => $reseau,
-    'engagement' => null,
-    'duree' => null,
+    'engagement' => array(),
+    'duree' => array(),
     'savoir_etre' => array()
   );
 

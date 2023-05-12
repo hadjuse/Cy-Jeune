@@ -21,6 +21,17 @@
             "engagement": null,
             "duree": null,
             "savoir_etre": []
+        },
+        {
+            "prenom": "Zizou",
+            "nom": "B",
+            "date_naissance": "2007-07-22",
+            "mail": "zizou@gmail.com",
+            "mdp": "a",
+            "reseau": "Facebook",
+            "engagement": null,
+            "duree": null,
+            "savoir_etre": []
         }
     ]
 }
