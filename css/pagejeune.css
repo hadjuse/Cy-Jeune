@@ -14,17 +14,14 @@
     font-size:6em;
     text-decoration: none;
     margin-left: 65vw;
-    position: absolute  ;  
+    position: absolute;  
 }
-#banderole #engagement{
+#hautpage{
     color: white;
     margin-top: 3em;
     margin-left: 46vw;
     font-size:2em;
     text-decoration: none;
-    float: right;
-    position: absolute;
-    display: contents;
 }
 /* volet de navigation*/
 #navigation{
@@ -72,7 +69,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.corps{
+.engagement{
     background-color: white;
     border:#e6007e solid 2px;
     border-radius: 7px;
@@ -81,18 +78,18 @@ body {
     margin-top: 20px;
     font-size: 1.7em;
     margin-left: 30vw;
-    margin-right: 30vw;
     padding:1%;
+    width: 35vw;
 }
 
-.corps input{
+.engagement input{
     border: none;
     border-bottom: #e6007e dotted 2px;
     font-size: 0.5em;
     background-color: aliceblue;
 }
 
-.corps select{
+.engagement select{
     text-align: center;
     font-size: 0.6em;
     
@@ -122,8 +119,8 @@ h1 {
 .btn-grad {
     background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
     margin: 10px;
-    margin-left: 100px;
-    padding: 15px 45px;
+    margin-left: 38vw;
+    padding: 1vW 3vw;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -131,7 +128,7 @@ h1 {
     color: white;            
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
-    display: block;
+    font-size: 1em;
   }
 
   .btn-grad:hover {
@@ -142,3 +139,35 @@ h1 {
   .white{
     color: white;
   }
+
+#savoiretre {
+    color: #e6007e;
+    font-size: 1.5em;
+}
+
+#jesuis{
+    color: white;
+    background: linear-gradient(to right,white,#e6007e);
+    text-align: right;
+    font-size: 1.3em;
+}
+
+#choix {
+    background-color: #f5d4e6;
+    font-size: 1.2em;
+    color: black;
+
+}
+
+#nbchoix {
+    color: #e6007e;
+    font-size: 0.6em;
+    margin-top: -2%;
+    text-align: center;
+}
+
+table {
+    margin-right: 2vw;
+    float: right;
+    margin-top: -8vw;
+}

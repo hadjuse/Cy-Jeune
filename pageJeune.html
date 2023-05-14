@@ -15,7 +15,7 @@
         <div id="banderole">
             <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
             <b id="Jeune">JEUNE</b>
-            <b id="engagement">Je donne de la valeur à mon engagement</b>
+            <b id="hautpage">Je donne de la valeur à mon engagement</b>
 
         </div>
 
@@ -27,15 +27,77 @@
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <h1 align="center">Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
-            <div class="corps">
+            <div class="engagement">
                 <form action="php/modification_jeune.php" method="get" id="form-inscription">
                     <label for="engagement">MON ENGAGAGEMENT:</label>
                     <input type="text" name="engagement" id="engagement" required><br>
                     <label for="duree">Durée d'engagement:</label>
-                    <input type="text" name="duree" id="duree" required> <br>
-                    <button type="submit" name="submit" id="submit" class="btn-grad">Ajout d'une nouvelle demande</button>
-                </form>
+                    <input type="text" name="duree" id="duree" required> <br>              
             </div>
+            <div class="savoir-etre"><table>
+                <tr id="savoiretre"><td>MES SAVOIRS ETRE</td></tr>
+                
+                    <tr id="jesuis"><td>Je suis*</td></tr>
+                    <tr id="choix"><td>
+                        <div>
+                        <input type="checkbox"  id="Autonome" value="Autonome" name="Autonome">
+                        <label for="Autonome">Autonome</label>
+                        </div><div>
+                        <input type="checkbox"  id="Passioné" value="Passioné" name="Passioné">
+                        <label for="Passioné">Passioné</label>
+                        </div><div>
+                        <input type="checkbox"  id="Réfléchi" value="Réfléchi" name="Réfléchi">
+                        <label for="Réfléchi">Réfléchi</label>
+                    </div><div>
+                        <input type="checkbox"  id="Al'écoute" value="Al'écoute" name="Al'écoute">
+                        <label for="Al'écoute">A l'écoute</label>
+                    </div><div>
+                        <input type="checkbox"  id="Organisé" value="Organisé" name="Organisé">
+                        <label for="Organisé">Organisé</label>
+                    </div><div>
+                        <input type="checkbox"  id="Passioné" value="Passioné" name="Passioné">
+                        <label for="Passioné">Passioné</label>
+                    </div><div>
+                        <input type="checkbox"  id="Fiable" value="Fiable" name="Fiable">
+                        <label for="Fiable">Fiable</label>
+                    </div><div>
+                        <input type="checkbox"  id="Patient" value="Patient" name="Patient">
+                        <label for="Patient">Patient</label>
+                    </div><div>
+                        <input type="checkbox"  id="Responsable" value="Responsable" name="Responsable">
+                        <label for="Responsable">Responsable</label>
+                    </div><div>
+                        <input type="checkbox"  id="Sociable" value="Sociable" name="Sociable">
+                        <label for="Sociable">Sociable</label>
+                    </div><div>
+                        <input type="checkbox"  id="Optimiste" value="Optimiste" name="Optimiste">
+                        <label for="Optimiste">Optimiste</label>
+                    </div>
+                    
+                    </td></tr>
+                    <tr><td><p id="nbchoix"> *Faire 4 choix maximum</p></td></tr>
+                </table>
+            </div>
+            <button type="submit" name="submit" id="submit" class="btn-grad">Ajout d'une nouvelle demande</button>
+        </form>
+            <script>
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+                let checkedCount = 0
+                
+                checkboxes.forEach((checkbox) => {
+                  checkbox.addEventListener('click', () => {
+                    if (checkbox.checked) {
+                      checkedCount++
+                    } else {
+                      checkedCount--
+                    }
+                
+                    if (checkedCount > 4) {
+                      checkbox.checked = false
+                      checkedCount--
+                    }
+                  })
+                })
+                </script>
 </body>
-
 </html>
