@@ -118,8 +118,6 @@ h1 {
          
 .btn-grad {
     background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
-    margin: 10px;
-    margin-left: 38vw;
     padding: 1vW 3vw;
     text-align: center;
     text-transform: uppercase;
@@ -170,4 +168,17 @@ table {
     margin-right: 2vw;
     float: right;
     margin-top: -8vw;
+}
+
+.corps{
+    background-color: aliceblue;
+    border:#e6007e solid 2px;
+    border-radius: 7px;
+    color: #e6007e;
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 1.7em;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    padding:1%;
 }

@@ -58,7 +58,7 @@
         <div id="banderole">
             <a href="../page0.html"><img src="../image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
             <b id="Jeune">JEUNE</b>
-            <b id="engagement">Je donne de la valeur à mon engagement</b>
+            <b id="hautpage">Je donne de la valeur à mon engagement</b>
         </div>
 
         <!--onglet de navigation entre les differentes pages-->
