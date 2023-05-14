@@ -34,34 +34,38 @@
 
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
-                    <form action="php/referent.php" method="get" id="description">
-                        <div id="commentaire">
-                            <label for="commentaire" class="head">COMMENTAIRES</label><br>
-                            <textarea name="commentaire" id="commentaire" required class="body"></textarea><br>
-                        </div>
-                        <div id="profil">
-                            <label for="nom" class="head">NOM :</label>
-                            <input type="text" name="nom" id="nom" required class="body"></input><br>
-                            <label for="prenom" class="head">PRENOM :</label>
-                            <input type="text" name="prenom" id="prenom" required class="body"></input><br>
-                            <label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
-                            <input type="date" name="dateNaissance" id="dateNaissance" required class="body"></input><br>
-                            <label for="mail" class="head">MAIL :</label>
-                            <input type="mail" name="mail" id="mail" required class="body"></input><br>
-                                <br>
-                            <label for="reseau" class="head">Réseau social :</label>
-                            <input type="text" name="reseau" id="reseau" required class="body"></input><br>
-                            <label for="presentation" class="head">Presentation :</label>
-                            <input type="text" name="presentation" id="presentation" required class="body"></input><br>
-                            <label for="duree" class="head">Durée :</label>
-                            <input type="number" name="duree" id="duree" required class="body"></input> <br>
+                    <form action="php/referent.php" method="get" >
+                        <div id="description">
+                            <div id="commentaire">
+                                <label for="commentaires" class="head">COMMENTAIRES</label><br>
+                                <textarea value="t1" name="commentaires" id="commentaires" required class="body"></textarea><br>
+                            </div>
+                            <div id="profil">
+                                <label for="nom" class="head">NOM :</label>
+                                <input value="nom" type="text" name="nom" id="nom" required class="body"></input><br>
+                                <label for="prenom" class="head">PRENOM :</label>
+                                <input value="prenom" type="text" name="prenom" id="prenom" required class="body"></input><br>
+                                <label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
+                                <input value="10/03/2002" type="date" name="dateNaissance" id="dateNaissance" required class="body"></input><br>
+                                <label for="mail" class="head">MAIL :</label>
+                                <input value="mail@mail.com" type="mail" name="mail" id="mail" required class="body"></input><br>
+                                    <br>
+                                <label for="reseau" class="head">Réseau social :</label>
+                                <input value="rs" type="text" name="reseau" id="reseau" required class="body"></input><br>
+                                <label for="presentation" class="head">Presentation :</label>
+                                <input value="pres" type="text" name="presentation" id="presentation" required class="body"></input><br>
+                                <label for="duree" class="head">Durée :</label>
+                                <input value="1" type="number" name="duree" id="duree" required class="body"></input> <br>
 
+                            </div>
+                            <div id="commentaire1">
+                                <label for="commentaire" class="head">COMMENTAIRES</label><br>
+                                <textarea value="t2" name="commentaire1" id="commentaire1" required class="body"></textarea><br>
+                            </div>
                         </div>
-                        <div id="commentaire1">
-                            <label for="commentaire" class="head">COMMENTAIRES</label><br>
-                            <textarea name="commentaire" id="commentaire" required class="body"></textarea><br>
-                        </div>
+                        <button type="submit" name="submit" id="submit" class="btn-grad">Ajout d'une nouvelle demande</button>
                     </form>
+                    
             </div>
 
             </div>
