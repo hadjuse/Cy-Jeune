@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (isset($_GET['submit'])) {
     // Obtenir les informations utilisateur à partir du formulaire
     $engagement = $_GET['engagement'];
@@ -28,6 +27,6 @@ if (isset($_GET['submit'])) {
     // Écrire le JSON dans un fichier
     file_put_contents('utilisateurs.json', $json);
 }
-header("location: recap.php");
+header("Location: recap.php");
 ?>
 

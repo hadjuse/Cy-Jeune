@@ -8,10 +8,12 @@
             "mdp": "a",
             "reseau": "Facebook",
             "engagement": [
-                "Football"
+                "Football",
+                "zefzei"
             ],
             "duree": [
-                1
+                1,
+                56
             ],
             "savoir_etre": []
         },

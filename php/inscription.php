@@ -50,7 +50,7 @@ if (isset($_POST['submit'])){
   file_put_contents('utilisateurs.json', $json);
 
   // Rediriger l'utilisateur vers une autre page
-  header("location: ../connexion.html");
+  header("Location: ../connexion.html");
   exit;
 }
 ?>
