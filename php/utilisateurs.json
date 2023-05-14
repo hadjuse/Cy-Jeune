@@ -5,21 +5,14 @@
             "nom": "Rabearimanana",
             "date_naissance": "2007-07-22",
             "mail": "rabearimananahadj@gmail.com",
-            "mdp": "ZFA",
-            "reseau": "Facebook",
-            "engagement": null,
-            "duree": null,
-            "savoir_etre": []
-        },
-        {
-            "prenom": "th\u00e9o",
-            "nom": "Rabearimanana",
-            "date_naissance": "2007-07-22",
-            "mail": "rabearimananhadj@gmail.com",
             "mdp": "a",
             "reseau": "Facebook",
-            "engagement": null,
-            "duree": null,
+            "engagement": [
+                "Football"
+            ],
+            "duree": [
+                1
+            ],
             "savoir_etre": []
         }
     ]

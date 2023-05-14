@@ -21,17 +21,17 @@
         $utilisateurs_trouve = false;
         foreach($utilisateurs as $utilisateur){
             if ($mail === $utilisateur['mail'] && $mdp === $utilisateur['mdp']){
-
                 // on initialise les sessions dont on veut simplement afficher le temps de la visite
                 $_SESSION['mail'] = $utilisateur['mail'];
                 $_SESSION['nom'] = $utilisateur['nom'];
                 $_SESSION['prenom'] = $utilisateur['prenom'];
 
                 // On initialise des cookies de l'utilisateur pour une durée de 24h
-                setcookie("engagement", $utilisateur['engagement'], time()+60*60*24);
-                setcookie("duree", $utilisateur['duree'], time()+60*60*24);
-                setcookie("savoir_etre", "qzefg", time()+60*60*24);
-                $utilisateurs_trouve = true; 
+                /*
+                setcookie("engagement", "", time()+60*60*24);
+                setcookie("duree", "", time()+60*60*24);
+                setcookie("savoir_etre", "qzefg", time()+60*60*24);*/   
+                $utilisateurs_trouve = true;
                 break;
             }
         }
@@ -70,7 +70,7 @@
             </div>
         <h1 align="center">Récapitulatif de votre compte</h1>
 
-    <div id="corps">
+    <div class="corps">
         <p>Nom:
             <div id="carree">
                 <?php
@@ -96,23 +96,7 @@
                 ?>    
             </div>  
         </p>
-        <p>MON ENGAGEMENT:
-            <div id="carree">
-                <?php
-                    $cookie_engagement = $_COOKIE['engagement'];
-                    echo $cookie_engagement;
-                ?>    
-            </div>
-            
-        </p>
-        <p>Durée engagement:
-            <div id="carree">
-                <?php
-                    $cookie_duree = $_COOKIE['duree'];
-                    echo $cookie_duree;
-                ?>    
-            </div>
-        </p>
+    <div class="btn-grad"><a href="../pageJeune.html" id="nouv"><div class="white">Cliquez ici pour ajouter une nouvelle demande</div></a></div>
     </div>            
 </body>
 </html>

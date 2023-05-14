@@ -72,31 +72,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.form a{
-    text-decoration: none;
-    color: black;
-    border: black solid 1px;
-    background-color: aliceblue;
-    padding: 1% ;
-    margin-right: 2%;
-    margin-left: 2%;
-}
-.form{
-    background-color: aliceblue;
-    border:#e6007e solid 2px;
-    border-radius: 7px;
-    color: #e6007e;
-    padding-left: 10px;
-    margin-top: 20px;
-    font-size: 1.7em;
-    margin-left: 35vw;
-    margin-right: 35vw;
-    padding:1%;
-    text-align: center;
-}
-
-
-#corps{
+.corps{
     background-color: white;
     border:#e6007e solid 2px;
     border-radius: 7px;
@@ -109,6 +85,31 @@ body {
     padding:1%;
 }
 
+.corps input{
+    border: none;
+    border-bottom: #e6007e dotted 2px;
+    font-size: 0.5em;
+    background-color: aliceblue;
+}
+
+.corps select{
+    text-align: center;
+    font-size: 0.6em;
+    
+}
+#nouv{
+        border: none;
+        border-bottom: #e6007e dotted 2px;
+        font-size: 0.5em;
+        background-color: aliceblue;
+        font-size: 0.8em;
+        color: #e6007e;
+        text-decoration: none;
+}
+h1 {
+    color: #e6007e;
+}
+
 #carree{
     border: none;
     border-bottom: #e6007e dotted 2px;
@@ -117,4 +118,27 @@ body {
     font-size: 0.8em;
     color: black;
 }
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
+    margin: 10px;
+    margin-left: 100px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
 
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  .white{
+    color: white;
+  }

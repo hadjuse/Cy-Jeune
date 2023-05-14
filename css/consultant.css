@@ -1,0 +1,63 @@
+
+#oui > h1{color: rgba(0, 166, 255, 0.819);
+    font-size:80px;
+    cursor: default;
+    }
+#oui>h2{color: rgb(255, 255, 255);
+    font-size: 40;
+    letter-spacing: 5px;
+    }
+#oui {background-color: rgb(202, 202, 202);
+    
+    }
+li{display:inline-block; padding: 15px;
+    background-color: rgb(202, 202, 202);
+}
+.ul1{border: 1px solid black;padding: 0px;
+    margin-top:-30;
+font-size: 20;}
+
+#bleu{text-align: center;
+    color: rgba(51, 171, 252, 0.819) ;
+    font-size: 26;
+    margin-top: 13;
+}
+.jeun{color: rgb(253, 107, 219);
+font-size: 30px;
+margin-top: 5px;}
+.ref{color: rgb(159, 199, 99);
+    font-size: 30px;
+    margin-top: 5px;}
+.bordure{border-color: rgb(253, 107, 219) ;}
+.bordure2{border-color: greenyellow;}
+.form1{width: 740px; height: 700px;}
+.arth{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
+.mart{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
+.date{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
+.gmail{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
+.Facebook{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
+.enfant{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
+.ans{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
+.form1{
+    background-image: url("jesuis2.png");
+    background-size: 220px;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-position-x: right;
+}
+.form2{width: 740px; height: 700px;
+    float:right;
+    background-image: url("referent.png");
+    background-size: 220px;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-position-x: right;
+}
+@media (max-width:767px){
+    body{
+        font-size:14px;
+    }
+    nav,footer{
+        display:block;
+    }
+}

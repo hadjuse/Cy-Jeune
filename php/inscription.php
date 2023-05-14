@@ -19,7 +19,7 @@ if (isset($_POST['submit'])){
   // On vérifie maintenant si le mail entré par l'utilisateur existe déjà dans la base de données ou pas.
   foreach ($utilisateurs as $utilisateur){
     if ($utilisateur["mail"] == $mail){
-      echo "exist";
+      echo "Le mail existe déjà";
       exit;
     }
   }
@@ -32,8 +32,8 @@ if (isset($_POST['submit'])){
     'mail' => $mail,
     'mdp' => $mdp,
     'reseau' => $reseau,
-    'engagement' => null,
-    'duree' => null,
+    'engagement' => array(),
+    'duree' => array(),
     'savoir_etre' => array()
   );
 
