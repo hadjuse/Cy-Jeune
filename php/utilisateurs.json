@@ -8,10 +8,12 @@
             "mdp": "a",
             "reseau": "Facebook",
             "engagement": [
-                "Football"
+                "Football",
+                "fooot "
             ],
             "duree": [
-                1
+                1,
+                2
             ],
             "savoir_etre": []
         }

@@ -7,96 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engagement</title>
 </head>
-<style>
-    body {
-        color: grey;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-    /* banderole avec le nom de la page sur laquelle on est*/
-    #banderole {
-        color: white;
-        margin: -7px;
-        margin-bottom: 0px;
-        background: radial-gradient(white, lightgrey);
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #banderole img {
-        width: 14em;
-    }
-
-    #banderole p {
-        text-align: right;
-        color: rgb(19, 202, 19);
-        font-size: 4em;
- 
-    }
-
-    /* volet de navigation*/
-    #navigation {
-        background: radial-gradient(white, lightgrey);
-        margin-left: 30%;
-        margin-right: 30%;
-        padding: 1%;
-        text-align: center;
-
-        top: 0%;
-    }
-
-    #jeunes {
-        color: rgb(225, 7, 7);
-        text-decoration: none;
-        padding: 1%;
-    }
-
-    #referent {
-        color: rgb(19, 202, 19);
-        text-decoration: none;
-        padding: 1%;
-    }
-
-    #consultant {
-        color: rgb(34, 140, 186);
-        text-decoration: none;
-        padding: 1%;
-    }
-
-    #partenaires {
-        color: rgb(92, 104, 92);
-        text-decoration: none;
-        padding: 1%;
-    }
-
-    #contenu .tete{
-        color:  rgb(19, 202, 19);
-        padding: 0 25% 0 25%;
-        text-align: center;
-    }
-
-    #description #commentaire{
-        display: block;
-        flex-direction: column;
-
-        }
-
-    #description #commentaire .head{
-        border: 1px solid black;
-        color: brown;
-
-    }
-
-    #description #commentaire .body{
-        border: 8px blue solid;
-        color: red;
-        margin-top: -30px;
-    }
-
-
-</style>
+<link rel="stylesheet" href="css/pagereferent.css">
 
 <body>
     <!-- banderole avec le nom de la page que la quelle on se situe -->
@@ -112,7 +23,7 @@
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <!-- corps de la page avec les informations -->
-            <div id="description">
+            <div id="projet">
                 <h1>De quoi s’agit-il ?</h1>
                 <p><b>D’une opportunité : </b>celle qu’un engagement quelqu’il soit
                 puisse être considérer
@@ -123,17 +34,38 @@
 
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
-                <div id="description">
-                    <form> 
-                    <div id="commentaire">
-                        <p class="head">COMMENTAIRES</p> <br>
-                            <p class="body">Martin s’est très rapidement intégré à  notre équipe ! </p>
-                    </div>
+                    <form action="php/referent.php" method="get" id="description">
+                        <div id="commentaire">
+                            <label for="commentaire" class="head">COMMENTAIRES</label><br>
+                            <textarea name="commentaire" id="commentaire" required class="body"></textarea><br>
+                        </div>
+                        <div id="profil">
+                            <label for="nom" class="head">NOM :</label>
+                            <input type="text" name="nom" id="nom" required class="body"></input><br>
+                            <label for="prenom" class="head">PRENOM :</label>
+                            <input type="text" name="prenom" id="prenom" required class="body"></input><br>
+                            <label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
+                            <input type="date" name="dateNaissance" id="dateNaissance" required class="body"></input><br>
+                            <label for="mail" class="head">MAIL :</label>
+                            <input type="mail" name="mail" id="mail" required class="body"></input><br>
+                                <br>
+                            <label for="reseau" class="head">Réseau social :</label>
+                            <input type="text" name="reseau" id="reseau" required class="body"></input><br>
+                            <label for="presentation" class="head">Presentation :</label>
+                            <input type="text" name="presentation" id="presentation" required class="body"></input><br>
+                            <label for="duree" class="head">Durée :</label>
+                            <input type="number" name="duree" id="duree" required class="body"></input> <br>
 
+                        </div>
+                        <div id="commentaire1">
+                            <label for="commentaire" class="head">COMMENTAIRES</label><br>
+                            <textarea name="commentaire" id="commentaire" required class="body"></textarea><br>
+                        </div>
                     </form>
-                </div>
+            </div>
 
             </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     
 </body>
 
