@@ -83,13 +83,62 @@
                                 <input value="" type="number" name="duree" id="duree" required class="body"></input> <br>
 
                             </div>
-                            <div id="commentaire1">
-                                <label for="commentaire" class="head">COMMENTAIRES</label><br>
-                                <textarea value="t2" name="commentaire1" id="commentaire1" required class="body"></textarea><br>
-                            </div>
-                        </div>
+                            <div class="savoir-etre"><table>
+                                <tr id="savoiretre"><td>MES SAVOIRS ETRE</td></tr>
+                                
+                                    <tr id="jesuis"><td>Je suis*</td></tr>
+                                    <tr id="choix"><td>
+                                        <div>
+                                        <input type="checkbox"  id="Confiance" value="Confiance" name="Confiance">
+                                        <label for="Confiance">Confiance</label>
+                                        </div><div>
+                                        <input type="checkbox"  id="Bienveillance" value="Bienveillance" name="Bienveillance">
+                                        <label for="Bienveillance">Bienveillance</label>
+                                        </div><div>
+                                        <input type="checkbox"  id="Respect" value="Respect" name="Respect">
+                                        <label for="Respect">Respect</label>
+                                    </div><div>
+                                        <input type="checkbox"  id="Honnêteté" value="Honnêteté" name="Honnêteté"">
+                                        <label for="Honnêteté">Honnêteté</label>
+                                    </div><div>
+                                        <input type="checkbox"  id="Tolérance" value="Tolérance" name="Tolérance">
+                                        <label for="Tolérance">Organisé</label>
+                                    </div><div>
+                                        <input type="checkbox"  id="Juste" value="Juste" name="Juste">
+                                        <label for="Juste">Juste</label>
+                                    </div><div>
+                                        <input type="checkbox"  id="Impartial" value="Impartial" name="Impartial">
+                                        <label for="Impartial">Impartial</label>
+                                    </div><div>
+                                        <input type="checkbox"  id="Travail" value="Travail" name="Travail">
+                                        <label for="Travail">Travail</label>
+                                    </div><div>
+                                    </td></tr>
+                                    <tr><td><p id="nbchoix"> *Faire 4 choix maximum</p></td></tr>
+                                </table>
+                            </div>     
+                        </div>                  
                         <button type="submit" name="submit" id="submit" class="btn-grad">Ajout d'une nouvelle demande</button>
                     </form>
+                    <script>
+                        const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+                        let checkedCount = 0
+                        
+                        checkboxes.forEach((checkbox) => {
+                          checkbox.addEventListener('click', () => {
+                            if (checkbox.checked) {
+                              checkedCount++
+                            } else {
+                              checkedCount--
+                            }
+                        
+                            if (checkedCount > 4) {
+                              checkbox.checked = false
+                              checkedCount--
+                            }
+                          })
+                        })
+                    </script>
                     
             </div>
 
