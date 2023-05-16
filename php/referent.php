@@ -3,18 +3,19 @@
 <head></head> 
 <body>
 <?php
-if (isset($_GET['submit'])){
+
+if (isset($_POST['submit'])){
 
   //On récupère les infos du jeune
-  $prenom = $_GET['prenom'];
-  $nom = $_GET['nom'];
-  $dateNaissance = $_GET['dateNaissance'];
-  $mail = $_GET['mail'];
-  $presentation = $_GET['presentation'];
-  $reseau = $_GET['reseau'];
-  $duree = $_GET['duree'];
-  $commentaires = $_GET['commentaires'];
-  $commentaire1 = $_GET['commentaire1'];
+  $prenom = $_POST['prenom'];
+  $nom = $_POST['nom'];
+  $dateNaissance = $_POST['dateNaissance'];
+  $mail = $_POST['mail'];
+  $presentation = $_POST['presentation'];
+  $reseau = $_POST['reseau'];
+  $duree = $_POST['duree'];
+  $commentaires = $_POST['commentaires'];
+  $commentaire1 = $_POST['commentaire1'];
 
   // Charger le contenu actuel du fichier JSON
   $json = file_get_contents('test.json');
