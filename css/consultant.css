@@ -1,34 +1,38 @@
-body{      
-    color:grey;
+body {
+    color: grey;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1vw;
-    background: radial-gradient( at center, white 80%,gray 120%);
-    height: 100vh;
+    background-image:url("../image/pagejeune/logo_page_jeune.jpeg");
+    background-size: 40%;
+    background-position:center;
+    background-position-y: 250px;
+    background-repeat: no-repeat;
 }
-/* banderole avec le nom de la page sur laquelle on est*/
+/*Partie Banderole -------------------------------------------------*/
 #banderole{
-color: white;
-    margin: -8px;
+    margin: -7px;
     margin-bottom: 0px;
-    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);    
+    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);
+    font-family:sans-serif;      
 }
 #banderole img{
-    width: 14em;
-}
-#banderole b{
-    margin-top: 1em;
-    margin-left: 20vw;
-    font-size:3.6em;
-    float: right;
-    position: absolute  ;
+    width: 14em;    
 }
 
-#banderole #Jeune{
-    color: #e6007e;
-    font-size:6em;
+#banderole #Consultant{
+    margin-top: -0.5%;
+    color:rgb(34, 140, 186);
+    font-size: 6em;
     text-decoration: none;
-    margin-left: 65vw;
+    margin-left: 42vw;
     position: absolute;  
+}
+#hautpage{
+    color: white;
+    margin-top: 3em;
+    margin-left: 46vw;
+    font-size: 2em;
+    text-decoration: none;
 }
 /* volet de navigation*/
 #navigation{
@@ -114,12 +118,4 @@ margin-top: 5px;}
     background-repeat: no-repeat;
     background-position-y: top;
     background-position-x: right;
-}
-@media (max-width:767px){
-    body{
-        font-size:14px;
-    }
-    nav,footer{
-        display:block;
-    }
 }
