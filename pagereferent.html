@@ -10,6 +10,31 @@
 <link rel="stylesheet" href="css/pagereferent.css">
 
 <body>
+    <script>
+        // Charger le fichier JSON
+        fetch('php/test.json')
+          .then(response => response.json())
+          .then(data => {
+            // Extraire la valeur souhaitée du fichier JSON
+            var prenom = data['jeunes'][0]['prenom'];
+            var nom = data['jeunes'][0]['nom'];
+            var dateNaissance = data['jeunes'][0]['dateNaissance'];
+            var presentation = data['jeunes'][0]['presentation'];
+            var mail = data['jeunes'][0]['mail'];
+            var reseau = data['jeunes'][0]['reseau'];
+            var duree = data['jeunes'][0]['duree'];
+
+            // Mettre à jour la valeur de l'input
+            document.getElementById("prenom").value = prenom;
+            document.getElementById("nom").value = nom;
+            document.getElementById("dateNaissance").value = dateNaissance;
+            document.getElementById("presentation").value = presentation;
+            document.getElementById("mail").value = mail;
+            document.getElementById("reseau").value = reseau;
+            document.getElementById("duree").value = duree;
+          })
+          .catch(error => console.error(error)); 
+      </script>
     <!-- banderole avec le nom de la page que la quelle on se situe -->
         <div id="banderole">
             <a href="page0.html"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
@@ -42,20 +67,20 @@
                             </div>
                             <div id="profil">
                                 <label for="nom" class="head">NOM :</label>
-                                <input value="nom" type="text" name="nom" id="nom" required class="body"></input><br>
+                                <input value="" type="text" name="nom" id="nom" required class="body"></input><br>
                                 <label for="prenom" class="head">PRENOM :</label>
-                                <input value="prenom" type="text" name="prenom" id="prenom" required class="body"></input><br>
+                                <input value="" type="text" name="prenom" id="prenom" required class="body"></input><br>
                                 <label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
-                                <input value="10/03/2002" type="date" name="dateNaissance" id="dateNaissance" required class="body"></input><br>
+                                <input value="" type="date" name="dateNaissance" id="dateNaissance" required class="body"></input><br>
                                 <label for="mail" class="head">MAIL :</label>
-                                <input value="mail@mail.com" type="mail" name="mail" id="mail" required class="body"></input><br>
+                                <input value="" type="mail" name="mail" id="mail" required class="body"></input><br>
                                     <br>
                                 <label for="reseau" class="head">Réseau social :</label>
-                                <input value="rs" type="text" name="reseau" id="reseau" required class="body"></input><br>
+                                <input value="" type="text" name="reseau" id="reseau" required class="body"></input><br>
                                 <label for="presentation" class="head">Presentation :</label>
-                                <input value="pres" type="text" name="presentation" id="presentation" required class="body"></input><br>
+                                <input value="" type="text" name="presentation" id="presentation" required class="body"></input><br>
                                 <label for="duree" class="head">Durée :</label>
-                                <input value="1" type="number" name="duree" id="duree" required class="body"></input> <br>
+                                <input value="" type="number" name="duree" id="duree" required class="body"></input> <br>
 
                             </div>
                             <div id="commentaire1">
@@ -73,4 +98,7 @@
                     
 </body>
 
-</html>
+</html><form>
+
+  
+  

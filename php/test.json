@@ -2,12 +2,23 @@
     "jeunes": [
         {
             "prenom": "prenafefefafezom",
-            "nom": "nom",
+            "nom": "test",
             "dateNaissance": "1010-02-10",
             "presentation": "pres",
             "mail": "mail@mail.com",
             "reseau": "rs",
             "commentaires": "bite",
+            "duree": "1",
+            "commentaire": "zefezfezzfazfzafzaf"
+        },
+        {
+            "prenom": "prenafefefafezom",
+            "nom": "nom",
+            "dateNaissance": "1010-02-10",
+            "presentation": "pres",
+            "mail": "mail@mail.com",
+            "reseau": "rs",
+            "commentaires": "dazdzda",
             "duree": "1",
             "commentaire": "zefezfezzfazfzafzaf"
         },
