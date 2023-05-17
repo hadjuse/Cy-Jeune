@@ -5,36 +5,6 @@
         header('Location: ../inscription.html');
         exit;
     }
-    if (isset($_POST['submit'])){
-        
-        // On récupère les infos d'utilisateurs
-        $mail = $_POST['mail'];
-        $mdp = $_POST['mdp'];    
-        // Charger le contenu actuel du fichier JSON
-        $json = file_get_contents('utilisateurs.json');
-        $data = json_decode($json, true);
-        
-        $utilisateurs = $data['utilisateurs'];
-        // verifie si l'utilisateur existe et initialie une session et des cookie pour l'utilisateur
-        $utilisateurs_trouve = false;
-        foreach($utilisateurs as $utilisateur){
-            if ($mail === $utilisateur['mail'] && $mdp === $utilisateur['mdp']){
-                // on initialise les sessions dont on veut simplement afficher le temps de la visite
-                $_SESSION['mail'] = $utilisateur['mail'];
-                $_SESSION['nom'] = $utilisateur['nom'];
-                $_SESSION['prenom'] = $utilisateur['prenom'];
-                $connecter= "jeune";
-                $utilisateurs_trouve = true;
-                break;
-            }
-        }
-        if ($utilisateurs_trouve == false){
-            echo "Utilisateur non trouvé";
-            exit;
-        }
-        //$response = array('connexion' => $utilisateurs_trouve);
-        //echo json_encode($response); 
-    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">

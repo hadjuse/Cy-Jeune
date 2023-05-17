@@ -9,11 +9,13 @@
             "reseau": "Facebook",
             "engagement": [
                 "ezgrzergzerg",
-                "rugby"
+                "rugby",
+                "ping pong"
             ],
             "duree": [
                 56,
-                8
+                8,
+                56
             ],
             "savoir_etre": [
                 [
@@ -25,6 +27,11 @@
                     "Al'\u00e9coute",
                     "Organis\u00e9",
                     "Passion\u00e9"
+                ],
+                [
+                    "Autonome",
+                    "Passion\u00e9",
+                    "Responsable"
                 ]
             ]
         }
