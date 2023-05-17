@@ -1,10 +1,9 @@
 
 <?php
     session_start();
-    function logout(){
-        setcookie("engagement", null, time()+60*60*24);
-        setcookie("duree", $utilisateur['duree'], time()+60*60*24);
-        setcookie("savoir_etre", "qzefg", time()+60*60*24);
+    if ($_SESSION['connexion'] == 'visiteur'){
+        header('Location: ../inscription.html');
+        exit;
     }
     if (isset($_POST['submit'])){
         
@@ -16,7 +15,6 @@
         $data = json_decode($json, true);
         
         $utilisateurs = $data['utilisateurs'];
-        
         // verifie si l'utilisateur existe et initialie une session et des cookie pour l'utilisateur
         $utilisateurs_trouve = false;
         foreach($utilisateurs as $utilisateur){
@@ -25,12 +23,7 @@
                 $_SESSION['mail'] = $utilisateur['mail'];
                 $_SESSION['nom'] = $utilisateur['nom'];
                 $_SESSION['prenom'] = $utilisateur['prenom'];
-
-                // On initialise des cookies de l'utilisateur pour une durée de 24h
-                /*
-                setcookie("engagement", "", time()+60*60*24);
-                setcookie("duree", "", time()+60*60*24);
-                setcookie("savoir_etre", "qzefg", time()+60*60*24);*/   
+                $connecter= "jeune";
                 $utilisateurs_trouve = true;
                 break;
             }

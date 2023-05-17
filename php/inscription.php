@@ -1,4 +1,6 @@
 <?php
+$_SESSION['connecter'] = false;
+$connecter = $_SESSION['connecter'];
 if (isset($_POST['submit'])){
 
   //On récupère les infos d'utilisateurs
