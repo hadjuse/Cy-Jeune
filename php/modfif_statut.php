@@ -1,14 +1,16 @@
 <?php
     // Ce fichier modifie la variable session de connexion et initialise les sessions nécessaires.
     session_start();
+
     // on récupère les infos du formulaires.
     $mail = $_POST['mail'];
     $mdp = $_POST['mdp'];
+
     // Charger le contenu actuel du fichier JSON
     $json = file_get_contents('utilisateurs.json');
     $data = json_decode($json, true);
-    
     $utilisateurs = $data['utilisateurs'];
+
     // verifie si l'utilisateur existe et initialie une session et des cookie pour l'utilisateur
     $utilisateurs_trouve = false;
     foreach($utilisateurs as $utilisateur){
@@ -21,6 +23,7 @@
             break;
         }
     }
+
     if ($utilisateurs_trouve == false){
         header('Location: ../connexion.html');
         exit;
