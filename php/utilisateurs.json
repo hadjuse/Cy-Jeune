@@ -34,6 +34,17 @@
                     "Responsable"
                 ]
             ]
+        },
+        {
+            "prenom": "Didier",
+            "nom": "cgg",
+            "date_naissance": "2007-07-10",
+            "mail": "zizou@gmail.com",
+            "mdp": "d",
+            "reseau": "Facebook",
+            "engagement": [],
+            "duree": [],
+            "savoir_etre": []
         }
     ]
 }

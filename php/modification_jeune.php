@@ -1,11 +1,16 @@
 <?php
     session_start();
     if (isset($_POST['submit'])) {
-        // Obtenir les informations utilisateur à partir du formulaire
+        // Obtenir les informations du referant et de l'engagement du jeune à partir du formulaire
+        $nom_referant = $_POST['nom'];
+        $prenom_referant = $_POST['prenom'];
+        $mail_referant = $_POST['mail'];
         $engagement = $_POST['engagement'];
+        $naissance_referant = $_POST['naissance'];
+        $reseau = $_POST['reseau'];
         $duree = (int)$_POST['duree'];    
         $savoir_etre = $_POST['savoir'];
-        //echo $savoir_etre;
+
         // Charger le contenu actuel du fichier JSON
         $json = file_get_contents('utilisateurs.json');
         $data = json_decode($json, true);

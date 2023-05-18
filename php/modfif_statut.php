@@ -1,5 +1,5 @@
 <?php
-    // Ce fichier modifie la variable de connexion suivant si l'état de connexion visiteurs ou pas.
+    // Ce fichier modifie la variable session de connexion et initialise les sessions nécessaires.
     session_start();
     // on récupère les infos du formulaires.
     $mail = $_POST['mail'];

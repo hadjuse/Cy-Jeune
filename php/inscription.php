@@ -1,7 +1,5 @@
 <?php
   session_start();
-  $_SESSION['connecter'] = false;
-  $connecter = $_SESSION['connecter'];
   if (isset($_POST['submit'])){
 
     //On récupère les infos d'utilisateurs
