@@ -9,21 +9,23 @@
 </head>
 <link rel="stylesheet" href="css/pagereferent.css">
 
-<body>
+<tr>
     <script>
         // Charger le fichier JSON
-        fetch('php/test.json')
+        fetch('php/utilisateurs.json')
           .then(response => response.json())
           .then(data => {
             // Extraire la valeur souhaitée du fichier JSON
-            var prenom = data['jeunes'][0]['prenom'];
-            var nom = data['jeunes'][0]['nom'];
-            var dateNaissance = data['jeunes'][0]['dateNaissance'];
-            var presentation = data['jeunes'][0]['presentation'];
-            var mail = data['jeunes'][0]['mail'];
-            var reseau = data['jeunes'][0]['reseau'];
-            var duree = data['jeunes'][0]['duree'];
+            var prenom = data['utilisateurs'][0]['referent']['prenom'][0];
+            var nom = data['utilisateurs'][0]['referent']['nom'][0];
+            var dateNaissance = data['utilisateurs'][0]['referent']['date_naissance'][0];
+            var presentation = data['utilisateurs'][0]['engagement'][0];
+            var mail = data['utilisateurs'][0]['referent']['mail'][0];
+            var reseau = data['utilisateurs'][0]['referent']['reseau'][0];
+            var duree = data['utilisateurs'][0]['duree'][0];
 
+            var savoiretre = data['utilisateurs'][0]['savoir_etre'][0];
+            var len = savoiretre.length;
             // Mettre à jour la valeur de l'input
             document.getElementById("prenom").value = prenom;
             document.getElementById("nom").value = nom;
@@ -32,6 +34,24 @@
             document.getElementById("mail").value = mail;
             document.getElementById("reseau").value = reseau;
             document.getElementById("duree").value = duree;
+            if( len < 4 ){
+                for (var j = 4; j > 4-len; j--) {
+                    var choixId = "Dchoix" + j;
+                    var choixElement = document.getElementById(choixId).innerHTML ="";
+                }
+            }
+            for (var i = 0; i < len; i++) {
+                    var choixId = "choix" + (i + 1);
+                    var inputId = "input" + (i + 1);
+                    var choixElement = document.getElementById(choixId);
+                    if (choixElement) {
+                        choixElement.textContent = savoiretre[i];
+                    }
+                    var choixElement = document.getElementById(inputId);
+                    if (choixElement) {
+                        choixElement.value = savoiretre[i];
+                    }
+                }
           })
           .catch(error => console.error(error)); 
       </script>
@@ -61,85 +81,52 @@
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
                     <form action="php/referent.php" method="post" >
                         <div id="description">
-                            <div id="commentaire">
-                                <label for="commentaires" class="head">COMMENTAIRES</label><br>
-                                <textarea value="t1" name="commentaires" id="commentaires" required class="body"></textarea><br>
+                            <div id="commentaire"><table>
+                                
+                                <tr class="head"><td><label for="commentaires" >COMMENTAIRES</label></td></tr>
+                                <tr ><td><textarea value="t1" name="commentaires" id="commentaires" class="body" required ></textarea></td></tr>
+                            </table>
                             </div>
-                            <div id="profil">
-                                <label for="nom" class="head">NOM :</label>
-                                <input value="" type="text" name="nom" id="nom" required class="body"></input><br>
-                                <label for="prenom" class="head">PRENOM :</label>
-                                <input value="" type="text" name="prenom" id="prenom" required class="body"></input><br>
-                                <label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
-                                <input value="" type="date" name="dateNaissance" id="dateNaissance" required class="body"></input><br>
-                                <label for="mail" class="head">MAIL :</label>
-                                <input value="" type="mail" name="mail" id="mail" required class="body"></input><br>
-                                    <br>
-                                <label for="reseau" class="head">Réseau social :</label>
-                                <input value="" type="text" name="reseau" id="reseau" required class="body"></input><br>
-                                <label for="presentation" class="head">Presentation :</label>
-                                <input value="" type="text" name="presentation" id="presentation" required class="body"></input><br>
-                                <label for="duree" class="head">Durée :</label>
-                                <input value="" type="number" name="duree" id="duree" required class="body"></input> <br>
-
+                            <div id="profil"><table>
+                                <tr><td><label for="nom" class="head">NOM :</label>
+                                <input value="" type="text" name="nom" id="nom" required class="body"></input></td></tr>
+                                <tr><td><label for="prenom" class="head">PRENOM :</label>
+                                <input value="" type="text" name="prenom" id="prenom" required class="body"></input></td></tr>
+                                <tr><td><label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
+                                <input value="" type="date" name="dateNaissance" id="dateNaissance" required class="body"></input></td></tr>
+                                <tr><td><label for="mail" class="head">MAIL :</label>
+                                <input value="" type="mail" name="mail" id="mail" required class="body"></input></td></tr>
+                                <tr><td><label for="reseau" class="head">Réseau social :</label>
+                                <input value="" type="text" name="reseau" id="reseau" required class="body"></input></td></tr>
+                                <tr><td><label for="presentation" class="head">Presentation :</label>
+                                <input value="" type="text" name="presentation" id="presentation" required class="body"></input></td></tr>
+                                <tr><td><label for="duree" class="head">Durée :</label>
+                                <input value="" type="number" name="duree" id="duree" required class="body"></input></td></tr>
+                            </table>
                             </div>
                             <div class="savoir-etre"><table>
-                                <tr id="savoiretre"><td>MES SAVOIRS ETRE</td></tr>
+                                <tr ><td>MES SAVOIRS ETRE</td></tr>
                                 
                                     <tr id="jesuis"><td>Je suis*</td></tr>
                                     <tr id="choix"><td>
-                                        <div>
-                                        <input type="checkbox"  id="Confiance" value="Confiance" name="Confiance">
-                                        <label for="Confiance">Confiance</label>
-                                        </div><div>
-                                        <input type="checkbox"  id="Bienveillance" value="Bienveillance" name="Bienveillance">
-                                        <label for="Bienveillance">Bienveillance</label>
-                                        </div><div>
-                                        <input type="checkbox"  id="Respect" value="Respect" name="Respect">
-                                        <label for="Respect">Respect</label>
-                                    </div><div>
-                                        <input type="checkbox"  id="Honnêteté" value="Honnêteté" name="Honnêteté"">
-                                        <label for="Honnêteté">Honnêteté</label>
-                                    </div><div>
-                                        <input type="checkbox"  id="Tolérance" value="Tolérance" name="Tolérance">
-                                        <label for="Tolérance">Organisé</label>
-                                    </div><div>
-                                        <input type="checkbox"  id="Juste" value="Juste" name="Juste">
-                                        <label for="Juste">Juste</label>
-                                    </div><div>
-                                        <input type="checkbox"  id="Impartial" value="Impartial" name="Impartial">
-                                        <label for="Impartial">Impartial</label>
-                                    </div><div>
-                                        <input type="checkbox"  id="Travail" value="Travail" name="Travail">
-                                        <label for="Travail">Travail</label>
-                                    </div><div>
-                                    </td></tr>
-                                    <tr><td><p id="nbchoix"> *Faire 4 choix maximum</p></td></tr>
+                                        <div id="Dchoix1">
+                                            <input id="input1" type="checkbox" value="" name="savoir[]">
+                                        <label  id="choix1" for="choix1">f </label>
+                                        </div><div id="Dchoix2">
+                                            <input id="input2" type="checkbox" value="" name="savoir[]">
+                                        <label id="choix2" for="choix2">f </label>
+                                        </div><div id="Dchoix3">
+                                            <input id="input3" type="checkbox" value="" name="savoir[]">
+                                        <label id="choix3" for="choix3">f </label>
+                                        </div><div id="Dchoix4">
+                                            <input id="input4" type="checkbox" value="" name="savoir[]">
+                                        <label id="choix4" for="choix4">f </label>
+                                        </div>
                                 </table>
                             </div>     
                         </div>                  
                         <button type="submit" name="submit" id="submit" class="btn-grad">Ajout d'une nouvelle demande</button>
                     </form>
-                    <script>
-                        const checkboxes = document.querySelectorAll('input[type="checkbox"]')
-                        let checkedCount = 0
-                        
-                        checkboxes.forEach((checkbox) => {
-                          checkbox.addEventListener('click', () => {
-                            if (checkbox.checked) {
-                              checkedCount++
-                            } else {
-                              checkedCount--
-                            }
-                        
-                            if (checkedCount > 4) {
-                              checkbox.checked = false
-                              checkedCount--
-                            }
-                          })
-                        })
-                    </script>
-                    
             </div>
 
             </div>

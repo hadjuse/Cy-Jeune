@@ -1,46 +1,10 @@
 
 <?php
     session_start();
-    function logout(){
-        setcookie("engagement", null, time()+60*60*24);
-        setcookie("duree", $utilisateur['duree'], time()+60*60*24);
-        setcookie("savoir_etre", "qzefg", time()+60*60*24);
-    }
-    if (isset($_POST['submit'])){
-        
-        // On récupère les infos d'utilisateurs
-        $mail = $_POST['mail'];
-        $mdp = $_POST['mdp'];    
-        // Charger le contenu actuel du fichier JSON
-        $json = file_get_contents('utilisateurs.json');
-        $data = json_decode($json, true);
-        
-        $utilisateurs = $data['utilisateurs'];
-        
-        // verifie si l'utilisateur existe et initialie une session et des cookie pour l'utilisateur
-        $utilisateurs_trouve = false;
-        foreach($utilisateurs as $utilisateur){
-            if ($mail === $utilisateur['mail'] && $mdp === $utilisateur['mdp']){
-                // on initialise les sessions dont on veut simplement afficher le temps de la visite
-                $_SESSION['mail'] = $utilisateur['mail'];
-                $_SESSION['nom'] = $utilisateur['nom'];
-                $_SESSION['prenom'] = $utilisateur['prenom'];
-
-                // On initialise des cookies de l'utilisateur pour une durée de 24h
-                /*
-                setcookie("engagement", "", time()+60*60*24);
-                setcookie("duree", "", time()+60*60*24);
-                setcookie("savoir_etre", "qzefg", time()+60*60*24);*/   
-                $utilisateurs_trouve = true;
-                break;
-            }
-        }
-        if ($utilisateurs_trouve == false){
-            echo "Utilisateur non trouvé";
-            exit;
-        }
-        //$response = array('connexion' => $utilisateurs_trouve);
-        //echo json_encode($response); 
+    if ($_SESSION['connexion'] == 'visiteur'){
+        header('Location: ../inscription.html');
+        exit;
+    
     }
 ?>
 <!DOCTYPE html>

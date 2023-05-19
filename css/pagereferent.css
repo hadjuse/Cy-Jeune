@@ -1,5 +1,6 @@
 body {
     color: grey;
+    font-size: 1.2em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -71,97 +72,80 @@ body {
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
-    height: 30em; 
+    height: 25em; 
 }
 
 
 
 
 #description #commentaire{
-
-    display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-
-  width: 20%;
+  width: 35%;
   height:100%;
-
 }
 
-#description #commentaire .head{
-    border: 1px solid black;
-    color: brown;
-    width: 100%; 
+#description #commentaire .head {
+    color: white;
+    background: linear-gradient(to right, white, #23e600);
+    text-align: center;
+    font-size: 1.5em;
+    width: 100%;
+    
 }
 
-#description #commentaire .body{
-    border: 1px blue solid;
-    color: red;
-    height: 100%; 
-    width: 100%; 
+#description #commentaire .body {
+    height: 25em; 
+    width: 100%;
     resize: none;
+    background-color: #e3f5d4;
+    font-size: 1.2em;
+    color: black;
+    padding : 0px 0px 0px 0px;
 }
 
 
 #description #profil{
-    flex-grow: 1;
+ flex-grow: 1;
     margin-left: 10%;
     margin-right: 10%;
-  border: 1px red solid;
-  height: 100%;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;  
+  background-color: white;
+  border:#23e600 solid 2px;
+  border-radius: 7px;
+  color: #23e600;
 }
 
-
-#description #commentaire1{
-    display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 20%;
-  height: 100%; 
-
+#description #profil input{
+    border: none;
+    border-bottom: #23e600 dotted 2px;
 }
 
-#description #commentaire1 .head{
-    border: 1px solid green;
-    color: brown;
-    width: 100%; 
-}
-
-#description #commentaire1 .body{
-    border: 1px blue solid;
-    color: red;
-    height: 100%; 
-    width: 100%; 
-    resize: none;
-}
-
-#savoiretre {
+.savoir-etre {
     color: #23e600;
-    font-size: 1.5em;
+    font-size: 1.3em;
+    width: 35%;
+  height:100%;
 }
 
 #jesuis{
     color: white;
     background: linear-gradient(to right,white,#23e600);
     text-align: right;
-    font-size: 1.3em;
+  
 }
 
 #choix {
     background-color: #e3f5d4;
-    font-size: 1.2em;
+ 
     color: black;
 
 }
 
-#nbchoix {
-    color: #23e600;
-    font-size: 0.6em;
-    margin-top: -2%;
-    text-align: center;
-}
-
-table {
+.savoir-etre table {
     
     float: right;
     
