@@ -1,0 +1,26 @@
+{
+    "utilisateurs": [
+        {
+            "prenom": "Hadj",
+            "nom": "Rabearimanana",
+            "date_naissance": "2007-07-22",
+            "mail": "rabearimananahadj@gmail.com",
+            "mdp": "a",
+            "reseau": "Facebook",
+            "engagement": [
+                "ping pong"
+            ],
+            "duree": [
+                8
+            ],
+            "savoir_etre": [],
+            "referent": {
+                "prenom": "Th\u00e9o",
+                "nom": "Fortier ",
+                "date_naissance": "2007-07-22",
+                "mail": "zizou@gmail.com",
+                "reseau": "Twitter"
+            }
+        }
+    ]
+}

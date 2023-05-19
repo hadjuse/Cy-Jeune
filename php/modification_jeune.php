@@ -1,4 +1,5 @@
 <?php
+    session_destroy();
     session_start();
     if (isset($_POST['submit'])) {
 
@@ -8,7 +9,6 @@
         $mail_referant = $_POST['mail'];
         $engagement = $_POST['engagement'];
         $naissance_referant = $_POST['naissance'];
-        echo $naissance_referant;
         $reseau = $_POST['reseau'];
         $duree = (int)$_POST['duree'];    
         $savoir_etre = $_POST['savoir'];
