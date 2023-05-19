@@ -15,8 +15,9 @@ body{
     width: 14em;    
 }
 #banderole b{
-    margin-left: 45vw;
-    font-size:7em;
+    margin-top: 1vw;
+    margin-left: 40vw;
+    font-size:6em;
     text-decoration: none;
     float: right;
     position: absolute;

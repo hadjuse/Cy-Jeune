@@ -1,6 +1,6 @@
 <?php
-    session_start();
-    require_once('php/statut.php');
+
+    require('php/statut.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -14,7 +14,7 @@
 <body>
 <! banderole avec le nom de la page que la quelle on se situe>
     <div id="banderole">
-        <a href="page0.html" ><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+        <a href="page0.php" ><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
         <div class="form"><a href="inscription.html" >inscription</a>
         <a href="connexion.html">connexion</a></div>
         <b>Pour faire de l'engagement une valeur</b>

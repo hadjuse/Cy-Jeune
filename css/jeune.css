@@ -127,8 +127,7 @@ h1 {
     box-shadow: 0 0 20px #eee;
     border-radius: 10px;
     font-size: 1em;
-    margin-left: 36vw;
-    margin-top: 2vw;}
+}
 
   .btn-grad:hover {
     background-position: right center; /* change the direction of the change here */
@@ -168,7 +167,7 @@ h1 {
 table {
     margin-right: 2vw;
     float: right;
-    margin-top: -17vw;
+    margin-top: -15vw;
 }
 
 .corps{
@@ -184,25 +183,3 @@ table {
     padding:1%;
 }
 
-.btn-grad2 {
-    background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
-    padding: 1vW 3vw;
-    width: 5vw;
-    float: right;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;            
-    box-shadow: 0 0 20px #eee;
-    border-radius: 10px;
-    font-size: 1em;
-    margin-top: -24.5vw;
-    margin-right: -13vw;
-  }
-
-  .btn-grad2:hover {
-    background-position: right center; /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-  }
