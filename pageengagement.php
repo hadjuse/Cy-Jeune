@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require_once('php/statut.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,7 +21,7 @@
     </div>
 <! onglet de navigation entre les differentes pages>
     <div id="navigation">
-        <a href="pagejeune.html" id="jeunes">JEUNES</a>
+        <a href="php/Jeune.php" id="jeunes">JEUNES</a>
         <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
         <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
         <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
