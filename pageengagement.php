@@ -12,11 +12,17 @@
 </head>
 <link rel="stylesheet" href="css/pageengagement.css">
 <body>
-<! banderole avec le nom de la page que la quelle on se situe>
+<!-- banderole avec le nom de la page que la quelle on se situe-->
     <div id="banderole">
         <a href="page0.php" ><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
-        <div class="form"><a href="inscription.html" >inscription</a>
-        <a href="connexion.html">connexion</a></div>
+        <?php
+            if ($_SESSION['connexion'] == 'visiteur'){
+                echo '<div class="inscription"><a href="inscription.html" id="nouv"><div class="white">inscription</div></a></div>
+                <div class="connexion"><a href="connexion.html" id="nouv"><div class="white">connexion</div></a></div>';
+            }
+            else 
+                echo '<div class="deconnexion"><a href="php/deconnexion.php" id="nouv"><div class="white">Déconnexion</div></a></div>';
+                ?>
         <b>Pour faire de l'engagement une valeur</b>
     </div>
 <! onglet de navigation entre les differentes pages>

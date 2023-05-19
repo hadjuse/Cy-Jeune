@@ -176,3 +176,80 @@ background-color: rgb(255, 225, 239);
 text-align: justify;
 font-size: 1em;
 }
+.inscription {
+    background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
+    padding: 1vW;
+    padding-right: 3vw;
+    width: 3vw;
+    float: right;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 9vw;
+    margin-right: 3vw;
+  }
+  .inscription:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+.connexion {
+    background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
+    padding: 1vw ;
+    padding-right: 3vw;
+    width: 3vw;
+    float: right;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 9vw;
+    margin-right: 1vw;
+  }
+
+  .connexion:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+.deconnexion {
+    background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
+    padding: 1vW ;
+    padding-right: 2vw;
+    width: 5vw;
+    float: right;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 9vw;
+    margin-right: 3vw;
+  }
+
+  .deconnexion:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  #nouv{
+    border: none;
+    border-bottom: #e6007e dotted 2px;
+    font-size: 0.5em;
+    background-color: aliceblue;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: none;
+}
