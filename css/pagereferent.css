@@ -1,5 +1,5 @@
-body{
-    color:grey;
+body {
+    color: grey;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1vw;
     background: radial-gradient( at center, white 80%,gray 120%);
@@ -74,14 +74,27 @@ body{
 #description{
     margin-left: 2vw;
     justify-content: space-between;
+    height: 30em; 
+}
+
+
+
+
+#description #commentaire{
+
     display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 20%;
+  height:100%;
+
 }
 
 #description #commentaire .head{
-    background: linear-gradient(0.25turn, #c5d40e,#dde576);
-    color: white;
-    text-align: center;
-    font-size: 1.2em;
+    border: 1px solid black;
+    color: brown;
+    width: 100%; 
 }
 
 #description #commentaire .body{
@@ -93,34 +106,18 @@ body{
     width: 20vw;
     height: 15vw;
     resize: none;
-    text-align: center;
 }
 
 
 #description #profil{
-    margin-left: -5vw;
-    background-color: white;
-    border:#dde576 solid 2px;
-    border-radius: 7px;
-    color: #dde576;
-    padding-left: 10px;
-    font-size: 1.7em;
-    padding:1%;
-    width: 30vw;
-
+    flex-grow: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+  border: 1px red solid;
+  height: 100%;
 }
 
-#description #profil input{
-    width: 50%;
-    border: none;
-    border-bottom: #dde576 dotted 2px;
-    font-size: 0.5em;
-    color: #2a248b;
-}
 
-#description #profil [type="date"] {
-    width: 25%;
-}
 #description #commentaire1{
     display: flex;
   align-items: flex-start;
@@ -171,6 +168,3 @@ body{
     color: black;
 }
 
-#savoiretre{
-    margin-right: 3vw;
-}
