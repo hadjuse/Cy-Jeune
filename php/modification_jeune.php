@@ -10,7 +10,7 @@
         $engagement = $_POST['engagement'];
         $naissance_referant = $_POST['naissance'];
         $reseau = $_POST['reseau'];
-        $duree = (int)$_POST['duree'];    
+        $duree = $_POST['duree'];    
         $savoir_etre = $_POST['savoir'];
 
         // Charger le contenu actuel du fichier JSON
@@ -22,13 +22,16 @@
             if ($_SESSION['mail'] == $utilisateur['mail']){
                 $utilisateur['engagement'][] = $engagement;
                 $utilisateur['duree'][] = $duree;
-                $utilisateur['referent']['nom'] = $nom_referant;
-                $utilisateur['referent']['prenom'] = $prenom_referant;
-                $utilisateur['referent']['mail'] = $mail_referant;
-                $utilisateur['referent']['reseau'] = $reseau;
-                $utilisateur['referent']['date_naissance'] = $naissance_referant;
+                $utilisateur['referent']['nom'][] = $nom_referant;
+                $utilisateur['referent']['prenom'][] = $prenom_referant;
+                $utilisateur['referent']['mail'][] = $mail_referant;
+                $utilisateur['referent']['reseau'][] = $reseau;
+                $utilisateur['referent']['date_naissance'][] = $naissance_referant;
                 if (isset($savoir_etre)) {
                     $utilisateur['savoir_etre'][] = $savoir_etre;   
+                }
+                else{
+                    $utilisateur['savoir_etre'][] = [];
                 }
                 break;
             }
@@ -42,7 +45,7 @@
 
         // Écrire le JSON dans un fichier
         file_put_contents('utilisateurs.json', $json);
-    }
+}
     header("Location: recap.php");
     exit;
 ?>

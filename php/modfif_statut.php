@@ -10,7 +10,7 @@
     $json = file_get_contents('utilisateurs.json');
     $data = json_decode($json, true);
     $utilisateurs = $data['utilisateurs'];
-
+    
     // verifie si l'utilisateur existe et initialie une session et des cookie pour l'utilisateur
     $utilisateurs_trouve = false;
     foreach($utilisateurs as $utilisateur){

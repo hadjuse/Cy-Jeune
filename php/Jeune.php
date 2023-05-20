@@ -4,6 +4,7 @@
     if ($_SESSION['connexion'] == 'visiteur'){
         header('Location: ../inscription.html');
         exit;
+    
     }
 ?>
 <!DOCTYPE html>
