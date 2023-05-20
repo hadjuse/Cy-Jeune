@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 body{
     color:grey;
+=======
+body {
+    color: grey;
+>>>>>>> 6ed92cede2eab062554f8a6e4e79feaf8479e100
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1vw;
     background: radial-gradient( at center, white 80%,gray 120%);
@@ -74,6 +79,7 @@ body{
 #description{
     margin-left: 2vw;
     justify-content: space-between;
+<<<<<<< HEAD
     display: flex;
 }
 
@@ -82,6 +88,29 @@ body{
     color: white;
     text-align: center;
     font-size: 1.2em;
+=======
+    height: 30em; 
+}
+
+
+
+
+#description #commentaire{
+
+    display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 20%;
+  height:100%;
+
+}
+
+#description #commentaire .head{
+    border: 1px solid black;
+    color: brown;
+    width: 100%; 
+>>>>>>> 6ed92cede2eab062554f8a6e4e79feaf8479e100
 }
 
 #description #commentaire .body{
@@ -93,11 +122,15 @@ body{
     width: 20vw;
     height: 15vw;
     resize: none;
+<<<<<<< HEAD
     text-align: center;
+=======
+>>>>>>> 6ed92cede2eab062554f8a6e4e79feaf8479e100
 }
 
 
 #description #profil{
+<<<<<<< HEAD
     margin-left: -5vw;
     background-color: white;
     border:#dde576 solid 2px;
@@ -121,6 +154,16 @@ body{
 #description #profil [type="date"] {
     width: 25%;
 }
+=======
+    flex-grow: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+  border: 1px red solid;
+  height: 100%;
+}
+
+
+>>>>>>> 6ed92cede2eab062554f8a6e4e79feaf8479e100
 #description #commentaire1{
     display: flex;
   align-items: flex-start;
@@ -171,6 +214,9 @@ body{
     color: black;
 }
 
+<<<<<<< HEAD
 #savoiretre{
     margin-right: 3vw;
 }
+=======
+>>>>>>> 6ed92cede2eab062554f8a6e4e79feaf8479e100
