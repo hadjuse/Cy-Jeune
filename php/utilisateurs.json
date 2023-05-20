@@ -35,6 +35,34 @@
                     "date_naissance": "2007-07-22"
                 }
             ]
+        },
+        {
+            "prenom": "Hadj",
+            "nom": "Rabearimanana",
+            "date_naissance": "2007-07-22",
+            "mail": "rabearimananahadj@gmail.com",
+            "mdp": "a",
+            "reseau": "Facebook",
+            "engagement": [
+                "zefzei"
+            ],
+            "duree": [
+                "8"
+            ],
+            "savoir_etre": [
+                [
+                    "Autonome"
+                ]
+            ],
+            "referent": [
+                {
+                    "nom": "Rabearimanana",
+                    "prenom": "Hadj",
+                    "mail": "rabearimananahadj@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22"
+                }
+            ]
         }
     ]
 }
