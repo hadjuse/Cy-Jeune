@@ -22,11 +22,13 @@
             if ($_SESSION['mail'] == $utilisateur['mail']){
                 $utilisateur['engagement'][] = $engagement;
                 $utilisateur['duree'][] = $duree;
-                $utilisateur['referent']['nom'][] = $nom_referant;
-                $utilisateur['referent']['prenom'][] = $prenom_referant;
-                $utilisateur['referent']['mail'][] = $mail_referant;
-                $utilisateur['referent']['reseau'][] = $reseau;
-                $utilisateur['referent']['date_naissance'][] = $naissance_referant;
+                $utilisateur['referent'][] = array( 
+                'nom' => $nom_referant,
+                'prenom' => $prenom_referant,
+                'mail' => $mail_referant,
+                'reseau' => $reseau,
+                'date_naissance' => $naissance_referant
+                );
                 if (isset($savoir_etre)) {
                     $utilisateur['savoir_etre'][] = $savoir_etre;   
                 }
