@@ -16,6 +16,7 @@
     foreach($utilisateurs as $utilisateur){
         if ($mail === $utilisateur['mail'] && $mdp === $utilisateur['mdp']){
             // on initialise les sessions dont on veut simplement afficher le temps de la visite
+            $_SESSION['indice'] = $utilisateur['indice'];
             $_SESSION['mail'] = $utilisateur['mail'];
             $_SESSION['nom'] = $utilisateur['nom'];
             $_SESSION['prenom'] = $utilisateur['prenom'];
