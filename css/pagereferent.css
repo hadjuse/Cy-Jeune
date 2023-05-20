@@ -2,14 +2,14 @@ body{
     color:grey;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1vw;
-    background: radial-gradient( at center, white 80%,gray 120%);
+    background: radial-gradient( at center, white 80%,#d3d3d3 120%);
     height: 100vh;
 }
 /* banderole avec le nom de la page sur laquelle on est*/
 #banderole{
     margin: -7px;
     margin-bottom: 0px;
-    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);
+    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, #d3d3d3 100%);
     font-family:sans-serif;      
 }
 #banderole img{

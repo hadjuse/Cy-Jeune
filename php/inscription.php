@@ -24,9 +24,17 @@
         exit;
       }
     }
-   
+   //Voir si l'existe deja un utilisateur 
+
+   if ( isset ($utilisateurs)){
+      $indice = count($utilisateurs);
+   }
+   else {
+      $indice = 0;
+   }
     // Crée un tableau associatif avec les données de l'utilisateur
     $utilisateur = array(
+      'indice' => $indice,
       'prenom' => $prenom,
       'nom' => $nom,
       'date_naissance' => $date_naissance,
