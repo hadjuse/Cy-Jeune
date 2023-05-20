@@ -10,7 +10,7 @@
         $naissance_referant = $_POST['naissance'];
         echo $naissance_referant;
         $reseau = $_POST['reseau'];
-        $duree = (int)$_POST['duree'];    
+        $duree = $_POST['duree'];    
         $savoir_etre = $_POST['savoir'];
 
         // Charger le contenu actuel du fichier JSON
@@ -22,11 +22,13 @@
             if ($_SESSION['mail'] == $utilisateur['mail']){
                 $utilisateur['engagement'][] = $engagement;
                 $utilisateur['duree'][] = $duree;
-                $utilisateur['referent']['nom'] = $nom_referant;
-                $utilisateur['referent']['prenom'] = $prenom_referant;
-                $utilisateur['referent']['mail'] = $mail_referant;
-                $utilisateur['referent']['reseau'] = $reseau;
-                $utilisateur['referent']['date_naissance'] = $naissance_referant;
+                $utilisateur['referent'][]=array(
+                    'prenom' => "$prenom_referant",
+                    'nom' => "$nom_referant",
+                    'date_naissance' => "$naissance_referant",
+                    'mail' => "$mail_referant",
+                    'reseau' => "$reseau",
+                  );
                 if (isset($savoir_etre)) {
                     $utilisateur['savoir_etre'][] = $savoir_etre;   
                 }

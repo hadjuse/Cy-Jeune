@@ -24,13 +24,6 @@
         exit;
       }
     }
-    $referent=array(
-      'prenom' => "",
-      'nom' => "",
-      'date_naissance' => "",
-      'mail' => "",
-      'reseau' => "",
-    );
     // Crée un tableau associatif avec les données de l'utilisateur
     $utilisateur = array(
       'prenom' => $prenom,
@@ -42,7 +35,7 @@
       'engagement' => array(),
       'duree' => array(),
       'savoir_etre' => array(),
-      'referent' => $referent
+      'referent' => array()
     );
 
     // Ajouter le nouvel utilisateur au tableau des utilisateurs
