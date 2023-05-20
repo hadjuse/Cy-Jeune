@@ -1,0 +1,42 @@
+{
+    "utilisateurs": [
+        {
+            "prenom": "Hadj",
+            "nom": "Rabearimanana",
+            "date_naissance": "2007-07-22",
+            "mail": "rabearimananahadj@gmail.com",
+            "mdp": "a",
+            "reseau": "Facebook",
+            "engagement": [
+                "ping pong"
+            ],
+            "duree": [
+                "3"
+            ],
+            "savoir_etre": [
+                [
+                    "Autonome",
+                    "R\u00e9fl\u00e9chi",
+                    "Organis\u00e9"
+                ]
+            ],
+            "referent": {
+                "nom": [
+                    "tuiop"
+                ],
+                "prenom": [
+                    "azert"
+                ],
+                "mail": [
+                    "rabearimananahadj@gmail.com"
+                ],
+                "reseau": [
+                    "Facebook"
+                ],
+                "date_naissance": [
+                    "2007-07-22"
+                ]
+            }
+        }
+    ]
+}
