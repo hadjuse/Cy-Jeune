@@ -1,0 +1,76 @@
+body{
+    color:grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1vw;
+    background: radial-gradient( at center, white 80%,gray 120%);
+    height: 100vh;
+}
+/* banderole avec le nom de la page sur laquelle on est*/
+#banderole{
+    margin: -7px;
+    margin-bottom: 0px;
+    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);      
+}
+#banderole img{
+    width: 14em;    
+}
+#banderole b{
+    margin-top: 1vw;
+    margin-left: 40vw;
+    font-size:6em;
+    text-decoration: none;
+    float: right;
+    position: absolute;
+}
+/* volet de navigation*/
+#navigation{
+    background:radial-gradient( 150px at 150px ,white -30%, lightgrey);  
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.5em;
+    top:0%;
+}
+#jeunes{
+    color:#e6007e;
+    text-decoration: none;
+    margin-left: 4%;
+    padding: 1%;
+}
+#referent{
+    color:rgb(19, 202, 19);
+    text-decoration: none;
+    padding: 1%;
+}
+#consultant{
+    color:rgb(34, 140, 186);
+    text-decoration: none;
+    padding: 1%;
+}
+#partenaires{
+    background-color: rgb(92, 104, 92);
+    color:white;
+    text-decoration: none;
+    padding: 1%;
+}
+/* Corps de la page*/
+#logo{
+    text-align: center;
+}
+#logo img{
+    padding-left:3%;
+    padding-right:3%;
+}
+body>p{
+    font-size: 1.1em;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+body>p>b{
+    color: #0d005f;
+    text-decoration: none;
+}
+#logo img{
+    width: 14em;
+}

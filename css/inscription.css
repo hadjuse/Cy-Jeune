@@ -1,0 +1,77 @@
+body{
+    color:grey;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vw;
+    background: radial-gradient( at center, white 80%,gray 120%);
+    height: 100vh;
+    background-image:url("../image/pagejeune/logo_page_jeune.jpeg");
+    background-size: 50%;
+    background-position-x:40vw;
+    background-position-y: 18vw;
+    background-repeat: no-repeat;
+}
+/* banderole avec le nom de la page sur laquelle on est*/
+#banderole{
+color: white;
+    margin: -8px;
+    margin-bottom: 0px;
+    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);    
+}
+
+#banderole img{
+    width: 14em;
+}
+#banderole b{
+    margin-top: 1.2em;
+    margin-left: 65vw;
+    font-size:3.5em;
+    position: absolute  ;
+}
+/******************************corps***************************/
+
+
+.corps{
+    background-color: aliceblue;
+    border:#e6007e solid 2px;
+    border-radius: 7px;
+    color: #e6007e;
+    padding-left: 10px;
+    margin-top: 20px;
+    font-size: 1.7em;
+    margin-left: 30vw;
+    margin-right: 30vw;
+    padding:1%;
+}
+
+.corps input{
+    border: none;
+    border-bottom: #e6007e dotted 2px;
+    font-size: 0.5em;
+    background-color: aliceblue;
+}
+
+.corps select{
+    text-align: center;
+    font-size: 0.6em;
+    
+}
+.btn-grad {
+    background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/connexion.css">
+    <title>Connexion</title>
+</head>
+
+<body>
+    <! banderole avec le nom de la page que la quelle on se situe>
+        <div id="banderole">
+            <a href="page0.php"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+            <b>Connexion</b>
+        </div>
+        <div class="corps">
+            <form action="php/modfif_statut.php" method="post">
+                <label for="mail">Mail:</label>
+                <input type="email" name="mail" id="mail" placeholder=""><br>
+                <label for="mdp">Mot de passe:</label>
+                <input type="password" name="mdp" id="mdp" required><br>
+                <button type="submit" name="submit" class="btn-grad">Connexion</button>
+            </form>
+        </div>
+</html>

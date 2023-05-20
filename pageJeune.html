@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'inscription</title>
+    <link rel="stylesheet" href="css/pagejeune.css">
+</head>
+<!--Ce fichier sert à l'ajout des données du réferent et des infos d'engagement du jeune-->
+<body>
+
+    <!-- banderole avec le nom de la page que la quelle on se situe>-->
+        <div id="banderole">
+            <a href="page0.php"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+            <b id="Jeune">JEUNE</b>
+            <b id="hautpage">Je donne de la valeur à mon engagement</b>
+
+        </div>
+
+        <!--onglet de navigation entre les differentes pages>-->
+            <div id="navigation">
+                <a href="pagejeune.html" id="jeunes">JEUNES</a>
+                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
+            </div>
+            <h1 align="center">Décrivez votre expérience et mettez en avant ce que vous en avez retiré.</h1>
+            <div class="engagement">
+                <!--Formulaire d'ajout des infos du référent et de l'engagement du jeune-->
+                <form action="php/modification_jeune.php" method="post" id="form-inscription">
+                    <label for="nom">Nom: </label>
+                    <input type="text" name="nom" id="nom" required><br>
+                    <label for="prenom">Prénom:</label>
+                    <input type="text" name="prenom" id="prenom" required><br>
+                    <label for="naissance">Date de naissance:</label> <input type="date" id="naissance"
+                        name="naissance" value="2007-07-22" min="1997-01-01" max="2007-12-31" required /> <br>
+                    <label for="mail">Mail:</label>
+                    <input type="text" name="mail" id="mail"><br>
+                    <label for="reseau">Réseau social</label>
+                    <select name="reseau" id="reseau">
+                        <optgroup label="réseau">
+                            <option value="Facebook">Facebook</option>
+                            <option value="Twitter">Twitter</option>
+                            <option value="LinkedIn">LinkedIn</option>
+                        </optgroup>
+                    </select><br>
+                    <label for="engagement">MON ENGAGAGEMENT:</label>
+                    <input type="text" name="engagement" id="engagement" required><br>
+                    <label for="duree">Durée d'engagement:</label>
+                    <input type="text" name="duree" id="duree" required> <br>              
+            </div>
+            <div class="savoir-etre"><table>
+                <tr id="savoiretre"><td>MES SAVOIRS ETRE</td></tr>
+                
+                    <tr id="jesuis"><td>Je suis*</td></tr>
+                    <tr id="choix"><td>
+                        <div>
+                        <input type="checkbox"  id="Autonome" value="Autonome" name="savoir[]">
+                        <label for="Autonome">Autonome</label>
+                        </div><div>
+                        <input type="checkbox"  id="Passioné" value="Passioné" name="savoir[]">
+                        <label for="Passioné">Passioné</label>
+                        </div><div>
+                        <input type="checkbox"  id="Réfléchi" value="Réfléchi" name="savoir[]">
+                        <label for="Réfléchi">Réfléchi</label>
+                    </div><div>
+                        <input type="checkbox"  id="Al'écoute" value="Al'écoute" name="savoir[]">
+                        <label for="Al'écoute">A l'écoute</label>
+                    </div><div>
+                        <input type="checkbox"  id="Organisé" value="Organisé" name="savoir[]">
+                        <label for="Organisé">Organisé</label>
+                    </div><div>
+                        <input type="checkbox"  id="Passioné" value="Passioné" name="savoir[]">
+                        <label for="Passioné">Passioné</label>
+                    </div><div>
+                        <input type="checkbox"  id="Fiable" value="Fiable" name="savoir[]">
+                        <label for="Fiable">Fiable</label>
+                    </div><div>
+                        <input type="checkbox"  id="Patient" value="Patient" name="savoir[]">
+                        <label for="Patient">Patient</label>
+                    </div><div>
+                        <input type="checkbox"  id="Responsable" value="Responsable" name="savoir[]">
+                        <label for="Responsable">Responsable</label>
+                    </div><div>
+                        <input type="checkbox"  id="Sociable" value="Sociable" name="savoir[]">
+                        <label for="Sociable">Sociable</label>
+                    </div><div>
+                        <input type="checkbox"  id="Optimiste" value="Optimiste" name="savoir[]">
+                        <label for="Optimiste">Optimiste</label>
+                    </div>
+
+                    </td></tr>
+                    <tr><td><p id="nbchoix"> *Faire 4 choix maximum</p></td></tr>
+                </table>
+            </div>
+            <button type="submit" name="submit" id="submit" class="btn-grad">Ajout d'une nouvelle demande</button>
+            <div class="btn-grad2"><a href="php/deconnexion.php" id="nouv"><div class="white">Déconnexion</div></a></div>
+        </form>
+            <script>
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+                let checkedCount = 0
+                
+                checkboxes.forEach((checkbox) => {
+                  checkbox.addEventListener('click', () => {
+                    if (checkbox.checked) {
+                      checkedCount++
+                    } else {
+                      checkedCount--
+                    }
+                
+                    if (checkedCount > 4) {
+                      checkbox.checked = false
+                      checkedCount--
+                    }
+                  })
+                })
+                </script>
+</body>
+</html>

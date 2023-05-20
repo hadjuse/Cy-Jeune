@@ -1,0 +1,137 @@
+body {
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* banderole avec le nom de la page sur laquelle on est*/
+#banderole {
+    color: white;
+    margin: -7px;
+    margin-bottom: 0px;
+    background: radial-gradient(white, lightgrey);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#banderole img {
+    width: 14em;
+}
+
+#banderole p {
+    text-align: right;
+    color: rgb(19, 202, 19);
+    font-size: 4em;
+
+}
+
+/* volet de navigation*/
+#navigation {
+    background: radial-gradient(white, lightgrey);
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 1%;
+    text-align: center;
+
+    top: 0%;
+}
+
+#jeunes {
+    color: rgb(225, 7, 7);
+    text-decoration: none;
+    padding: 1%;
+}
+
+#referent {
+    color: rgb(19, 202, 19);
+    text-decoration: none;
+    padding: 1%;
+}
+
+#consultant {
+    color: rgb(34, 140, 186);
+    text-decoration: none;
+    padding: 1%;
+}
+
+#partenaires {
+    color: rgb(92, 104, 92);
+    text-decoration: none;
+    padding: 1%;
+}
+
+#contenu .tete{
+    color:  rgb(19, 202, 19);
+    padding: 0 25% 0 25%;
+    text-align: center;
+}
+
+#description{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    height: 30em; 
+}
+
+
+
+
+#description #commentaire{
+
+    display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  width: 20%;
+  height:100%;
+
+}
+
+#description #commentaire .head{
+    border: 1px solid black;
+    color: brown;
+    width: 100%; 
+}
+
+#description #commentaire .body{
+    border: 1px blue solid;
+    color: red;
+    height: 100%; 
+    width: 100%; 
+    resize: none;
+}
+
+
+#description #profil{
+    flex-grow: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+  border: 1px red solid;
+  height: 100%;
+}
+
+
+#description #commentaire1{
+    display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 20%;
+  height: 100%; 
+
+}
+
+#description #commentaire1 .head{
+    border: 1px solid green;
+    color: brown;
+    width: 100%; 
+}
+
+#description #commentaire1 .body{
+    border: 1px blue solid;
+    color: red;
+    height: 100%; 
+    width: 100%; 
+    resize: none;
+}
+
