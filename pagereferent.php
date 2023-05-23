@@ -68,7 +68,7 @@
       </script>
     <!-- banderole avec le nom de la page que la quelle on se situe -->
         <div id="banderole">
-            <a href="page0.php"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+            <a href="pageengagement.php"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
             <b id="ref">RÉFÉRENT</b>
             <b id="hautpage">Je confirme la valeur de ton engagement</b>
         </div>

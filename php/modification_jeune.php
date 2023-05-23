@@ -33,7 +33,7 @@
                 'prenom' => $prenom_referant,
                 'mail' => $mail_referant,
                 'reseau' => $reseau,
-                'date_naissance' => $naissance_referant
+                'date_naissance' => $naissance_referant,
                 );
                 if (isset($savoir_etre)) {
                     $utilisateur['savoir_etre'][] = $savoir_etre;   
@@ -54,7 +54,7 @@
         // Écrire le JSON dans un fichier
         file_put_contents('utilisateurs.json', $json);
 }
-    header("Location: ../recap.php");
+    header("Location: ../pagereferent.php");
     exit;
 ?>
 

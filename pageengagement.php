@@ -14,7 +14,7 @@
 <body>
 <!-- banderole avec le nom de la page que la quelle on se situe-->
     <div id="banderole">
-        <a href="page0.php" ><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+        <a href="pageengagement.php" ><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
         <?php
             if ($_SESSION['connexion'] == 'visiteur'){
                 echo '<div class="inscription"><a href="inscription.html" id="nouv"><div class="white">inscription</div></a></div>
