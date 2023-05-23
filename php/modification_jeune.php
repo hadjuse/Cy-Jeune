@@ -25,8 +25,12 @@
                  else {
                     $indice = 0;
                  }
-                $utilisateur['engagement'][] = $engagement;
-                $utilisateur['duree'][] = $duree;
+                if (isset($savoir_etre)) {
+                    $savoir = $savoir_etre;   
+                }
+                else{
+                    $savoir = [];
+                }
                 $utilisateur['referent'][] = array( 
                 'indice' => $indice,
                 'nom' => $nom_referant,
@@ -34,15 +38,14 @@
                 'mail' => $mail_referant,
                 'reseau' => $reseau,
                 'date_naissance' => $naissance_referant,
+                'engagement' => $engagement,
+                'duree' => $duree,
+                'savoir etre' => $savoir,
+                'commentaire' => ''
                 );
-                if (isset($savoir_etre)) {
-                    $utilisateur['savoir_etre'][] = $savoir_etre;   
-                }
-                else{
-                    $utilisateur['savoir_etre'][] = [];
-                }
                 break;
             }
+        
         }
 
         // Mettre à jour le tableau des utilisateurs dans le tableau complet

@@ -25,18 +25,18 @@ if (isset($_POST['submit'])){
   $utilisateurs = $data['utilisateurs'];
   $utilisateur = $utilisateurs[0];
 
-  $utilisateur['referent'][] = array( 
+  $utilisateur['referent'] = array( 
     'indice' => $indice,
     'nom' => $nom_referant,
     'prenom' => $prenom_referant,
     'mail' => $mail_referant,
     'reseau' => $reseau,
     'date_naissance' => $naissance_referant,
-    'commentaire' => $commentaires
+    'commentaire' => $commentaires,
+    'duree' =>  $duree,
+    'savoir_etre' => $savoir_etre,
+    'engagement'=> $engagement
     );
-  $utilisateur['duree'][0] = $duree;
-  $utilisateur['savoir_etre'][0] = $savoir_etre;
-  $utilisateur['engagement'][0] = $engagement;
   // Convertir le tableau associatif en JSON
   $utilisateurs[0] = $utilisateur;
   $data['utilisateurs'] = $utilisateurs;

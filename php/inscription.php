@@ -41,9 +41,6 @@
       'mail' => $mail,
       'mdp' => $mdp,
       'reseau' => $reseau,
-      'engagement' => array(),
-      'duree' => array(),
-      'savoir_etre' => array(),
       'referent' => array()
     );
 
