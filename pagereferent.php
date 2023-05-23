@@ -25,14 +25,14 @@
           .then(data => {
 
             // Extraire la valeur souhaitée du fichier JSON
-            var prenom = data['utilisateurs'][1]['referent'][0]['prenom'];
-            var nom = data['utilisateurs'][1]['referent'][0]['nom'];
-            var dateNaissance = data['utilisateurs'][1]['referent'][0]['date_naissance'];
-            var presentation = data['utilisateurs'][1]['engagement'][0];
-            var mail = data['utilisateurs'][1]['referent'][0]['mail'];
-            var reseau = data['utilisateurs'][1]['referent'][0]['reseau'];
-            var duree = data['utilisateurs'][1]['duree'][0];
-            var savoiretre = data['utilisateurs'][1]['savoir_etre'][0];
+            var prenom = data['utilisateurs'][0]['referent'][0]['prenom'];
+            var nom = data['utilisateurs'][0]['referent'][0]['nom'];
+            var dateNaissance = data['utilisateurs'][0]['referent'][0]['date_naissance'];
+            var presentation = data['utilisateurs'][0]['referent'][0]['engagement'];
+            var mail = data['utilisateurs'][0]['referent'][0]['mail'];
+            var reseau = data['utilisateurs'][0]['referent'][0]['reseau'];
+            var duree = data['utilisateurs'][0]['referent'][0]['duree'];
+            var savoiretre = data['utilisateurs'][0]['referent'][0]['savoir etre'];
             var len = savoiretre.length;
 
             // Mettre à jour la valeur de l'input

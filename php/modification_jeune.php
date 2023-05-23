@@ -19,8 +19,8 @@
         $utilisateurs = &$data['utilisateurs']; // On utilise une affectation par reference grâce au & qui modifie directement la table de hachage.
         foreach($utilisateurs as &$utilisateur){
             if ($_SESSION['mail'] == $utilisateur['mail']){
-                if ( isset ($utilisateurs['referent'])){
-                    $indice = count($utilisateurs['referent']);
+                if ( isset ($utilisateur['referent'])){
+                    $indice = count($utilisateur['referent']);
                  }
                  else {
                     $indice = 0;
