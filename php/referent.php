@@ -35,8 +35,8 @@ if (isset($_POST['submit'])){
     'date_naissance' => $date_naissance,
     'commentaire' => $commentaires,
     'duree' =>  $duree,
-    'savoir etre' => $savoir_etre,
-    'engagement'=> $engagement
+    'engagement'=> $engagement,
+    'savoir_etre' => $savoir_etre,
     );
   // Convertir le tableau associatif en JSON
   $utilisateurs[0] = $utilisateur;

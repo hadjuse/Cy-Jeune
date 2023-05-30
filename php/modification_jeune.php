@@ -1,4 +1,5 @@
 <?php
+    session_destroy();
     session_start();
     if (isset($_POST['submit'])) {
 
@@ -38,10 +39,11 @@
                 'mail' => $mail_referant,
                 'reseau' => $reseau,
                 'date_naissance' => $naissance_referant,
+                'commentaire' => '',
                 'engagement' => $engagement,
                 'duree' => $duree,
-                'savoir etre' => $savoir,
-                'commentaire' => ''
+                'savoir_etre' => $savoir
+                
                 );
                 break;
             }

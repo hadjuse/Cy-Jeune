@@ -7,13 +7,15 @@
     $nom = $_POST['nom'];
     $date_naissance = $_POST['date_naissance'];
     $mail = $_POST['mail'];
-    $mdp = $_POST['mdp'];
+    //$mdp = $_POST['mdp'];
     $reseau = $_POST['reseau'];
-
+    
+    //cryptage du mot de passe 
+    $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
     // Charger le contenu actuel du fichier JSON
     $json = file_get_contents('utilisateurs.json');
     $data = json_decode($json, true);
-
+    
     // Récupérer le tableau des utilisateurs
     $utilisateurs = $data['utilisateurs'];
 
