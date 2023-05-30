@@ -59,7 +59,7 @@
         // Écrire le JSON dans un fichier
         file_put_contents('utilisateurs.json', $json);
 }
-    header("Location: ../pagereferent.php");
+    header("Location: ../recap.php");
     exit;
 ?>
 
