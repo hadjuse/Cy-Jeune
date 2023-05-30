@@ -38,10 +38,11 @@
                 'mail' => $mail_referant,
                 'reseau' => $reseau,
                 'date_naissance' => $naissance_referant,
+                'commentaire' => '',
                 'engagement' => $engagement,
                 'duree' => $duree,
-                'savoir etre' => $savoir,
-                'commentaire' => ''
+                'savoir etre' => $savoir
+                
                 );
                 break;
             }
