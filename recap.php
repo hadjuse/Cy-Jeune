@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engagement</title>
 </head>
-<link rel="stylesheet" href="css/pagereferent.css">
+<link rel="stylesheet" href="css/recap.css">
 
     <script>
         function referent(u,r){
@@ -77,6 +77,7 @@
             <!-- corps de la page avec les informations -->
             <?php
                 session_start();
+                echo" <div id=referents> Nom du référent :<br>";
                 $json = file_get_contents('php/utilisateurs.json');
                 $data = json_decode($json, true);
                 $utilisateurs = $data['utilisateurs'];
@@ -87,8 +88,13 @@
                    }   
                 }
                 }
-                
-            ?>
+                echo"</div>";   
+    if ($_SESSION['connexion'] == 'visiteur'){
+        header('Location: inscription.html');
+        exit;
+    
+    }
+?>
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
                     <form action="php/referent.php" method="post" >
@@ -96,24 +102,24 @@
                             <div id="commentaire"><table id="tableaucom">
                                 
                                 <tr class="head"><td><label for="commentaires" >COMMENTAIRES</label></td></tr>
-                                <tr ><td><textarea value="t1" name="commentaires" id="commentaires" class="body" required ></textarea></td></tr>
+                                <tr ><td><textarea disabled value="t1" name="commentaires" id="commentaires" class="body" required ></textarea></td></tr>
                             </table>
                             </div>
                             <div id="profil"><table >
                                 <tr><td><label for="nom" class="head">NOM :</label>
-                                <input value="" type="text" name="nom" id="nom" required class="body"></input></td></tr>
+                                <input disabled value="" type="text" name="nom" id="nom" required class="body"></input></td></tr>
                                 <tr><td><label for="prenom" class="head">PRENOM :</label>
-                                <input value="" type="text" name="prenom" id="prenom" required class="body"></input></td></tr>
+                                <input disabled value="" type="text" name="prenom" id="prenom" required class="body"></input></td></tr>
                                 <tr><td><label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
-                                <input value="" type="date" name="dateNaissance" id="dateNaissance" required class="body"></input></td></tr>
+                                <input disabled value="" type="date" name="dateNaissance" id="dateNaissance" required class="body"></input></td></tr>
                                 <tr><td><label for="mail" class="head">MAIL :</label>
-                                <input value="" type="mail" name="mail" id="mail" required class="body"></input></td></tr>
+                                <input disabled value="" type="mail" name="mail" id="mail" required class="body"></input></td></tr>
                                 <tr><td><label for="reseau" class="head">Réseau social :</label>
-                                <input value="" type="text" name="reseau" id="reseau" required class="body"></input></td></tr>
+                                <input disabled value="" type="text" name="reseau" id="reseau" required class="body"></input></td></tr>
                                 <tr><td><label for="presentation" class="head">Presentation :</label>
-                                <input value="" type="text" name="presentation" id="presentation" required class="body"></input></td></tr>
+                                <input disabled value="" type="text" name="presentation" id="presentation" required class="body"></input></td></tr>
                                 <tr><td><label for="duree" class="head">Durée :</label>
-                                <input value="" type="text" name="duree" id="duree" required class="body"></input></td></tr>
+                                <input disabled value="" type="text" name="duree" id="duree" required class="body"></input></td></tr>
                             </table>
                             </div>
                             <div id="savoiretre"><table>
@@ -122,22 +128,21 @@
                                     <tr id="jesuis"><td>je confirme qu'il est*</td></tr>
                                     <tr id="choix"><td>
                                         <div id="Dchoix1">
-                                            <input id="input1" type="checkbox" value="" name="savoir[]">
+                                            <input id="input1" type="checkbox" value="" name="savoir[]" disabled>
                                         <label  id="choix1" for="choix1">f </label>
                                         </div><div id="Dchoix2">
-                                            <input id="input2" type="checkbox" value="" name="savoir[]">
+                                            <input id="input2" type="checkbox" value="" name="savoir[]" disabled>
                                         <label id="choix2" for="choix2">f </label>
                                         </div><div id="Dchoix3">
-                                            <input id="input3" type="checkbox" value="" name="savoir[]">
+                                            <input id="input3" type="checkbox" value="" name="savoir[]" disabled>
                                         <label id="choix3" for="choix3">f </label>
                                         </div><div id="Dchoix4">
-                                            <input id="input4" type="checkbox" value="" name="savoir[]">
+                                            <input id="input4" type="checkbox" value="" name="savoir[]" disabled>
                                         <label id="choix4" for="choix4">f </label>
                                         </div>
                                 </table>
                             </div>     
                         </div>                  
-                        <button type="submit" name="submit" id="submit" class="btn-grad2">Confirmez la demande</button>
                     </form>
             </div>
 
