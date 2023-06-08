@@ -17,23 +17,23 @@ function verif_mail() {
     var utilisateurs = data['utilisateurs'];
     var mail = document.getElementById("mail").value;
     if(utilisateurs == null ){
-      alert('null');
       return true;
     }
     else {
-      utilisateurs.foreach(utilisateur => {
-      alert(mail);
-      if (utilisateur["mail"] == mail){
-        document.getElementById("mailfaux").value="email existe deja";
+      
+      for(var i = 0 ; i < utilisateurs.length ;i++ ){
+      if (utilisateurs[i]["mail"] == mail){
+        alert('faux');
+      document.getElementById("mailfaux").value="email existe deja";
         return false;
       }
-      })
+      }
     }
-    alert("la");
     return true;
   })
 }
   </script>
+
 
 <body>
     <! banderole avec le nom de la page que la quelle on se situe>
@@ -42,7 +42,7 @@ function verif_mail() {
             <b>Inscription</b>
         </div>
             <div class="corps">
-                <form action="php/inscription.php" method="post" id="form-inscription" onSubmit="return verif_mail();">
+                <form action="php/inscription.php" method="post" id="form-inscription" >
                     <label for="prenom" class="left">Prénom: </label>
                     <input type="text" name="prenom" id="prenom" placeholder="" size="40" maxlength="30" required /><br>
                     <label for="nom" class="left">Nom:</label>
@@ -63,12 +63,11 @@ function verif_mail() {
                             <option value="LinkedIn">LinkedIn</option>
                         </optgroup>
                     </select><br>
-                    <button type="submit" name="submit" id="submit" 
+                    <button type="submit" name="submit" id="submit"
                         class="btn-grad">Inscription</button>
                     <button type="button" name="connexion" id="connexion" onclick="document.location.href='connexion.html'" class="btn-grad">Connexion</button>
                 </form>
                 </div>
-        <div id="mailfaux"></div>
 </body>
 </body>
 

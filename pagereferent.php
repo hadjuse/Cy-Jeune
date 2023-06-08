@@ -92,7 +92,7 @@
         <!-- onglet de navigation entre les differentes pages -->
             <div id="navigation">
                 <a href="php/Jeune.php" id="jeunes">JEUNES</a>
-                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="pagereferent.php" id="referent">RÉFÉRENT</a>
                 <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
@@ -108,7 +108,7 @@
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
                     <form action="php/referent.php" method="post" >
-                        <div id="description">
+                        <div class="description">
                             <div id="commentaire"><table id="tableaucom">
                                 
                                 <tr class="head"><td><label for="commentaires" >COMMENTAIRES</label></td></tr>

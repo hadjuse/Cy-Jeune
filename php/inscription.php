@@ -32,7 +32,6 @@
     // Récupérer le tableau des utilisateurs
     $utilisateurs = $data['utilisateurs'];
    //Voir si l'existe deja un utilisateur 
-
    if ( isset ($utilisateurs)){
       $indice = count($utilisateurs);
    }
