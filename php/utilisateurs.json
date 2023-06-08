@@ -146,6 +146,34 @@
             "mdp": "$2y$10$aJI4e3YiUnwYnaGeAogM6ugRHDFsRb6Q4uBqo0mcGxD9llvq\/bgzK",
             "reseau": "Facebook",
             "referent": []
+        },
+        {
+            "indice": 6,
+            "prenom": "Z",
+            "nom": "B",
+            "date_naissance": "2007-07-22",
+            "mail": "ddzdz@gmail.com",
+            "mdp": "$2y$10$87X5Zpjln74nrkm.XoUElu37TA.3oSQgt0q\/HdQA.Ij5GSV9oDCLG",
+            "reseau": "Facebook",
+            "referent": [
+                {
+                    "indice": 0,
+                    "nom": "theo",
+                    "prenom": "fortier",
+                    "mail": "theo@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "flavio mario",
+                    "duree": "apagnan ann\u00e9e",
+                    "savoir_etre": [
+                        "Autonome",
+                        "R\u00e9fl\u00e9chi",
+                        "A l'\u00e9coute",
+                        "Organis\u00e9"
+                    ]
+                }
+            ]
         }
     ]
 }
