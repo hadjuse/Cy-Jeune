@@ -145,6 +145,22 @@ body{
     margin-left: 40vw;
     margin-top: 2vw;
   }
+  
+  .btn-grad {
+    background-image: linear-gradient(to right, #e57676 0%, #d11a1a  51%, #e57676  100%);
+    padding: 1vW 3vw;
+    width: 20vw;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-left: 40vw;
+    margin-top: 2vw;
+  }
 
   .btn-grad2:hover {
     background-position: right center; /* change the direction of the change here */
