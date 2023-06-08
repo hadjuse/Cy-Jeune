@@ -58,8 +58,17 @@
 
         // Écrire le JSON dans un fichier
         file_put_contents('utilisateurs.json', $json);
-}
-    header("Location: ../recap.php");
-    exit;
+    }
+    // Les valeurs des variables
+    $idjeune = $_SESSION['indice'];
+    $idreferent = $indice;
+
+    // Construction de l'URL avec les paramètres
+    $url = "../pagereferent.php?jeune=" . urlencode($idjeune) . "&referent=" . urlencode($idreferent);
+
+    // Redirection vers la page de destination
+    header("Location: " . $url);
+    //header("Location: ../recap.php");
+    exit; // Assure que le script se termine ici
 ?>
 
