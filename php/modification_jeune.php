@@ -1,4 +1,5 @@
 <?php
+    session_destroy();
     session_start();
     if (isset($_POST['submit'])) {
 
@@ -19,21 +20,34 @@
         $utilisateurs = &$data['utilisateurs']; // On utilise une affectation par reference grâce au & qui modifie directement la table de hachage.
         foreach($utilisateurs as &$utilisateur){
             if ($_SESSION['mail'] == $utilisateur['mail']){
-                $utilisateur['engagement'][] = $engagement;
-                $utilisateur['duree'][] = $duree;
-                $utilisateur['referent']['nom'][] = $nom_referant;
-                $utilisateur['referent']['prenom'][] = $prenom_referant;
-                $utilisateur['referent']['mail'][] = $mail_referant;
-                $utilisateur['referent']['reseau'][] = $reseau;
-                $utilisateur['referent']['date_naissance'][] = $naissance_referant;
+                if ( isset ($utilisateur['referent'])){
+                    $indice = count($utilisateur['referent']);
+                 }
+                 else {
+                    $indice = 0;
+                 }
                 if (isset($savoir_etre)) {
-                    $utilisateur['savoir_etre'][] = $savoir_etre;   
+                    $savoir = $savoir_etre;   
                 }
                 else{
-                    $utilisateur['savoir_etre'][] = [];
+                    $savoir = [];
                 }
+                $utilisateur['referent'][] = array( 
+                'indice' => $indice,
+                'nom' => $nom_referant,
+                'prenom' => $prenom_referant,
+                'mail' => $mail_referant,
+                'reseau' => $reseau,
+                'date_naissance' => $naissance_referant,
+                'commentaire' => '',
+                'engagement' => $engagement,
+                'duree' => $duree,
+                'savoir_etre' => $savoir
+                
+                );
                 break;
             }
+        
         }
 
         // Mettre à jour le tableau des utilisateurs dans le tableau complet
@@ -45,7 +59,7 @@
         // Écrire le JSON dans un fichier
         file_put_contents('utilisateurs.json', $json);
 }
-    header("Location: recap.php");
+    header("Location: ../recap.php");
     exit;
 ?>
 

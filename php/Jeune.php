@@ -20,7 +20,7 @@
 
 <!--banderole avec le nom de la page que la quelle on se situe-->
         <div id="banderole">
-            <a href="../page0.php"><img src="../image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+            <a href="../pageengagement.php"><img src="../image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
             <b id="Jeune">JEUNE</b>
             <b id="hautpage">Je donne de la valeur à mon engagement</b>
         </div>
@@ -28,7 +28,7 @@
         <!--onglet de navigation entre les differentes pages-->
             <div id="navigation">
                 <a href="../php/Jeune.php" id="jeunes">JEUNES</a>
-                <a href="../pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="../recap.php" id="referent">RÉFÉRENT</a>
                 <a href="../pageconsultant.html" id="consultant">CONSULTANT</a>
                 <a href="../pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>

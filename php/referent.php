@@ -24,16 +24,20 @@ if (isset($_POST['submit'])){
   // Récupérer le tableau des jeunes
   $utilisateurs = $data['utilisateurs'];
   $utilisateur = $utilisateurs[0];
+  $indice = $utilisateur['referent'][0]["indice"];
 
-  $utilisateur['referent']['prenom'][0] = $prenom;
-  $utilisateur['referent']['nom'][0] = $nom;
-  $utilisateur['referent']['date_naissance'][0] = $date_naissance;
-  $utilisateur['referent']['mail'][0] = $mail;
-  $utilisateur['referent']['reseau'][0] = $reseau;
-  $utilisateur['duree'][0] = $duree;
-  $utilisateur['referent']['commentaires'][0] = $commentaires;
-  $utilisateur['savoir_etre'][0] = $savoir_etre;
-  $utilisateur['engagement'][0] = $engagement;
+  $utilisateur['referent'][0] = array( 
+    'indice' => $indice,
+    'nom' => $nom,
+    'prenom' => $prenom,
+    'mail' => $mail,
+    'reseau' => $reseau,
+    'date_naissance' => $date_naissance,
+    'commentaire' => $commentaires,
+    'duree' =>  $duree,
+    'engagement'=> $engagement,
+    'savoir_etre' => $savoir_etre,
+    );
   // Convertir le tableau associatif en JSON
   $utilisateurs[0] = $utilisateur;
   $data['utilisateurs'] = $utilisateurs;

@@ -36,23 +36,23 @@ body{
     color:#e6007e;
     text-decoration: none;
     margin-left: 4%;
-    padding: 1%;
+    padding: 0.5%;
 }
 #referent{
     color:rgb(19, 202, 19);
     text-decoration: none;
-    padding: 1%;
+    padding: 0.5%;
 }
 #consultant{
     color:rgb(34, 140, 186);
     text-decoration: none;
-    padding: 1%;
+    padding: 0.5%;
 }
 #partenaires{
     background-color: rgb(92, 104, 92);
     color:white;
     text-decoration: none;
-    padding: 1%;
+    padding: 0.5%;
 }
 /* Corps de la page*/
 #logo{

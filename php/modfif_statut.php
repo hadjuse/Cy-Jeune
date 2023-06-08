@@ -14,8 +14,9 @@
     // verifie si l'utilisateur existe et initialie une session et des cookie pour l'utilisateur
     $utilisateurs_trouve = false;
     foreach($utilisateurs as $utilisateur){
-        if ($mail === $utilisateur['mail'] && $mdp === $utilisateur['mdp']){
+        if ($mail === $utilisateur['mail'] && password_verify($mdp, $utilisateur['mdp'])){
             // on initialise les sessions dont on veut simplement afficher le temps de la visite
+            $_SESSION['indice'] = $utilisateur['indice'];
             $_SESSION['mail'] = $utilisateur['mail'];
             $_SESSION['nom'] = $utilisateur['nom'];
             $_SESSION['prenom'] = $utilisateur['prenom'];

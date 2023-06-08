@@ -7,18 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'inscription Jeune</title>
     <link rel="stylesheet" href="css/inscription.css">
-    <script src="javascript/inscription.js">
     </script>
 </head>
+<script>
+function verif_mail() {
+  fetch('php/utilisateurs.json')
+  .then(response => response.json())
+  .then(data => {
+    var utilisateurs = data['utilisateurs'];
+    var mail = document.getElementById("mail").value;
+    if(utilisateurs == null ){
+      return true;
+    }
+    else {
+      
+      for(var i = 0 ; i < utilisateurs.length ;i++ ){
+      if (utilisateurs[i]["mail"] == mail){
+        alert('faux');
+      document.getElementById("mailfaux").value="email existe deja";
+        return false;
+      }
+      }
+    }
+    return true;
+  })
+}
+  </script>
+
 
 <body>
     <! banderole avec le nom de la page que la quelle on se situe>
         <div id="banderole">
-            <a href="page0.php"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
+            <a href="pageengagement.php"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
             <b>Inscription</b>
         </div>
             <div class="corps">
-                <form action="php/inscription.php" method="post" id="form-inscription">
+                <form action="php/inscription.php" method="post" id="form-inscription" >
                     <label for="prenom" class="left">Prénom: </label>
                     <input type="text" name="prenom" id="prenom" placeholder="" size="40" maxlength="30" required /><br>
                     <label for="nom" class="left">Nom:</label>
@@ -39,12 +63,11 @@
                             <option value="LinkedIn">LinkedIn</option>
                         </optgroup>
                     </select><br>
-                    <button type="submit" name="submit" id="submit" onsubmit="verif_mail()"
+                    <button type="submit" name="submit" id="submit"
                         class="btn-grad">Inscription</button>
                     <button type="button" name="connexion" id="connexion" onclick="document.location.href='connexion.html'" class="btn-grad">Connexion</button>
                 </form>
                 </div>
-        
 </body>
 </body>
 
