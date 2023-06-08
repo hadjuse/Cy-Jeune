@@ -767,6 +767,16 @@
                     ]
                 }
             ]
+        },
+        {
+            "indice": 2,
+            "prenom": "Hadj",
+            "nom": "Rabearimanana",
+            "date_naissance": "2007-07-22",
+            "mail": "rabearimananahadj@gmail.com",
+            "mdp": "$2y$10$WzlBhD9CGBAwEXyZuQYQXOXJJ0wB2K16ud5sJhkIMt5bGXYgBWZeS",
+            "reseau": "Facebook",
+            "referent": []
         }
     ]
 }
