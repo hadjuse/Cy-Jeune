@@ -60,6 +60,8 @@
             document.getElementById("mail").value = mail;
             document.getElementById("reseau").value = reseau;
             document.getElementById("duree").value = duree;
+            document.getElementById("idjeune").value = idjeune;
+            document.getElementById("idreferent").value = idreferent;
             
             if( len < 4 ){
                 for (var j = 4; j > len; j--) {
@@ -152,16 +154,20 @@
                                         </div>
                                 </table>
                             </div>     
-                        </div>                  
-                        <button type="submit" name="submit" id="submit" class="btn-grad2">Confirmez la demande</button>
+                        </div>   
+                        <input id="idjeune" type="hidden" name="idjeune" value="">       
+                        <input id="idreferent" type="hidden" name="idreferent" value="">    
+                        <button type="submit" name="confirmer" id="submit" class="btn-grad2">Confirmer la demande</button>
+                        <button type="submit" name="refuser" id="submit" class="btn-grad">Refuser la demande</button>
                     </form>
+                    
             </div>
 
             </div>
                     
 </body>
 
-</html><form>
+</html>
 
   
   
