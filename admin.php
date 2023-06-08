@@ -50,7 +50,7 @@
         }
         
         //test
-        supprimer(0);
+        //supprimer(0);
     }
 ?>
 <!DOCTYPE html>
@@ -62,6 +62,9 @@
     <title>Adminstrateur</title>
 </head>
 <body>
-<div class="btn-grad2"><a href="php/deconnexion.php" id="nouv"><div class="white">Déconnexion</div></a></div>
+    <div id = "utilisateurs"></div>
+    <script src="javascript/admin.js"></script>
+    <div class="btn-grad2"><a href="php/deconnexion.php" id="nouv"><div class="white">Déconnexion</div></a></div>
+    
 </body>
 </html>
