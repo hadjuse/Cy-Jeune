@@ -71,20 +71,20 @@ body{
     text-align: center;
 }
 
-#description{
+.description{
     margin-left: 2vw;
     justify-content: space-between;
     display: flex;
 }
 
-#description #commentaire .head{
+.description #commentaire .head{
     background: linear-gradient(0.25turn, #c5d40e,#dde576);
     color: white;
     text-align: center;
     font-size: 1.2em;
 }
 
-#description #commentaire .body{
+.description #commentaire .body{
     border: none;
     background: linear-gradient(0.25turn, #c5d40e,#dde576);
     color: #2a248b;
@@ -97,7 +97,7 @@ body{
 }
 
 
-#description #profil{
+.description #profil{
     margin-left: -5vw;
     background-color: white;
     border:#dde576 solid 2px;
@@ -110,7 +110,7 @@ body{
 
 }
 
-#description #profil input{
+.description #profil input{
     width: 50%;
     border: none;
     border-bottom: #dde576 dotted 2px;
@@ -118,10 +118,10 @@ body{
     color: #2a248b;
 }
 
-#description #profil [type="date"] {
-    width: 25%;
+.description #profil [type="date"] {
+    width: 10vw;
 }
-#description #commentaire1{
+.description #commentaire1{
     display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -174,3 +174,5 @@ body{
 #savoiretre{
     margin-right: 3vw;
 }
+
+

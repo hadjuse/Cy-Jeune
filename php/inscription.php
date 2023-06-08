@@ -32,7 +32,11 @@
     // Récupérer le tableau des utilisateurs
     $utilisateurs = $data['utilisateurs'];
    //Voir si l'existe deja un utilisateur 
-
+    foreach ( $utilisateurs => {
+      if ($utilisateurs['mail'] == $mail){
+        echo "<div id='mailfaux'>email deja utilisé<div>";
+      }
+    })
    if ( isset ($utilisateurs)){
       $indice = count($utilisateurs);
    }
