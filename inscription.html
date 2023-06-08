@@ -7,9 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'inscription Jeune</title>
     <link rel="stylesheet" href="css/inscription.css">
-    <script src="javascript/inscription.js">
     </script>
 </head>
+<script>
+function verif_mail() {
+    fetch('php/utilisateurs.json')
+    .then(response => response.json())
+    .then(data => {
+      var utilisateurs = data['utilisateurs'];
+      var mail = document.getElementById("mail").value;
+      alert(mail);
+      if(utilisateurs == null ){
+        alert('null');
+        return true;
+      }
+      else {
+        utilisateurs.foreach(utilisateur => {
+        alert(mail,"la");
+        if (utilisateur["mail"] == mail){
+          document.getElementById("mailfaux").value="email existe deja";
+          return false;
+        }
+        })
+      }
+      alert("la");
+      return true;
+    })
+  }
+  </script>
 
 <body>
     <! banderole avec le nom de la page que la quelle on se situe>
@@ -18,7 +43,7 @@
             <b>Inscription</b>
         </div>
             <div class="corps">
-                <form action="php/inscription.php" method="post" id="form-inscription">
+                <form action="php/inscription.php" method="post" id="form-inscription" onsubmit="return verif_mail()">
                     <label for="prenom" class="left">Prénom: </label>
                     <input type="text" name="prenom" id="prenom" placeholder="" size="40" maxlength="30" required /><br>
                     <label for="nom" class="left">Nom:</label>
@@ -39,7 +64,7 @@
                             <option value="LinkedIn">LinkedIn</option>
                         </optgroup>
                     </select><br>
-                    <button type="submit" name="submit" id="submit" onsubmit="verif_mail()"
+                    <button type="submit" name="submit" id="submit"
                         class="btn-grad">Inscription</button>
                     <button type="button" name="connexion" id="connexion" onclick="document.location.href='connexion.html'" class="btn-grad">Connexion</button>
                 </form>
