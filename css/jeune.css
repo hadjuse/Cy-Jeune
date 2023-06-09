@@ -13,14 +13,14 @@
     color: #e6007e;
     font-size:6em;
     text-decoration: none;
-    margin-left: 65vw;
+    margin-left: 63vw;
     position: absolute;  
 }
 #hautpage{
     color: white;
     margin-top: 3em;
     margin-left: 46vw;
-    font-size:2em;
+    font-size:1.8em;
     text-decoration: none;
 }
 /* volet de navigation*/
@@ -117,6 +117,7 @@ h1 {
 }
          
 .btn-grad {
+    margin-top: 0.5vw;
     background-image: linear-gradient(to right, #e6007e 0%, #61045F  51%, #e6007e  100%);
     padding: 1vW 3vw;
     text-align: center;
