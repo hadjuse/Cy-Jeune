@@ -96,8 +96,15 @@ margin-top: 5px;}
 .ref{color: rgb(159, 199, 99);
     font-size: 30px;
     margin-top: 5px;}
-.bordure{border-color: rgb(253, 107, 219) ;}
-.bordure2{border-color: greenyellow;}
+.bordure{
+    border: rgb(253, 107, 219) solid 3px ;
+    border-radius: 7px;
+    background-color: white;
+}
+.bordure2{
+    border: greenyellow solid 3px;
+    border-radius: 7px;
+    background-color: white;}
 .form1{width: 740px; height: 700px;}
 .arth{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
 .mart{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}

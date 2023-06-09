@@ -100,7 +100,7 @@
     }
     echo '<script> referent('.$_SESSION["indice"].',0) </script>';
     
-    }
+    
     if ($utilisateurs[$_SESSION['indice']]['referent'] == NULL){
         header('Location: inscription.html');
         exit;
