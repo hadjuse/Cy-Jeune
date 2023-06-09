@@ -6,6 +6,19 @@
             "nom": "Martins soares",
             "date_naissance": "2007-07-22",
             "mail": "soares.flavio2002@gmail.com",
+<<<<<<< HEAD
+            "mdp": "$2y$10$NGXbssNRl.CgWguKRoSGGODksfMTjGO2r3pyue8Jzn3m3Qyj7Al.G",
+            "reseau": "Fa",
+            "referent": []
+        },
+        {
+            "indice": 1,
+            "prenom": "flavio",
+            "nom": "Martins soares",
+            "date_naissance": "2007-07-22",
+            "mail": "aaaaa@a.com",
+            "mdp": "$2y$10$OOHtIcEkxeeAZOMN\/\/ND7.bIlYLls\/TbCaHstWsqexakJI3ZsH2j2",
+=======
             "mdp": "$2y$10$mSnokBUeBsYhNiSn78jYD.mMorfLuB.ghQzp\/eRg4QZpcNObVo9N2",
             "reseau": "Facebook",
             "referent": []
@@ -57,6 +70,7 @@
             "date_naissance": "2007-07-22",
             "mail": "bezrzr@gmil.com",
             "mdp": "$2y$10$g4iHTV\/v.qEYl6MUtWFLlu6\/\/sHJcnOpfbDqpx5t8BoY2T1bi9IjS",
+>>>>>>> main
             "reseau": "Facebook",
             "referent": []
         }

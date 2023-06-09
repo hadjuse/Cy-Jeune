@@ -60,7 +60,8 @@
                 ?>    
             </div>  
         </p>
-    <div class="btn-grad"><a href="../pageJeune.html" id="nouv"><div class="white">Cliquez ici pour ajouter une nouvelle demande</div></a></div>
+    <div class="btn-grad"><a href="../php/modif_profil.php" id="nouv"><div class="white">modifier ton profil</div></a></div>
+    <div class="btn-grad"><a href="../pageJeune.html" id="nouv"><div class="white">Cliquez ici pour ajouter une nouvelle demande de référent</div></a></div>
     </div>            
 </body>
 </html>

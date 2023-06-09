@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engagement</title>
+    <link rel="stylesheet" href="css/recap.css">
+    <title>recapitulatif</title>
 </head>
-<link rel="stylesheet" href="css/recap.css">
+
 
     <script>
         function referent(u,r){
@@ -70,7 +71,7 @@
         <!-- onglet de navigation entre les differentes pages -->
             <div id="navigation">
                 <a href="php/Jeune.php" id="jeunes">JEUNES</a>
-                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="recap.php" id="referent">RÉFÉRENT</a>
                 <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
@@ -99,6 +100,11 @@
     }
     echo '<script> referent('.$_SESSION["indice"].',0) </script>';
     
+    }
+    if ($utilisateurs[$_SESSION['indice']]['referent'] == NULL){
+        header('Location: inscription.html');
+        exit;
+    }
 ?>
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
