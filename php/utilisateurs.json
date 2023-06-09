@@ -1,0 +1,280 @@
+<<<<<<< HEAD
+=======
+{
+    "utilisateurs": [
+        {
+            "indice": 0,
+            "prenom": "flavio",
+            "nom": "Martins soares",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$mSnokBUeBsYhNiSn78jYD.mMorfLuB.ghQzp\/eRg4QZpcNObVo9N2",
+            "reseau": "Facebook",
+            "referent": [
+                {
+                    "indice": 0,
+                    "nom": "b",
+                    "prenom": "b",
+                    "mail": "b@gmail.com",
+                    "reseau": "b",
+                    "date_naissance": "2010-02-01",
+                    "commentaire": "a",
+                    "duree": "b",
+                    "engagement": "b",
+                    "savoir_etre": [
+                        ""
+                    ]
+                }
+            ]
+        },
+        {
+            "indice": 1,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$htqHhqYFemPem40wnW7Y0uHWDKBHLhkHwytOhgGBL3U9URMbLWI0.",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 2,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$A0md037bFUgmyzEe0sLIN.razO\/ekUvxi9ZyurBJFBW0rJacRvyQu",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 3,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$2j3szTXQ19zwjWBj1w3XEOgNExP9.6Q7S\/3FVS1UeJ553vpGC0pCG",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 4,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$ymj3AenT0Wc8jMyPEJ2N1uovkDwD\/VwJir9242NI1nw2ehOTJE1VS",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 5,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$O2qPTzCZkNoAK0pg\/qInWOtWthetW.CGRG3pLn3AIFmefBcomzQxu",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 6,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$UVwHqw7TLRz6fLJBBZ2gX.xBxNX1LBXX0nGfi6hlkP\/LQefV4t0k2",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 7,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$m7xRSm.ltrGgT2jdaJAjlemO5RpHx8gBETrLUkagevudUqudPtGP2",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 8,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$J.VkVQG7ROZ.9\/2P7es0fuiT.jdRhSEvbm0BHcH6OFFGjEuEEfkom",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 9,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$uK5QGmaS9xkU2aVi3yZbJO2laP\/kCY2zGGL4SY3a7d8EgSmiAcbl6",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 10,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$Z6t2siGXEuQ7dFB8MKElweMa0JsZMQFJKDK36Eo5aafBNfb0qRicu",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 11,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$j.vJljUXrsYqp3Y5JHiiLOVu5Ce4uQQXapC5SIG\/XTzVVZECZuL16",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 12,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARE",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$aJI4e3YiUnwYnaGeAogM6ugRHDFsRb6Q4uBqo0mcGxD9llvq\/bgzK",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 6,
+            "prenom": "Z",
+            "nom": "B",
+            "date_naissance": "2007-07-22",
+            "mail": "ddzdz@gmail.com",
+            "mdp": "$2y$10$87X5Zpjln74nrkm.XoUElu37TA.3oSQgt0q\/HdQA.Ij5GSV9oDCLG",
+            "reseau": "Facebook",
+            "referent": [
+                {
+                    "indice": 0,
+                    "nom": "theo",
+                    "prenom": "fortier",
+                    "mail": "theo@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "flavio mario",
+                    "duree": "apagnan ann\u00e9e",
+                    "savoir_etre": [
+                        "Autonome",
+                        "R\u00e9fl\u00e9chi",
+                        "A l'\u00e9coute",
+                        "Organis\u00e9"
+                    ]
+                }
+            ]
+        },
+        {
+            "indice": 7,
+            "prenom": "Zinedine",
+            "nom": "BENZOUA",
+            "date_naissance": "2007-07-22",
+            "mail": "zinedinebenzoua@gmail.com",
+            "mdp": "$2y$10$RLarCOLbR7XkI6\/C.DrWve9SEiIoo7Dala9kpEEWbt.VBO8DFZSqy",
+            "reseau": "Facebook",
+            "referent": [
+                {
+                    "indice": 0,
+                    "nom": "Fortier",
+                    "prenom": "Theo",
+                    "mail": "t.fortier901@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "Flop",
+                    "duree": "2ans",
+                    "savoir_etre": []
+                },
+                {
+                    "indice": 1,
+                    "nom": "a",
+                    "prenom": "b",
+                    "mail": "t.fortier901@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "oi",
+                    "duree": "8ans",
+                    "savoir_etre": []
+                },
+                {
+                    "indice": 2,
+                    "nom": "a",
+                    "prenom": "a",
+                    "mail": "t.fortier901@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "a",
+                    "duree": "a",
+                    "savoir_etre": []
+                },
+                {
+                    "indice": 3,
+                    "nom": "a",
+                    "prenom": "a",
+                    "mail": "t.fortier901@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "a",
+                    "duree": "a",
+                    "savoir_etre": [
+                        "Autonome",
+                        "Passion\u00e9",
+                        "A l'\u00e9coute",
+                        "Organis\u00e9"
+                    ]
+                },
+                {
+                    "indice": 4,
+                    "nom": "a",
+                    "prenom": "a",
+                    "mail": "zinedinebenzoua@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "a",
+                    "duree": "a",
+                    "savoir_etre": [
+                        "Passion\u00e9"
+                    ]
+                },
+                {
+                    "indice": 5,
+                    "nom": "b",
+                    "prenom": "b",
+                    "mail": "mrglutch@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "",
+                    "engagement": "a",
+                    "duree": "a",
+                    "savoir_etre": []
+                }
+            ]
+        },
+        {
+            "indice": 8,
+            "prenom": "a",
+            "nom": "b",
+            "date_naissance": "2007-07-22",
+            "mail": "a@gmail.com",
+            "mdp": "$2y$10$L9EGfXP8PlWNraMrqd2BMOO0R4ktOJjPRaDKseoMcND8OpP.RwrSG",
+            "reseau": "Facebook",
+            "referent": []
+        }
+    ]
+}
+>>>>>>> Zizou
