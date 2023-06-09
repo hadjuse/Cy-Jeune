@@ -19,20 +19,37 @@
 ?>
 
     <script>
+        // Fonction pour récupérer les paramètres de requête depuis l'URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Récupération des paramètres de requête
+        var idjeune = getParameterByName('jeune');
+        var idreferent = getParameterByName('referent');
+        // Récupérer les paramètres de l'URL
+        const params = new URLSearchParams(window.location.search);
+                 
         // Charger le fichier JSON
         fetch('php/utilisateurs.json')
           .then(response => response.json())
           .then(data => {
 
             // Extraire la valeur souhaitée du fichier JSON
-            var prenom = data['utilisateurs'][0]['referent'][0]['prenom'];
-            var nom = data['utilisateurs'][0]['referent'][0]['nom'];
-            var dateNaissance = data['utilisateurs'][0]['referent'][0]['date_naissance'];
-            var presentation = data['utilisateurs'][0]['referent'][0]['engagement'];
-            var mail = data['utilisateurs'][0]['referent'][0]['mail'];
-            var reseau = data['utilisateurs'][0]['referent'][0]['reseau'];
-            var duree = data['utilisateurs'][0]['referent'][0]['duree'];
-            var savoiretre = data['utilisateurs'][0]['referent'][0]['savoir_etre'];
+            var prenom = data['utilisateurs'][idjeune]['referent'][idreferent]['prenom'];
+            var nom = data['utilisateurs'][idjeune]['referent'][idreferent]['nom'];
+            var dateNaissance = data['utilisateurs'][idjeune]['referent'][idreferent]['date_naissance'];
+            var presentation = data['utilisateurs'][idjeune]['referent'][idreferent]['engagement'];
+            var mail = data['utilisateurs'][idjeune]['referent'][idreferent]['mail'];
+            var reseau = data['utilisateurs'][idjeune]['referent'][idreferent]['reseau'];
+            var duree = data['utilisateurs'][idjeune]['referent'][idreferent]['duree'];
+            var savoiretre = data['utilisateurs'][idjeune]['referent'][idreferent]['savoir_etre'];
             var len = savoiretre.length;
 
             // Mettre à jour la valeur de l'input
@@ -43,6 +60,8 @@
             document.getElementById("mail").value = mail;
             document.getElementById("reseau").value = reseau;
             document.getElementById("duree").value = duree;
+            document.getElementById("idjeune").value = idjeune;
+            document.getElementById("idreferent").value = idreferent;
             
             if( len < 4 ){
                 for (var j = 4; j > len; j--) {
@@ -75,7 +94,7 @@
         <!-- onglet de navigation entre les differentes pages -->
             <div id="navigation">
                 <a href="php/Jeune.php" id="jeunes">JEUNES</a>
-                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="pagereferent.php" id="referent">RÉFÉRENT</a>
                 <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
@@ -91,7 +110,7 @@
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
                     <form action="php/referent.php" method="post" >
-                        <div id="description">
+                        <div class="description">
                             <div id="commentaire"><table id="tableaucom">
                                 
                                 <tr class="head"><td><label for="commentaires" >COMMENTAIRES</label></td></tr>
@@ -135,16 +154,20 @@
                                         </div>
                                 </table>
                             </div>     
-                        </div>                  
-                        <button type="submit" name="submit" id="submit" class="btn-grad2">Confirmez la demande</button>
+                        </div>   
+                        <input id="idjeune" type="hidden" name="idjeune" value="">       
+                        <input id="idreferent" type="hidden" name="idreferent" value="">    
+                        <button type="submit" name="confirmer" id="submit" class="btn-grad2">Confirmer la demande</button>
+                        <button type="submit" name="refuser" id="submit" class="btn-grad">Refuser la demande</button>
                     </form>
+                    
             </div>
 
             </div>
                     
 </body>
 
-</html><form>
+</html>
 
   
   

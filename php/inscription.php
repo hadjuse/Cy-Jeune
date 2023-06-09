@@ -1,3 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'inscription Jeune</title>
+    <link rel="stylesheet" href="css/inscription.css">
+    <script src="javascript/inscription.js">
+    </script>
+</head>
 <?php
   session_start();
   if (isset($_POST['submit'])){
@@ -18,16 +31,13 @@
     
     // Récupérer le tableau des utilisateurs
     $utilisateurs = $data['utilisateurs'];
-
-    // On vérifie maintenant si le mail entré par l'utilisateur existe déjà dans la base de données ou pas.
-    foreach ($utilisateurs as $utilisateur){
-      if ($utilisateur["mail"] == $mail){
-        echo "Le mail existe déjà";
+   //Voir si l'existe deja un utilisateur 
+    foreach ( $utilisateurs as $utilisateur) {
+      if ($utilisateur['mail'] == $mail){
+        header("Location: ../inscription.html");
         exit;
       }
     }
-   //Voir si l'existe deja un utilisateur 
-
    if ( isset ($utilisateurs)){
       $indice = count($utilisateurs);
    }
