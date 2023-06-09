@@ -92,8 +92,13 @@
     if ($_SESSION['connexion'] == 'visiteur'){
         header('Location: inscription.html');
         exit;
-    
     }
+    if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
+        header('Location: php/jeune.php');
+        exit;
+    }
+    echo '<script> referent('.$_SESSION["indice"].',0) </script>';
+    
 ?>
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
@@ -129,16 +134,16 @@
                                     <tr id="choix"><td>
                                         <div id="Dchoix1">
                                             <input id="input1" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label  id="choix1" for="choix1">f </label>
+                                        <label  id="choix1" for="choix1"> </label>
                                         </div><div id="Dchoix2">
                                             <input id="input2" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label id="choix2" for="choix2">f </label>
+                                        <label id="choix2" for="choix2"> </label>
                                         </div><div id="Dchoix3">
                                             <input id="input3" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label id="choix3" for="choix3">f </label>
+                                        <label id="choix3" for="choix3"> </label>
                                         </div><div id="Dchoix4">
                                             <input id="input4" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label id="choix4" for="choix4">f </label>
+                                        <label id="choix4" for="choix4"> </label>
                                         </div>
                                 </table>
                             </div>     
