@@ -123,7 +123,7 @@
             </script>
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
-                    <form action="php/referent.php" method="post" >
+                    <form action="php/referent.php" method="POST" >
                         <div class="description">   
                             <div id="commentaire"><table id="tableaucom">   <!--Commentaire du referent-->
                                 
