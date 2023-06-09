@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+                         <!--Page ou arrive le référent-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -124,8 +124,8 @@
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
                     <form action="php/referent.php" method="post" >
-                        <div class="description">
-                            <div id="commentaire"><table id="tableaucom">
+                        <div class="description">   
+                            <div id="commentaire"><table id="tableaucom">   <!--Commentaire du referent-->
                                 
                                 <tr class="head"><td><label for="commentaires" >COMMENTAIRES</label></td></tr>
                                 <tr ><td><textarea value="t1" name="commentaires" id="commentaires" class="body" required ></textarea></td></tr>
@@ -166,7 +166,7 @@
                             </table>
                             </div>
                             <div id="savoiretre"><table>
-                                <tr class="savoir-etre"><td>SES SAVOIRS ETRE</td></tr>
+                                <tr class="savoir-etre"><td>SES SAVOIRS ETRE</td></tr>      <!--Tableau des savoirs etre-->
                                 
                                     <tr id="jesuis"><td>je confirme qu'il est*</td></tr>
                                     <tr id="choix"><td>
@@ -228,8 +228,7 @@
                     
             </div>
 
-            </div>
-                    
+            </div>                  
 </body>
 
 </html>

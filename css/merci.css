@@ -1,0 +1,86 @@
+body {
+    color: grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1vw;
+    background-image:url("../image/merci.png");
+    background-size: 40%;
+    background-position:center;
+    background-position-y: 250px;
+    background-repeat: no-repeat;
+    
+}
+/* banderole avec le nom de la page sur laquelle on est*/
+#banderole{
+    margin: -7px;
+    margin-bottom: 0px;
+    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, #d3d3d3 100%);
+    font-family:sans-serif;      
+}
+#banderole img{
+    width: 14em;    
+}
+
+#ref{
+    color: #2c2f56;
+    font-size:5em;
+    text-decoration: none;
+    margin-left: 62vw;
+    margin-top: 1vw;
+    position: absolute;  
+}
+#hautpage{
+    color: white;
+    margin-top: 2em;
+    margin-left: 44vw;
+    font-size:2em;
+    text-decoration: none;
+}
+/* volet de navigation*/
+#navigation{
+    background:radial-gradient( 150px at 150px ,white -30%, lightgrey);  
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.5em;
+    top:0%;
+}
+#jeunes{
+    color:#e6007e;
+    text-decoration: none;
+    margin-left: 4%;
+    padding: 1%;
+}
+#referent{
+    color:rgb(35, 164, 21);
+    text-decoration: none;
+    padding: 1%;
+}
+#consultant{
+    background-color: rgb(71, 124, 199);
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 1%;
+}
+#partenaires{
+    color:rgb(92, 104, 92);
+    text-decoration: none;
+    padding: 1%;
+}
+
+#merci{text-align: center;
+    color: rgba(51, 171, 252, 0.819) ;
+    font-size: 50;
+    margin-top: 13;
+}
+#Votre{text-align: center;
+    color: rgba(51, 171, 252, 0.819) ;
+    font-size: 35;
+    margin-top: 6vw;
+}
+#visiteur{
+    font-size: 27;
+    margin-left: 38vw;
+    bottom:10%;
+    position:absolute;
+}
