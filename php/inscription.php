@@ -34,7 +34,7 @@
    //Voir si l'existe deja un utilisateur 
     foreach ( $utilisateurs as $utilisateur) {
       if ($utilisateur['mail'] == $mail){
-        header("Location: ../inscription.html");
+        header("Location: ../inscription.html?erreur=" . urlencode(1));
         exit;
       }
     }
