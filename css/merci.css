@@ -68,7 +68,8 @@ body {
     padding: 1%;
 }
 
-#merci{text-align: center;
+#merci{
+    text-align: center;
     color: rgba(51, 171, 252, 0.819) ;
     font-size: 50;
     margin-top: 13;
@@ -80,7 +81,8 @@ body {
 }
 #visiteur{
     font-size: 27;
-    margin-left: 38vw;
+    margin-left: 41vw;
     bottom:10%;
     position:absolute;
+    text-align: center;
 }
