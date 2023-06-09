@@ -21,23 +21,7 @@ if (isset($_POST['submit'])){
   $idjeune = $_POST['idjeune'];
   $idreferent = $_POST['idreferent'];
   
-if (isset($_POST['confirmer'])){
-  $commentaires = $_POST['commentaires']."      Accepté";
-}
-elseif (isset($_POST['refuser'])){
-  $commentaires = $_POST['commentaires']."      Refusé";
-}
-
-
-  $savoir_etre = $_POST['savoir'];
-  if (isset($savoir_etre)) {
-    $savoir = $savoir_etre;   
-  }
-  else{
-    $savoir = [];
-  }
-
- // Paramètres de l'e-mail
+  // Paramètres de l'e-mail
  $expediteur = 'cyjeune6.4@laposte.net';
  $mot_de_passe = 'Flaviomarioluigi6.4';
  $sujet = '[JEUNE6.4] Nouvelle réponse de referencement';
@@ -70,6 +54,24 @@ elseif (isset($_POST['refuser'])){
  } catch (Exception $e) {
      echo "Une erreur s'est produite lors de l'envoi de l'e-mail : " . $mail->ErrorInfo;
  }
+ 
+if (isset($_POST['confirmer'])){
+  $commentaires = $_POST['commentaires']."      Accepté";
+}
+elseif (isset($_POST['refuser'])){
+  $commentaires = $_POST['commentaires']."      Refusé";
+}
+
+
+  $savoir_etre = $_POST['savoir'];
+  if (isset($savoir_etre)) {
+    $savoir = $savoir_etre;   
+  }
+  else{
+    $savoir = [];
+  }
+
+ 
 
   // Charger le contenu actuel du fichier JSON
   $json = file_get_contents('utilisateurs.json');
