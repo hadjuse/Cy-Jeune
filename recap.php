@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engagement</title>
+    <link rel="stylesheet" href="css/recap.css">
+    <title>recapitulatif</title>
 </head>
-<link rel="stylesheet" href="css/recap.css">
+
 
     <script>
         function referent(u,r){
@@ -70,7 +71,7 @@
         <!-- onglet de navigation entre les differentes pages -->
             <div id="navigation">
                 <a href="php/Jeune.php" id="jeunes">JEUNES</a>
-                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
+                <a href="recap.php" id="referent">RÉFÉRENT</a>
                 <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
@@ -92,7 +93,17 @@
     if ($_SESSION['connexion'] == 'visiteur'){
         header('Location: inscription.html');
         exit;
+    }
+    if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
+        header('Location: php/jeune.php');
+        exit;
+    }
+    echo '<script> referent('.$_SESSION["indice"].',0) </script>';
     
+    }
+    if ($utilisateurs[$_SESSION['indice']]['referent'] == NULL){
+        header('Location: inscription.html');
+        exit;
     }
 ?>
             <div id="contenu">
@@ -129,16 +140,16 @@
                                     <tr id="choix"><td>
                                         <div id="Dchoix1">
                                             <input id="input1" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label  id="choix1" for="choix1">f </label>
+                                        <label  id="choix1" for="choix1"> </label>
                                         </div><div id="Dchoix2">
                                             <input id="input2" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label id="choix2" for="choix2">f </label>
+                                        <label id="choix2" for="choix2"> </label>
                                         </div><div id="Dchoix3">
                                             <input id="input3" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label id="choix3" for="choix3">f </label>
+                                        <label id="choix3" for="choix3"> </label>
                                         </div><div id="Dchoix4">
                                             <input id="input4" type="checkbox" value="" name="savoir[]" disabled>
-                                        <label id="choix4" for="choix4">f </label>
+                                        <label id="choix4" for="choix4"> </label>
                                         </div>
                                 </table>
                             </div>     
