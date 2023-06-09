@@ -6,6 +6,7 @@
             "nom": "Martins soares",
             "date_naissance": "2007-07-22",
             "mail": "soares.flavio2002@gmail.com",
+<<<<<<< HEAD
             "mdp": "$2y$10$NGXbssNRl.CgWguKRoSGGODksfMTjGO2r3pyue8Jzn3m3Qyj7Al.G",
             "reseau": "Fa",
             "referent": []
@@ -17,6 +18,59 @@
             "date_naissance": "2007-07-22",
             "mail": "aaaaa@a.com",
             "mdp": "$2y$10$OOHtIcEkxeeAZOMN\/\/ND7.bIlYLls\/TbCaHstWsqexakJI3ZsH2j2",
+=======
+            "mdp": "$2y$10$mSnokBUeBsYhNiSn78jYD.mMorfLuB.ghQzp\/eRg4QZpcNObVo9N2",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 1,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$zRq3bQ.UI8NQrY9Pn.03lu.3Dv2yqyVblIcntaqJ.FWlASlMDEGPW",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 2,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$OunroRXLEra7HKg1B5TMcOjIvwURnax616gV.zgQhzFKvJcvhT0MW",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 3,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$hq\/xILHJpzgjqqoJfCat\/.V6mDd5YZzq.twV3eSEY.f8CnuOefufe",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 4,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARES",
+            "date_naissance": "2007-07-22",
+            "mail": "soares.flavio2002@gmail.com",
+            "mdp": "$2y$10$H63Xlt9ZVEZWNXDphkX4iudHuEtsSzRMbHUmL6\/mOScigrc3tr\/7m",
+            "reseau": "Facebook",
+            "referent": []
+        },
+        {
+            "indice": 5,
+            "prenom": "Flavio",
+            "nom": "MARTINS SOARE",
+            "date_naissance": "2007-07-22",
+            "mail": "bezrzr@gmil.com",
+            "mdp": "$2y$10$g4iHTV\/v.qEYl6MUtWFLlu6\/\/sHJcnOpfbDqpx5t8BoY2T1bi9IjS",
+>>>>>>> main
             "reseau": "Facebook",
             "referent": []
         }
