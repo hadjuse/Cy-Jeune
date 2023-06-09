@@ -1,4 +1,9 @@
 <?php
+    // Inclusion de PHPMailer
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+
+    //require 'php/vendor/autoload.php';
     session_destroy();
     session_start();
     if (isset($_POST['submit'])) {
@@ -12,6 +17,40 @@
         $reseau = $_POST['reseau'];
         $duree = $_POST['duree'];    
         $savoir_etre = $_POST['savoir'];
+
+        // Paramètres de l'e-mail
+        $expediteur = 'cyjeune6.4@laposte.net';
+        $mot_de_passe = 'Flaviomarioluigi6.4';
+        $sujet = 'Demande de';
+        $corps_message = 'Bonjour'.$url;
+
+        // Configuration de PHPMailer
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->SMTPDebug=2;
+        $mail->Host = 'smtp.laposte.net';
+        $mail->Port = 465;
+        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPAuth = true;
+        $mail->Username = $expediteur;
+        $mail->Password = $mot_de_passe;
+
+        // Destinataire et expéditeur
+        $mail->setFrom($expediteur);
+        $mail->addAddress($mail_referant);
+
+        // Contenu de l'e-mail
+        $mail->Subject = $sujet;
+        $mail->Body = $corps_message;
+    
+        try {
+        // Envoi de l'e-mail
+        //$mail->send();
+        echo "L'e-mail a été envoyé avec succès.";
+        } catch (Exception $e) {
+            echo "Une erreur s'est produite lors de l'envoi de l'e-mail : " . $mail->ErrorInfo;
+        }
+
 
         // Charger le contenu actuel du fichier JSON
         $json = file_get_contents('utilisateurs.json');
@@ -69,6 +108,7 @@
     // Redirection vers la page de destination
     header("Location: " . $url);
     //header("Location: ../recap.php");
+
     exit; // Assure que le script se termine ici
 ?>
 
