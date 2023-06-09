@@ -1,0 +1,105 @@
+body{
+    color:grey;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1vw;
+    background: radial-gradient( at center, white 80%,#d3d3d3 120%);
+    height: 100vh;
+}
+/* banderole avec le nom de la page sur laquelle on est*/
+#banderole{
+    margin: -7px;
+    margin-bottom: 0px;
+    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, #d3d3d3 100%);
+    font-family:sans-serif;      
+}
+#banderole img{
+    width: 14em;    
+}
+
+#banderole #ref{
+    color: #e6007e;
+    font-size:6em;
+    text-decoration: none;
+    margin-left: 68vw;
+    position: absolute;  
+}
+#hautpage{
+    color: white;
+    margin-top: 3em;
+    margin-left: 58vw;
+    font-size:2em;
+    text-decoration: none;
+}
+/* volet de navigation*/
+#navigation{
+    background:radial-gradient( 150px at 150px ,white -30%, lightgrey);  
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 1%;
+    text-align: center;
+    font-size: 1.5em;
+    top:0%;
+}
+#jeunes{
+    background-color: #e6007e;
+    color:white;
+    text-decoration: none;
+    margin-left: 4%;
+    padding: 1%;
+}
+#referent{
+    color:rgb(19, 202, 19);
+    text-decoration: none;
+    padding: 1%;
+}
+#consultant{
+    color:rgb(34, 140, 186);
+    text-decoration: none;
+    padding: 1%;
+}
+#partenaires{
+    color:rgb(92, 104, 92);
+    text-decoration: none;
+    padding: 1%;
+}
+/*corps de la page*/
+#profil{
+    margin-top: 2vw;
+    margin-left: 30vw;
+    margin-right: -5vw;
+    background-color: white;
+    border:#e6007e solid 2px;
+    border-radius: 7px;
+    color: #e6007e;
+    padding-left: 10px;
+    font-size: 1.7em;
+    padding:1%;
+    width: 30vw;
+}
+
+input{
+    width: 50%;
+    border: none;
+    border-bottom: #e6007e dotted 2px;
+    font-size: 0.5em;
+    color: #2a248b;
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #e6007e 0%, #eb64ae  51%, #dde576  100%);
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 2vw;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }

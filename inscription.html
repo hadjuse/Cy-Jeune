@@ -7,34 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'inscription Jeune</title>
     <link rel="stylesheet" href="css/inscription.css">
-    </script>
 </head>
 <script>
-function verif_mail() {
-  fetch('php/utilisateurs.json')
-  .then(response => response.json())
-  .then(data => {
-    var utilisateurs = data['utilisateurs'];
-    var mail = document.getElementById("mail").value;
-    if(utilisateurs == null ){
-      return true;
-    }
-    else {
-      
-      for(var i = 0 ; i < utilisateurs.length ;i++ ){
-      if (utilisateurs[i]["mail"] == mail){
-        alert('faux');
-      document.getElementById("mailfaux").value="email existe deja";
-        return false;
-      }
-      }
-    }
-    return true;
-  })
-}
-  </script>
+   // Fonction pour récupérer les paramètres de requête depuis l'URL
+  function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
 
-
+  // Récupération des paramètres de requête
+  var iderreur = getParameterByName('erreur');
+  const params = new URLSearchParams(window.location.search);
+  if (iderreur == null){
+  }
+  else{
+  alert("mail faux");
+  }
+</script>
 <body>
     <! banderole avec le nom de la page que la quelle on se situe>
         <div id="banderole">
@@ -63,11 +57,13 @@ function verif_mail() {
                             <option value="LinkedIn">LinkedIn</option>
                         </optgroup>
                     </select><br>
-                    <button type="submit" name="submit" id="submit"
+                    <button type="submit" name="submit" id="submit" 
                         class="btn-grad">Inscription</button>
                     <button type="button" name="connexion" id="connexion" onclick="document.location.href='connexion.html'" class="btn-grad">Connexion</button>
+                    <button type="button" name="connexion" id="connexion" onclick="document.location.href='connexion_admin.html'" class="btn-grad">Connexion Administrateur</button>
                 </form>
                 </div>
+                <div id="mailfaux"></div>
 </body>
 </body>
 

@@ -98,6 +98,7 @@ body{
 
 
 .description #profil{
+    margin-top: 1vw;
     margin-left: -5vw;
     background-color: white;
     border:#dde576 solid 2px;
@@ -191,4 +192,12 @@ body{
     margin-right: 3vw;
 }
 
+.centre{
+    text-align: center;
+}
 
+#savoiretre3{
+    position: absolute;
+    margin-left: 80.5vw;
+    margin-top: 12vw;
+}

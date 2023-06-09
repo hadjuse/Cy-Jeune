@@ -32,6 +32,12 @@
     // Récupérer le tableau des utilisateurs
     $utilisateurs = $data['utilisateurs'];
    //Voir si l'existe deja un utilisateur 
+    foreach ( $utilisateurs as $utilisateur) {
+      if ($utilisateur['mail'] == $mail){
+        header("Location: ../inscription.html?erreur=" . urlencode(1));
+        exit;
+      }
+    }
    if ( isset ($utilisateurs)){
       $indice = count($utilisateurs);
    }
