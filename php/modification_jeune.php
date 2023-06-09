@@ -3,7 +3,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
 
-    //require 'php/vendor/autoload.php';
+    require '../php/vendor/autoload.php';
     session_destroy();
     session_start();
     if (isset($_POST['submit'])) {
@@ -45,7 +45,7 @@
     
         try {
         // Envoi de l'e-mail
-        //$mail->send();
+        $mail->send();
         echo "L'e-mail a été envoyé avec succès.";
         } catch (Exception $e) {
             echo "Une erreur s'est produite lors de l'envoi de l'e-mail : " . $mail->ErrorInfo;
@@ -106,7 +106,7 @@
     $url = "../pagereferent.php?jeune=" . urlencode($idjeune) . "&referent=" . urlencode($idreferent);
 
     // Redirection vers la page de destination
-    header("Location: " . $url);
+    header("Location: ../recap.php");
     //header("Location: ../recap.php");
 
     exit; // Assure que le script se termine ici
