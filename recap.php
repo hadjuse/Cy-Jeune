@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/recap.css">
-    <title>recapitulatif</title>
+    <title>Engagement</title>
 </head>
-
+<link rel="stylesheet" href="css/recap.css">
 
     <script>
         function referent(u,r){
@@ -71,8 +70,8 @@
         <!-- onglet de navigation entre les differentes pages -->
             <div id="navigation">
                 <a href="php/Jeune.php" id="jeunes">JEUNES</a>
-                <a href="../recap.php" id="referent">RÉFÉRENT</a>
-                <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="recap.php" id="referent">RÉFÉRENT</a>
+                <a href="" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <!-- corps de la page avec les informations -->
@@ -85,8 +84,18 @@
                 foreach ($utilisateurs as $us){
                 if ($_SESSION["mail"] == $us["mail"]){
                     foreach ($us["referent"] as $pr ){
-                    echo "<table id='referenttab'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
-                   }   
+                       if (substr($pr["commentaire"], -3) == "sé"){
+                            echo "<table id='referenttabRefusé'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
+                        }
+                        elseif(substr($pr["commentaire"], -3) == "té"){
+                            echo "<table id='referenttabAccepté'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
+                        }
+                        else{
+                            echo "<table id='referenttab'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
+                        } 
+                        
+                   }  
+                   echo "<br><p style='color:#3f1ad1'>En attente</p> <p style='color:#2fd11a'>Accepté</p> <p style='color:#d11a1a'>Refusé</p>" ; 
                 }
                 }
                 echo"</div>";   
@@ -100,11 +109,6 @@
     }
     echo '<script> referent('.$_SESSION["indice"].',0) </script>';
     
-    
-    if ($utilisateurs[$_SESSION['indice']]['referent'] == NULL){
-        header('Location: inscription.html');
-        exit;
-    }
 ?>
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>

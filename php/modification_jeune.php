@@ -43,7 +43,7 @@
                 'mail' => $mail_referant,
                 'reseau' => $reseau,
                 'date_naissance' => $naissance_referant,
-                'commentaire' => '',
+                'commentaire' => '    ',
                 'engagement' => $engagement,
                 'duree' => $duree,
                 'savoir_etre' => $savoir);
@@ -86,6 +86,7 @@
         $mail->Password = $mot_de_passe;
         $mail->CharSet = 'utf-8';
         $mail->isHTML(true);
+        
         // Destinataire et expéditeur
         $mail->setFrom($expediteur);
         $mail->addAddress($mail_referant);

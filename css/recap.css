@@ -159,7 +159,7 @@ body{
 }
 
 #referenttab{
-    background-image: linear-gradient(to right, #dde576 0%, #2fd11a  51%, #dde576  100%);
+    background-image: linear-gradient(to right, #9b98cb 0%, #3f1ad1  51%, #7d76e5  100%);
     padding: 0.2vW 0.2vw;
     width: 10vw;
     text-align: center;
@@ -177,6 +177,49 @@ body{
     color: #fff;
     text-decoration: none;
 }
+
+
+#referenttabAccepté{
+    background-image: linear-gradient(to right, #dde576 0%, #2fd11a  51%, #dde576  100%);
+    padding: 0.2vW 0.2vw;
+    width: 10vw;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;         
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 0.2vw;
+}
+
+#referenttabAccepté:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+#referenttabRefusé{
+    background-image: linear-gradient(to right, #e57676 0%, #d11a1a  51%, #e57676  100%);
+    padding: 0.2vW 0.2vw;
+    width: 10vw;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;         
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 0.2vw;
+}
+
+#referenttabRefusé:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
 
 button{
     background-color: transparent;
