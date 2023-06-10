@@ -29,7 +29,7 @@
             <div id="navigation">
                 <a href="../php/Jeune.php" id="jeunes">JEUNES</a>
                 <a href="../recap.php" id="referent">RÉFÉRENT</a>
-                <a href="../pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="../pageDemandeConsultant.php" id="consultant">CONSULTANT</a>
                 <a href="../pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
         <h1 align="center">Récapitulatif de votre compte</h1>
@@ -60,7 +60,8 @@
                 ?>    
             </div>  
         </p>
-    <div class="btn-grad"><a href="../pageJeune.html" id="nouv"><div class="white">Cliquez ici pour ajouter une nouvelle demande</div></a></div>
+    <div class="btn-grad"><a href="../php/modif_profil.php" id="nouv"><div class="white">modifier ton profil</div></a></div>
+    <div class="btn-grad"><a href="../pageJeune.html" id="nouv"><div class="white">Cliquez ici pour ajouter une nouvelle demande de référent</div></a></div>
     </div>            
 </body>
 </html>

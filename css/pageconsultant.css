@@ -1,37 +1,33 @@
-body {
-    color: grey;
+body{
+    color:grey;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1vw;
-    background-image:url("../image/pagejeune/logo_page_jeune.jpeg");
-    background-size: 40%;
-    background-position:center;
-    background-position-y: 250px;
-    background-repeat: no-repeat;
+    background: radial-gradient( at center, white 80%,#d3d3d3 120%);
+    height: 100vh;
 }
-/*Partie Banderole -------------------------------------------------*/
+/* banderole avec le nom de la page sur laquelle on est*/
 #banderole{
     margin: -7px;
     margin-bottom: 0px;
-    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, lightgrey 100%);
+    background:radial-gradient( circle closest-corner at 220px 150px ,white 0%, #d3d3d3 100%);
     font-family:sans-serif;      
 }
 #banderole img{
     width: 14em;    
 }
 
-#banderole #Consultant{
-    margin-top: -0.5%;
-    color:rgb(34, 140, 186);
-    font-size: 6em;
+#banderole #ref{
+    color: rgb(34, 140, 186);
+    font-size:6em;
     text-decoration: none;
-    margin-left: 42vw;
+    margin-left: 50vw;
     position: absolute;  
 }
 #hautpage{
     color: white;
     margin-top: 3em;
-    margin-left: 46vw;
-    font-size: 2em;
+    margin-left: 43vw;
+    font-size:2em;
     text-decoration: none;
 }
 /* volet de navigation*/
@@ -47,15 +43,17 @@ body {
 #jeunes{
     color:#e6007e;
     text-decoration: none;
+    margin-left: 4%;
     padding: 1%;
 }
 #referent{
-    color:rgb(19, 202, 19);
+    color: rgb(19, 202, 19);
     text-decoration: none;
     padding: 1%;
 }
 #consultant{
-    color:rgb(34, 140, 186);
+    background-color:rgb(34, 140, 186);
+    color: white;
     text-decoration: none;
     padding: 1%;
 }
@@ -64,58 +62,133 @@ body {
     text-decoration: none;
     padding: 1%;
 }
-/* Corps de la page*/
-#oui > h1{color: rgba(0, 166, 255, 0.819);
-    font-size:80px;
-    cursor: default;
-    }
-#oui>h2{color: rgb(255, 255, 255);
-    font-size: 40;
-    letter-spacing: 5px;
-    }
-#oui {background-color: rgb(202, 202, 202);
-    
-    }
-li{display:inline-block; padding: 15px;
-    background-color: rgb(202, 202, 202);
+/*corps de la page*/
+#contenu{
+    width: 90vw;
+    margin-left: 10vw;
+    position: absolute;
 }
-.ul1{border: 1px solid black;padding: 0px;
-    margin-top:-30;
-font-size: 20;}
 
-#bleu{text-align: center;
-    color: rgba(51, 171, 252, 0.819) ;
-    font-size: 26;
-    margin-top: 13;
+#contenu .tete{
+    color:  rgb(34, 140, 186);
+    padding: 0 25% 0 25%;
+    text-align: center;
 }
-.jeun{color: rgb(253, 107, 219);
-font-size: 30px;
-margin-top: 5px;}
-.ref{color: rgb(159, 199, 99);
-    font-size: 30px;
-    margin-top: 5px;}
-.bordure{border-color: rgb(253, 107, 219) ;}
-.bordure2{border-color: greenyellow;}
-.form1{width: 740px; height: 700px;}
-.arth{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
-.mart{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
-.date{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
-.gmail{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
-.Facebook{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
-.enfant{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
-.ans{border-bottom-style: dotted;font-size: 20px;color: rgb(30, 30, 155);}
-.form1{
-    background-image: url("jesuis2.png");
-    background-size: 220px;
-    background-repeat: no-repeat;
-    background-position-y: top;
-    background-position-x: right;
+
+#description{
+    margin-left: 2vw;
+    justify-content: space-between;
+    display: flex;
 }
-.form2{width: 740px; height: 700px;
-    float:right;
-    background-image: url("referent.png");
-    background-size: 220px;
-    background-repeat: no-repeat;
-    background-position-y: top;
-    background-position-x: right;
+
+#description #commentaire .head{
+    background: linear-gradient(0.25turn, #250ed4,#7f76e5);
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#description #commentaire .body{
+    border: none;
+    background: linear-gradient(0.25turn, #1b0ed4,#7876e5);
+    color: #2a248b;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 20vw;
+    height: 15vw;
+    resize: none;
+    text-align: center;
+}
+
+
+#description #profil{
+    margin-left: -5vw;
+    margin-right: -5vw;
+    background-color: white;
+    border:#7f76e5 solid 2px;
+    border-radius: 7px;
+    color: #8776e5;
+    padding-left: 10px;
+    font-size: 1.7em;
+    padding:1%;
+    width: 30vw;
+
+}
+
+#description #profil input{
+    width: 50%;
+    border: none;
+    border-bottom: #8876e5 dotted 2px;
+    font-size: 0.5em;
+    color: #2a248b;
+}
+
+#description #profil [type="date"] {
+    width: 25%;
+}
+#description #commentaire1{
+    display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 20vw;
+  height: 100%; 
+
+}
+
+  .savoir-etre{
+    color: #1a13a5;
+    font-size: 1.5em;
+  }
+
+  #jesuis{
+    color: white;
+    background: linear-gradient(0.25turn, #0e8bd4,#2913a5);
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#choix {
+
+    background:linear-gradient(0.25turn, rgba(255, 255, 255, 0.695),#0e5dd487);
+    font-size: 1.2em;
+    color: black;
+}
+
+#savoiretre{
+    margin-right: 3vw;
+}
+
+#referenttabAccepté{
+    background-image: linear-gradient(to right, #7699e5 0%, #1a29d1  51%, #7683e5  100%);
+    padding: 0.2vW 0.2vw;
+    width: 10vw;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;         
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 0.2vw;
+}
+
+#referenttabAccepté:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    width :9vw;
+    height: 1vw;
+}
+
+#referents{
+    width: 10vw;
+    float: left;
+    padding: 0.5vw;
+    background-color: rgb(243, 241, 241);
+    margin-top: -3%;
 }

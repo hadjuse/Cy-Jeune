@@ -84,8 +84,18 @@
                 foreach ($utilisateurs as $us){
                 if ($_SESSION["mail"] == $us["mail"]){
                     foreach ($us["referent"] as $pr ){
-                    echo "<table id='referenttab'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
-                   }   
+                       if (substr($pr["commentaire"], -3) == "sé"){
+                            echo "<table id='referenttabRefusé'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
+                        }
+                        elseif(substr($pr["commentaire"], -3) == "té"){
+                            echo "<table id='referenttabAccepté'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
+                        }
+                        else{
+                            echo "<table id='referenttab'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
+                        } 
+                        
+                   }  
+                   echo "<br><p style='color:#3f1ad1'>En attente</p> <p style='color:#2fd11a'>Accepté</p> <p style='color:#d11a1a'>Refusé</p>" ; 
                 }
                 }
                 echo"</div>";   

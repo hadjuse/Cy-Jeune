@@ -3,7 +3,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php';
+require 'vendor/autoload.php';
 
 
 if (isset($_POST['adresse_email'])) {
@@ -23,11 +23,11 @@ if (isset($_POST['adresse_email'])) {
     $mail->Port = 465;
     $mail->SMTPSecure = 'ssl';
     $mail->SMTPAuth = true;
-    $mail->Username = $expediteur;
+    $mail->Username = 'cyjeune6.4';
     $mail->Password = $mot_de_passe;
     
     // Destinataire et expéditeur
-    $mail->setFrom($expediteur);
+    $mail->setFrom($expediteur,'cyjeune6.4');
     $mail->addAddress($adresse_email);
     
     // Contenu de l'e-mail
