@@ -59,6 +59,10 @@ function supprimer($id)
 
     $jsonData = json_encode($data, JSON_PRETTY_PRINT); // Encoder les données au format JSON
     file_put_contents('utilisateurs.json', $jsonData); // Enregistrer les modifications dans le fichier
+    while($data['utilisateurs'][$index] !=NULL){
+        $data['utilisateurs'][$index]['indice']-=1;
+        $index++;
+    }
 
 }
 if(isset($s)){
