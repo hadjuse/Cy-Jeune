@@ -1,16 +1,25 @@
 {
     "utilisateurs": [
         {
+<<<<<<< HEAD
             "indice": 1,
+=======
+            "indice": 0,
+>>>>>>> Théo
             "prenom": "Th\u00e9o",
             "nom": "Fortier",
             "date_naissance": "2007-07-22",
             "mail": "t.fortier901@gmail.com",
+<<<<<<< HEAD
             "mdp": "$2y$10$DgrrarIMc9qtEVkwPsVbOu2Ajuv0ir6YM\/e\/7rYL9DfOHOFVLoB4S",
+=======
+            "mdp": "$2y$10$mmK3SKkfNoRu.SxyDdmXseBqNA13vIAU\/UI10NRxiJu0OjCDWsLfW",
+>>>>>>> Théo
             "reseau": "Facebook",
             "referent": [
                 {
                     "indice": "0",
+<<<<<<< HEAD
                     "nom": "flaio",
                     "prenom": "MOAM",
                     "mail": "tfortier4@gmail.com",
@@ -50,6 +59,29 @@
                     "duree": "7",
                     "savoir_etre": [
                         "Passion\u00e9"
+=======
+                    "nom": "Fortier",
+                    "prenom": "Th\u00e9o",
+                    "mail": "t.fortier901@gmail.com",
+                    "reseau": "Facebook",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "Cetait bien       Accept\u00e9",
+                    "duree": "1",
+                    "engagement": "fooot ",
+                    "savoir_etre": [
+                        "Organis\u00e9",
+                        "Passion\u00e9",
+                        "Fiable",
+                        "Patient",
+                        "Comp\u00e9tent",
+                        "Confiant",
+                        "Bienveillant",
+                        "Respectueux",
+                        "Honnete",
+                        "Tol\u00e9rant",
+                        "Juste",
+                        "Impartial"
+>>>>>>> Théo
                     ]
                 }
             ]

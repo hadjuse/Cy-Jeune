@@ -40,13 +40,15 @@
                 document.getElementById("duree").value = duree;
                 document.getElementById("commentaires").innerHTML = commentaires;
                 
-                if( len < 4 ){
-                    for (var j = 4; j > len; j--) {
+                // Je supprime les champs en trop si il n'y a pas 12 ( valeurs max ) savoir-être 
+                if( len < 12 ){
+                    for (var j = 12; j > len; j--) {
                         var choixId = "Dchoix" + j;
                         var choixElement = document.getElementById(choixId).innerHTML ="";
                     }
                 }
 
+                 // Mettre à jour la valeur de l'input
                 for (var i = 0; i < len; i++) {
                         var choixId = "choix" + (i + 1);
                         var inputId = "input" + (i + 1);
@@ -80,9 +82,12 @@
             <!-- corps de la page avec les informations -->
             <?php
                 session_start();
+
+                // Je récupère les données de l'URL
                 $jeune = $_GET['jeune'];
                 $referent = $_GET['referent'];
 
+                // J'affiche mes demandes de références validés, séléctionez par le jeune 
                 echo" <div id=referents> Nom du référent :<br>";
                 $json = file_get_contents('php/utilisateurs.json');
                 $data = json_decode($json, true);
@@ -122,9 +127,9 @@
                             <div id="savoiretre"><table>
                                 <tr class="savoir-etre"><td>SES SAVOIRS ETRE</td></tr>
                                 
-                                    <tr id="jesuis"><td>je confirme qu'il est*</td></tr>
+                                    <tr id="jesuis"><td>Il est</td></tr>
                                     <tr id="choix"><td>
-                                        <div id="Dchoix1">
+                                    <div id="Dchoix1">
                                             <input id="input1" type="checkbox" value="" name="savoir[]" disabled>
                                         <label  id="choix1" for="choix1"> </label>
                                         </div><div id="Dchoix2">
@@ -137,10 +142,40 @@
                                             <input id="input4" type="checkbox" value="" name="savoir[]" disabled>
                                         <label id="choix4" for="choix4"> </label>
                                         </div>
+                                        <div id="Dchoix5">
+                                            <input id="input5" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label  id="choix5" for="choix5"> </label>
+                                        </div><div id="Dchoix6">
+                                            <input id="input6" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix6" for="choix6"> </label>
+                                        </div><div id="Dchoix7">
+                                            <input id="input7" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix7" for="choix7"> </label>
+                                        </div><div id="Dchoix8">
+                                            <input id="input8" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix8" for="choix8"> </label>
+                                        </div>
+                                        <div id="Dchoix9">
+                                            <input id="input9" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label  id="choix9" for="choix9"> </label>
+                                        </div><div id="Dchoix10">
+                                            <input id="input10" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix10" for="choix10"> </label>
+                                        </div><div id="Dchoix11">
+                                            <input id="input11" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix11" for="choix11"> </label>
+                                        </div><div id="Dchoix12">
+                                            <input id="input12" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix12" for="choix12"> </label>
+                                        </div>
                                 </table>
                             </div>     
                         </div>                  
                     </form>
+                    <?php
+                        //On prérempli le tableau avec les informations du premiers référents  
+                        echo "<script> referent(".$jeune.",".$referent[0].") </script>";
+                    ?>
 
                     <p class="tete"> Le jeune : </p>
                     <form action="php/referent.php" method="post" >
@@ -163,7 +198,7 @@
                         </div>                  
                     </form>
                     <?php 
-                        $jeune = $_GET['jeune'];
+                        // J'affiche ici les informations dans le tableau du jeune 
                     echo "
                     <script>
                             fetch('php/utilisateurs.json')
