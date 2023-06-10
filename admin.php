@@ -20,19 +20,6 @@
             header('Location: connexion_admin.html');
             exit;
         }
-    
-        //include("php/suppresion.php");
-        //$s=$_GET['q'];
-        /*
-        echo $s;
-        print_r($_GET);
-        if (isset($s)) {
-            $ind = $s;
-            echo $ind;
-            // Faites d'autres opérations avec $ind si nécessaire
-        } else {
-            echo 'Indice non trouvé';
-        }*/
     }
     
 ?>
@@ -49,6 +36,5 @@
     <div id = "test"></div>
     <script src="javascript/admin.js"></script>
     <div class="btn-grad2"><a href="php/deconnexion.php" id="nouv"><div class="white">Déconnexion</div></a></div>
-    
 </body>
 </html>
