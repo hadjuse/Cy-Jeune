@@ -29,7 +29,7 @@
             <div id="navigation">
                 <a href="../php/Jeune.php" id="jeunes">JEUNES</a>
                 <a href="../recap.php" id="referent">RÉFÉRENT</a>
-                <a href="../pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="../pageDemandeConsultant.php" id="consultant">CONSULTANT</a>
                 <a href="../pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
         <h1 align="center">Récapitulatif de votre compte</h1>

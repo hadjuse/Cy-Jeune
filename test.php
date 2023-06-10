@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engagement</title>
 </head>
-<link rel="stylesheet" href="css/recap.css">
+<link rel="stylesheet" href="css/test.css">
 
     <script>
+
         function referent(u,r){
+            
             // Charger le fichier JSON
             fetch('php/utilisateurs.json')
             .then(response => response.json())
@@ -60,43 +62,33 @@
             })
             .catch(error => console.error(error)); 
         }
+        
       </script>
     <!-- banderole avec le nom de la page que la quelle on se situe -->
         <div id="banderole">
             <a href="page0.php"><img src="image/pagedepres/LOGOS_JEUNES_6,4,pdpres.png"></a>
-            <b id="ref">RÉFÉRENT</b>
-            <b id="hautpage">Je confirme la valeur de ton engagement</b>
+            <b id="ref">CONSULTANT</b>
+            <b id="hautpage">Je donne de la valeur à ton engagement</b>
         </div>
         <!-- onglet de navigation entre les differentes pages -->
             <div id="navigation">
                 <a href="php/Jeune.php" id="jeunes">JEUNES</a>
-                <a href="pagereferent.html" id="referent">RÉFÉRENT</a>
-                <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="recap.php" id="referent">RÉFÉRENT</a>
+                <a href="pageconsultant.php" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <!-- corps de la page avec les informations -->
             <?php
                 session_start();
+                $jeune = $_GET['jeune'];
+                $referent = $_GET['referent'];
+
                 echo" <div id=referents> Nom du référent :<br>";
                 $json = file_get_contents('php/utilisateurs.json');
                 $data = json_decode($json, true);
                 $utilisateurs = $data['utilisateurs'];
-                foreach ($utilisateurs as $us){
-                if ($_SESSION["mail"] == $us["mail"]){
-                    foreach ($us["referent"] as $pr ){
-                       if (substr($pr["commentaire"], -3) == "sé"){
-                            echo "<table id='referenttabRefusé'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
-                        }
-                        elseif(substr($pr["commentaire"], -3) == "té"){
-                            echo "<table id='referenttabAccepté'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
-                        }
-                        else{
-                            echo "<table id='referenttab'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
-                        } 
-                        
-                   }  
-                   echo "<br><p style='color:#3f1ad1'>En attente</p> <p style='color:#2fd11a'>Accepté</p> <p style='color:#d11a1a'>Refusé</p>" ; 
-                }
+                for($k=0; $k<count($referent);$k++){
+                            echo "<table id='referenttabAccepté'><tr><td><button onclick='referent(" . $jeune . "," . $referent[$k] . ")'>" . $utilisateurs[$jeune]['referent'][$referent[$k]]['nom'] . ' ' .$utilisateurs[$jeune]['referent'][$referent[$k]]['prenom'] ."</td></tr></table>";
                 }
                 echo"</div>";   
     if ($_SESSION['connexion'] == 'visiteur'){
@@ -107,11 +99,11 @@
         header('Location: php/jeune.php');
         exit;
     }
-    echo '<script> referent('.$_SESSION["indice"].',0) </script>';
+    //echo '<script> referent('.$_SESSION["indice"].',0) </script>';
     
 ?>
             <div id="contenu">
-                <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
+                <p class="tete"> Les référents : </p>
                     <form action="php/referent.php" method="post" >
                         <div id="description">
                             <div id="commentaire"><table id="tableaucom">
@@ -159,6 +151,51 @@
                             </div>     
                         </div>                  
                     </form>
+
+                    <p class="tete"> Le jeune : </p>
+                    <form action="php/referent.php" method="post" >
+                        <div id="description">
+                            <div id="profil"><table >
+                                <tr><td><label for="nom" class="head">NOM :</label>
+                                <input disabled value="" type="text" name="nomJeune" id="nomJeune" required class="body"></input></td></tr>
+                                <tr><td><label for="prenomJeune" class="head">PRENOM :</label>
+                                <input disabled value="" type="text" name="prenomJeune" id="prenomJeune" required class="body"></input></td></tr>
+                                <tr><td><label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
+                                <input disabled value="" type="date" name="dateNaissanceJeune" id="dateNaissanceJeune" required class="body"></input></td></tr>
+                                <tr><td><label for="mail" class="head">MAIL :</label>
+                                <input disabled value="" type="mail" name="mailJeune" id="mailJeune" required class="body"></input></td></tr>
+                                <tr><td><label for="reseau" class="head">Réseau social :</label>
+                                <input disabled value="" type="text" name="reseauJeune" id="reseauJeune" required class="body"></input></td></tr>
+    
+                            </table>
+                            </div>
+                            <!--</div> -->     
+                        </div>                  
+                    </form>
+                    <?php 
+                        $jeune = $_GET['jeune'];
+                    echo "
+                    <script>
+                            fetch('php/utilisateurs.json')
+                            .then(response => response.json())
+                            .then(data => {
+                                // Extraire les données souhaitées du fichier JSON
+                                var prenom = data['utilisateurs'][".$jeune."]['prenom'];
+                                var nom = data['utilisateurs'][".$jeune."]['nom'];
+                                var dateNaissance = data['utilisateurs'][".$jeune."]['date_naissance'];
+                                var mail = data['utilisateurs'][".$jeune."]['mail'];
+                                var reseau = data['utilisateurs'][".$jeune."]['reseau'];
+
+                                // Affecter les valeurs aux champs de formulaire
+                                document.getElementById('nomJeune').value = nom;
+                                document.getElementById('prenomJeune').value = prenom;
+                                document.getElementById('dateNaissanceJeune').value = dateNaissance;
+                                document.getElementById('mailJeune').value = mail;
+                                document.getElementById('reseauJeune').value = reseau;
+                            })
+                            .catch(error => console.error(error));
+                    </script>"
+                ?>
             </div>
 
             </div>
