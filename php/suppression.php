@@ -24,10 +24,6 @@ function supprimer_referent($idUtilisateur, $idReferent){
                 if ($referent['indice'] === $idReferent) {
                     unset($referents[$index]); // Supprimer le référent du tableau
                     //echo $referent['nom'];
-                    while($referents[$index] != NULL){
-                        $referents[$index]["indice"] -= 1;
-                        $index++;
-                    }
                     break;
                 }
             }
@@ -58,12 +54,6 @@ function supprimer($id)
 
     if ($index !== -1) { // Si l'index du compte a été trouvé
         unset($data['utilisateurs'][$index]); // Supprimer le compte du tableau
-        
-        while($data['utilisateurs'][$index] != NULL){
-            $data['utilisateurs'][$index]["indice"] -= 1;
-            $index++;
-            
-        }
         $data['utilisateurs'] = array_values($data['utilisateurs']); // Réorganiser les index du tableau
     }
 

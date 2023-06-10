@@ -29,13 +29,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Cy-Jeune/css/admin.css">
+    <link rel="stylesheet" href="css/admin.css">
     <title>Adminstrateur</title>
 </head>
 <body>
     <div id = "utilisateurs"></div>
     <div id = "test"></div>
-
     <script src="javascript/admin.js"></script>
     <div class="deconnexion"><a href="php/deconnexion.php" id="nouv"><div class="white">Déconnexion</div></a></div>
 </body>
