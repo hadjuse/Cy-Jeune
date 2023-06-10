@@ -9,14 +9,14 @@
 
     require '../php/vendor/autoload.php';
 //On récupère les infos du jeune
-    $indiceReferent = $_POST['engagement'];
+    $kndiceReferent = $_POST['engagement'];
     $mailConsultant = $_POST["mailConsultant"];
-    $indiceJeune = $_SESSION['indice'];
+    $kndiceJeune = $_SESSION['indice'];
 
     // Construction du tableau de paramètres
     $parametres = array(
-        'jeune' => $indiceJeune,
-        'referent' => $indiceReferent
+        'jeune' => $kndiceJeune,
+        'referent' => $kndiceReferent
     );
 
     // Conversion du tableau en chaîne de requête
@@ -26,7 +26,7 @@
     $url = "http://localhost/Cy-Jeune/pageconsultant.php?" . $parametresRequete;
 
      // Construction de l'URL avec les paramètres
-     //$url = "http://localhost/Cy-Jeune/pageconsultant.php?jeune=" . urlencode($indiceJeune) . "&referent=" . urlencode(implode(" ", $indiceReferent));
+     //$url = "http://localhost/Cy-Jeune/pageconsultant.php?jeune=" . urlencode($kndiceJeune) . "&referent=" . urlencode(implode(" ", $kndiceReferent));
 
      // Paramètres de l'e-mail
      $expediteur = 'cyjeune6.4@laposte.net';

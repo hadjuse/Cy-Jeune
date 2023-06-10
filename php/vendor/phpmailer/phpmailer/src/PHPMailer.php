@@ -157,14 +157,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $Ical = '';
+    public $kcal = '';
 
     /**
      * Value-array of "method" in Contenttype header "text/calendar"
      *
      * @var string[]
      */
-    protected static $IcalMethods = [
+    protected static $kcalMethods = [
         self::ICAL_METHOD_REQUEST,
         self::ICAL_METHOD_PUBLISH,
         self::ICAL_METHOD_REPLY,
@@ -942,11 +942,11 @@ class PHPMailer
     /**
      * Sets message type to HTML or plain.
      *
-     * @param bool $isHtml True for HTML mode
+     * @param bool $ksHtml True for HTML mode
      */
-    public function isHTML($isHtml = true)
+    public function isHTML($ksHtml = true)
     {
-        if ($isHtml) {
+        if ($ksHtml) {
             $this->ContentType = static::CONTENT_TYPE_TEXT_HTML;
         } else {
             $this->ContentType = static::CONTENT_TYPE_PLAINTEXT;
@@ -974,12 +974,12 @@ class PHPMailer
      */
     public function isSendmail()
     {
-        $ini_sendmail_path = ini_get('sendmail_path');
+        $kni_sendmail_path = ini_get('sendmail_path');
 
-        if (false === stripos($ini_sendmail_path, 'sendmail')) {
+        if (false === stripos($kni_sendmail_path, 'sendmail')) {
             $this->Sendmail = '/usr/sbin/sendmail';
         } else {
-            $this->Sendmail = $ini_sendmail_path;
+            $this->Sendmail = $kni_sendmail_path;
         }
         $this->Mailer = 'sendmail';
     }
@@ -989,12 +989,12 @@ class PHPMailer
      */
     public function isQmail()
     {
-        $ini_sendmail_path = ini_get('sendmail_path');
+        $kni_sendmail_path = ini_get('sendmail_path');
 
-        if (false === stripos($ini_sendmail_path, 'qmail')) {
+        if (false === stripos($kni_sendmail_path, 'qmail')) {
             $this->Sendmail = '/var/qmail/bin/qmail-inject';
         } else {
-            $this->Sendmail = $ini_sendmail_path;
+            $this->Sendmail = $kni_sendmail_path;
         }
         $this->Mailer = 'qmail';
     }
@@ -1838,8 +1838,8 @@ class PHPMailer
 
         $length = strlen($string);
 
-        for ($i = 0; $i < $length; ++$i) {
-            $c = $string[$i];
+        for ($k = 0; $k < $length; ++$k) {
+            $c = $string[$k];
 
             //All other characters have a special meaning in at least one common shell, including = and +.
             //Full stop (.) has a special meaning in cmd.exe, but its impact should be negligible here.
@@ -2037,12 +2037,12 @@ class PHPMailer
                 if (!$this->smtp->recipient($to[0], $this->dsn)) {
                     $error = $this->smtp->getError();
                     $bad_rcpt[] = ['to' => $to[0], 'error' => $error['detail']];
-                    $isSent = false;
+                    $ksSent = false;
                 } else {
-                    $isSent = true;
+                    $ksSent = true;
                 }
 
-                $callbacks[] = ['issent' => $isSent, 'to' => $to[0], 'name' => $to[1]];
+                $callbacks[] = ['issent' => $ksSent, 'to' => $to[0], 'name' => $to[1]];
             }
         }
 
@@ -2452,7 +2452,7 @@ class PHPMailer
         }
         //If utf-8 encoding is used, we will need to make sure we don't
         //split multibyte characters when we wrap
-        $is_utf8 = static::CHARSET_UTF8 === strtolower($this->CharSet);
+        $ks_utf8 = static::CHARSET_UTF8 === strtolower($this->CharSet);
         $lelen = strlen(static::$LE);
         $crlflen = strlen(static::$LE);
 
@@ -2476,7 +2476,7 @@ class PHPMailer
                     if (!$firstword) {
                         if ($space_left > 20) {
                             $len = $space_left;
-                            if ($is_utf8) {
+                            if ($ks_utf8) {
                                 $len = $this->utf8CharBoundary($word, $len);
                             } elseif ('=' === substr($word, $len - 1, 1)) {
                                 --$len;
@@ -2497,7 +2497,7 @@ class PHPMailer
                             break;
                         }
                         $len = $length;
-                        if ($is_utf8) {
+                        if ($ks_utf8) {
                             $len = $this->utf8CharBoundary($word, $len);
                         } elseif ('=' === substr($word, $len - 1, 1)) {
                             --$len;
@@ -2714,7 +2714,7 @@ class PHPMailer
     public function getMailMIME()
     {
         $result = '';
-        $ismultipart = true;
+        $ksmultipart = true;
         switch ($this->message_type) {
             case 'inline':
                 $result .= $this->headerLine('Content-Type', static::CONTENT_TYPE_MULTIPART_RELATED . ';');
@@ -2735,13 +2735,13 @@ class PHPMailer
             default:
                 //Catches case 'plain': and case '':
                 $result .= $this->textLine('Content-Type: ' . $this->ContentType . '; charset=' . $this->CharSet);
-                $ismultipart = false;
+                $ksmultipart = false;
                 break;
         }
         //RFC1341 part 5 says 7bit is assumed if not specified
         if (static::ENCODING_7BIT !== $this->Encoding) {
             //RFC 2045 section 6.4 says multipart MIME parts may only use 7bit, 8bit or binary CTE
-            if ($ismultipart) {
+            if ($ksmultipart) {
                 if (static::ENCODING_8BIT === $this->Encoding) {
                     $result .= $this->headerLine('Content-Transfer-Encoding', static::ENCODING_8BIT);
                 }
@@ -2896,9 +2896,9 @@ class PHPMailer
                 $body .= static::$LE;
                 if (!empty($this->Ical)) {
                     $method = static::ICAL_METHOD_REQUEST;
-                    foreach (static::$IcalMethods as $imethod) {
-                        if (stripos($this->Ical, 'METHOD:' . $imethod) !== false) {
-                            $method = $imethod;
+                    foreach (static::$kcalMethods as $kmethod) {
+                        if (stripos($this->Ical, 'METHOD:' . $kmethod) !== false) {
+                            $method = $kmethod;
                             break;
                         }
                     }
@@ -2964,9 +2964,9 @@ class PHPMailer
                 $body .= static::$LE;
                 if (!empty($this->Ical)) {
                     $method = static::ICAL_METHOD_REQUEST;
-                    foreach (static::$IcalMethods as $imethod) {
-                        if (stripos($this->Ical, 'METHOD:' . $imethod) !== false) {
-                            $method = $imethod;
+                    foreach (static::$kcalMethods as $kmethod) {
+                        if (stripos($this->Ical, 'METHOD:' . $kmethod) !== false) {
+                            $method = $kmethod;
                             break;
                         }
                     }
@@ -3279,7 +3279,7 @@ class PHPMailer
         //Return text of body
         $mime = [];
         $cidUniq = [];
-        $incl = [];
+        $kncl = [];
 
         //Add all attachments
         foreach ($this->attachment as $attachment) {
@@ -3295,11 +3295,11 @@ class PHPMailer
                     $path = $attachment[0];
                 }
 
-                $inclhash = hash('sha256', serialize($attachment));
-                if (in_array($inclhash, $incl, true)) {
+                $knclhash = hash('sha256', serialize($attachment));
+                if (in_array($knclhash, $kncl, true)) {
                     continue;
                 }
-                $incl[] = $inclhash;
+                $kncl[] = $knclhash;
                 $name = $attachment[2];
                 $encoding = $attachment[3];
                 $type = $attachment[4];
@@ -3606,11 +3606,11 @@ class PHPMailer
         $avgLength = floor($length * $ratio * .75);
 
         $offset = 0;
-        for ($i = 0; $i < $mb_length; $i += $offset) {
+        for ($k = 0; $k < $mb_length; $k += $offset) {
             $lookBack = 0;
             do {
                 $offset = $avgLength - $lookBack;
-                $chunk = mb_substr($str, $i, $offset, $this->CharSet);
+                $chunk = mb_substr($str, $k, $offset, $this->CharSet);
                 $chunk = base64_encode($chunk);
                 ++$lookBack;
             } while (strlen($chunk) > $length);
@@ -4268,13 +4268,13 @@ class PHPMailer
      */
     public function msgHTML($message, $basedir = '', $advanced = false)
     {
-        preg_match_all('/(?<!-)(src|background)=["\'](.*)["\']/Ui', $message, $images);
-        if (array_key_exists(2, $images)) {
+        preg_match_all('/(?<!-)(src|background)=["\'](.*)["\']/Ui', $message, $kmages);
+        if (array_key_exists(2, $kmages)) {
             if (strlen($basedir) > 1 && '/' !== substr($basedir, -1)) {
                 //Ensure $basedir has a trailing /
                 $basedir .= '/';
             }
-            foreach ($images[2] as $imgindex => $url) {
+            foreach ($kmages[2] as $kmgindex => $url) {
                 //Convert data URIs into embedded images
                 //e.g. "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 $match = [];
@@ -4295,14 +4295,14 @@ class PHPMailer
                         $this->addStringEmbeddedImage(
                             $data,
                             $cid,
-                            'embed' . $imgindex,
+                            'embed' . $kmgindex,
                             static::ENCODING_BASE64,
                             $match[1]
                         );
                     }
                     $message = str_replace(
-                        $images[0][$imgindex],
-                        $images[1][$imgindex] . '="cid:' . $cid . '"',
+                        $kmages[0][$kmgindex],
+                        $kmages[1][$kmgindex] . '="cid:' . $cid . '"',
                         $message
                     );
                     continue;
@@ -4340,8 +4340,8 @@ class PHPMailer
                         )
                     ) {
                         $message = preg_replace(
-                            '/' . $images[1][$imgindex] . '=["\']' . preg_quote($url, '/') . '["\']/Ui',
-                            $images[1][$imgindex] . '="cid:' . $cid . '"',
+                            '/' . $kmages[1][$kmgindex] . '=["\']' . preg_quote($url, '/') . '["\']/Ui',
+                            $kmages[1][$kmgindex] . '="cid:' . $cid . '"',
                             $message
                         );
                     }
@@ -4731,10 +4731,10 @@ class PHPMailer
     {
         $line = '';
         $len = strlen($txt);
-        for ($i = 0; $i < $len; ++$i) {
-            $ord = ord($txt[$i]);
+        for ($k = 0; $k < $len; ++$k) {
+            $ord = ord($txt[$k]);
             if (((0x21 <= $ord) && ($ord <= 0x3A)) || $ord === 0x3C || ((0x3E <= $ord) && ($ord <= 0x7E))) {
-                $line .= $txt[$i];
+                $line .= $txt[$k];
             } else {
                 $line .= '=' . sprintf('%02X', $ord);
             }
@@ -4968,9 +4968,9 @@ class PHPMailer
         $body = $this->DKIM_BodyC($body);
         //Base64 of packed binary SHA-256 hash of body
         $DKIMb64 = base64_encode(pack('H*', hash('sha256', $body)));
-        $ident = '';
+        $kdent = '';
         if ('' !== $this->DKIM_identity) {
-            $ident = ' i=' . $this->DKIM_identity . ';' . static::$LE;
+            $kdent = ' i=' . $this->DKIM_identity . ';' . static::$LE;
         }
         //The DKIM-Signature header is included in the signature *except for* the value of the `b` tag
         //which is appended after calculating the signature
@@ -4983,7 +4983,7 @@ class PHPMailer
             ' t=' . $DKIMtime . ';' .
             ' c=' . $DKIMcanonicalization . ';' . static::$LE .
             $headerKeys .
-            $ident .
+            $kdent .
             $copiedHeaderFields .
             ' bh=' . $DKIMb64 . ';' . static::$LE .
             ' b=';
@@ -5090,7 +5090,7 @@ class PHPMailer
     /**
      * Perform a callback.
      *
-     * @param bool   $isSent
+     * @param bool   $ksSent
      * @param array  $to
      * @param array  $cc
      * @param array  $bcc
@@ -5099,10 +5099,10 @@ class PHPMailer
      * @param string $from
      * @param array  $extra
      */
-    protected function doCallback($isSent, $to, $cc, $bcc, $subject, $body, $from, $extra)
+    protected function doCallback($ksSent, $to, $cc, $bcc, $subject, $body, $from, $extra)
     {
         if (!empty($this->action_function) && is_callable($this->action_function)) {
-            call_user_func($this->action_function, $isSent, $to, $cc, $bcc, $subject, $body, $from, $extra);
+            call_user_func($this->action_function, $ksSent, $to, $cc, $bcc, $subject, $body, $from, $extra);
         }
     }
 

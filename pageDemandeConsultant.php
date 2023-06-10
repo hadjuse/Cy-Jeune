@@ -1,3 +1,6 @@
+<?php session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -38,13 +41,15 @@
                 document.getElementById("commentaires"+p).innerHTML = commentaires;
                 document.getElementById("indicereferent"+p).value = data['utilisateurs'][u]['referent'][r]['indice'];
                 
-                if( len < 4 ){
-                    for (var j = 4; j > len; j--) {
+                // Je supprime les champs en trop si il n'y a pas 12 ( valeurs max ) savoir-être 
+                if( len < 12 ){
+                    for (var j = 12; j > len; j--) {
                         var choixId = "Dchoix" + j;
                         var choixElement = document.getElementById(choixId+p).innerHTML ="";
                     }
                 }
 
+                // Mettre à jour la valeur de l'input
                 for (var i = 0; i < len; i++) {
                         var choixId = "choix" + (i + 1);
                         var inputId = "input" + (i + 1);
@@ -76,41 +81,47 @@
             </div>
             <!-- corps de la page avec les informations -->
             <?php
-                session_start();
-            
+
+            // Php qui me permettra d'afficher toute les demandes de références accépté 
+                // Je récupère les données du fichiers json 
                 $json = file_get_contents('php/utilisateurs.json');
                 $data = json_decode($json, true);
                 $utilisateurs = $data['utilisateurs'];
                 foreach ($utilisateurs as $us){
+                    // Parcours de tout les utilisateurs 
+                    
                     if ($_SESSION["mail"] == $us["mail"]){
-                        $i=0;
+                        
+                        $k=0;
                         echo '<form action="php/demandeConsultant.php" method="POST" > <label for "mailConsultant" class="head"> Entrez le e-mail du consultant : </label> <input value="" type="text" name="mailConsultant" id="mailConsultant" required class="body"></input>  ';
                         echo '<label > Selctionnez les engagement validé si dessous que vous souhaitez envoyé au consultant : </label>' ;
                         echo '<button type="submit" name="envoyer" > Envoyer </button> <br>';
                         foreach ($us["referent"] as $pr ){
+                            
                           if(substr($pr["commentaire"], -3) == "té"){
+                            // Pour chaque référents j'affiche toutes ses données avec un input checkbox pour séléctionné ou non la référence  
                                 echo '<div id="description">
                                     <div id="commentaire"><table id="tableaucom">
                                         
                                         <tr class="head"><td><label for="commentaires" >COMMENTAIRES</label></td></tr>
-                                        <tr ><td><textarea disabled value="t1" name="commentaires'.$i.'" id="commentaires'.$i.'" class="body" required ></textarea></td></tr>
+                                        <tr ><td><textarea disabled value="t1" name="commentaires'.$k.'" id="commentaires'.$k.'" class="body" required ></textarea></td></tr>
                                     </table>
                                     </div>
                                     <div id="profil"><table >
                                         <tr><td><label for="nom" class="head">NOM : </label>
-                                        <input disabled value="" type="text" name="nom" id="nom'.$i.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="nom" id="nom'.$k.'" required class="body"></input></td></tr>
                                         <tr><td><label for="prenom" class="head">PRENOM :</label>
-                                        <input disabled value="" type="text" name="prenom" id="prenom'.$i.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="prenom" id="prenom'.$k.'" required class="body"></input></td></tr>
                                         <tr><td><label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
-                                        <input disabled value="" type="date" name="dateNaissance" id="dateNaissance'.$i.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="date" name="dateNaissance" id="dateNaissance'.$k.'" required class="body"></input></td></tr>
                                         <tr><td><label for="mail" class="head">MAIL :</label>
-                                        <input disabled value="" type="mail" name="mail" id="mail'.$i.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="mail" name="mail" id="mail'.$k.'" required class="body"></input></td></tr>
                                         <tr><td><label for="reseau" class="head">Réseau social :</label>
-                                        <input disabled value="" type="text" name="reseau" id="reseau'.$i.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="reseau" id="reseau'.$k.'" required class="body"></input></td></tr>
                                         <tr><td><label for="presentation" class="head">Presentation :</label>
-                                        <input disabled value="" type="text" name="presentation" id="presentation'.$i.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="presentation" id="presentation'.$k.'" required class="body"></input></td></tr>
                                         <tr><td><label for="duree" class="head">Durée :</label>
-                                        <input disabled value="" type="text" name="duree" id="duree'.$i.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="duree" id="duree'.$k.'" required class="body"></input></td></tr>
                                     </table>
                                     </div>
                                     <div id="savoiretre"><table>
@@ -118,43 +129,68 @@
                                         
                                             <tr id="jesuis"><td>je confirme qu il est*</td></tr>
                                             <tr id="choix"><td>
-                                                <div id="Dchoix1'.$i.'">
-                                                    <input id="input1'.$i.'" type="checkbox" value="" name="savoir[]" disabled>
-                                                <label  id="choix1'.$i.'" for="choix1"> </label>
-                                                </div><div id="Dchoix2'.$i.'">
-                                                    <input id="input2'.$i.'" type="checkbox" value="" name="savoir[]" disabled>
-                                                <label id="choix2'.$i.'" for="choix2"> </label>
-                                                </div><div id="Dchoix3'.$i.'">
-                                                    <input id="input3'.$i.'" type="checkbox" value="" name="savoir[]" disabled>
-                                                <label id="choix3'.$i.'" for="choix3"> </label>
-                                                </div><div id="Dchoix4'.$i.'">
-                                                    <input id="input4'.$i.'" type="checkbox" value="" name="savoir[]" disabled>
-                                                <label id="choix4'.$i.'" for="choix4"> </label>
+                                                <div id="Dchoix1'.$k.'">
+                                                    <input id="input1'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label  id="choix1'.$k.'" for="choix1"> </label>
+                                                </div><div id="Dchoix2'.$k.'">
+                                                    <input id="input2'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix2'.$k.'" for="choix2"> </label>
+                                                </div><div id="Dchoix3'.$k.'">
+                                                    <input id="input3'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix3'.$k.'" for="choix3"> </label>
+                                                </div><div id="Dchoix4'.$k.'">
+                                                    <input id="input4'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix4'.$k.'" for="choix4"> </label>
+                                                </div>
+                                                <div id="Dchoix5'.$k.'">
+                                                    <input id="input5'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label  id="choix5'.$k.'" for="choix5"> </label>
+                                                </div><div id="Dchoix6'.$k.'">
+                                                    <input id="input6'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix6'.$k.'" for="choix6"> </label>
+                                                </div><div id="Dchoix7'.$k.'">
+                                                    <input id="input7'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix7'.$k.'" for="choix7"> </label>
+                                                </div><div id="Dchoix8'.$k.'">
+                                                    <input id="input8'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix8'.$k.'" for="choix8"> </label>
+                                                </div>
+                                                <div id="Dchoix9'.$k.'">
+                                                    <input id="input9'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label  id="choix9'.$k.'" for="choix9"> </label>
+                                                </div><div id="Dchoix10'.$k.'">
+                                                    <input id="input10'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix10'.$k.'" for="choix10"> </label>
+                                                </div><div id="Dchoix11'.$k.'">
+                                                    <input id="input11'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix11'.$k.'" for="choix11"> </label>
+                                                </div><div id="Dchoix12'.$k.'">
+                                                    <input id="input12'.$k.'" type="checkbox" value="" name="savoir[]" disabled>
+                                                <label id="choix12'.$k.'" for="choix12"> </label>
                                                 </div>
                                         </table>
                                     </div>     
-                                    <input id="indicereferent'.$i.'" type="checkbox" value="" name="engagement[]">
+                                    <input id="indicereferent'.$k.'" type="checkbox" value="" name="engagement[]">
                                         <label id="cliquez" for="cliquez"> Cochez pour envoyez </label>
                                 </div>';
                                  
-                            echo '<script> referent('.$_SESSION["indice"].','.$pr["indice"].','.$i.') </script>';
-                            $i++;
+                            // J'appelle pour chaque référence la fonction de remplissage javascript pour remplir le tableau 
+                            echo '<script> referent('.$_SESSION["indice"].','.$pr["indice"].','.$k.') </script>';
+                            $k++;
                             }
-                            
-                            //echo "<table id='referenttab'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
                        }  echo '</form>';
                   }
                     }
-                 
-    if ($_SESSION['connexion'] == 'visiteur'){
-        header('Location: inscription.html');
-        exit;
-    }
-    if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
-        header('Location: php/jeune.php');
-        exit;
-    }    
-?>
+                            
+                if ($_SESSION['connexion'] == 'visiteur'){
+                    header('Location: inscription.html');
+                    exit;
+                }
+                if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
+                    header('Location: php/jeune.php');
+                    exit;
+                }    
+            ?>
             <div id="contenu">
                 
             </div>

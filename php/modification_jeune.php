@@ -25,10 +25,10 @@
         foreach($utilisateurs as &$utilisateur){
             if ($_SESSION['mail'] == $utilisateur['mail']){
                 if ( isset ($utilisateur['referent'])){
-                    $indice = count($utilisateur['referent']);
+                    $kndice = count($utilisateur['referent']);
                  }
                  else {
-                    $indice = 0;
+                    $kndice = 0;
                  }
                 if (isset($savoir_etre)) {
                     $savoir = $savoir_etre;   
@@ -37,7 +37,7 @@
                     $savoir = [];
                 }
                 $utilisateur['referent'][] = array( 
-                'indice' => $indice,
+                'indice' => $kndice,
                 'nom' => $nom_referant,
                 'prenom' => $prenom_referant,
                 'mail' => $mail_referant,
@@ -49,11 +49,11 @@
                 'savoir_etre' => $savoir);
                 
                  // Les valeurs des variables
-    $idjeune = $_SESSION['indice'];
-    $idreferent = $indice;
+    $kdjeune = $_SESSION['indice'];
+    $kdreferent = $kndice;
 
     // Construction de l'URL avec les paramètres
-    $url = "http://localhost/Cy-Jeune/pagereferent.php?jeune=" . urlencode($idjeune) . "&referent=" . urlencode($idreferent);
+    $url = "http://localhost/Cy-Jeune/pagereferent.php?jeune=" . urlencode($kdjeune) . "&referent=" . urlencode($kdreferent);
 
         // Paramètres de l'e-mail
         $expediteur = 'cyjeune6.4@laposte.net';
