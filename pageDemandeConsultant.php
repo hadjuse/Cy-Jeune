@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Engagement</title>
 </head>
-<link rel="stylesheet" href="css/recap.css">
+<link rel="stylesheet" href="css/pageDemandeConsultant.css">
 
     <script>
         function referent(u,r,p){
@@ -84,9 +84,9 @@
                 foreach ($utilisateurs as $us){
                     if ($_SESSION["mail"] == $us["mail"]){
                         $i=0;
-                        echo '<form action="php/demandeConsultant.php" method="POST" > <label for "mailConsultant" class="head"> Entrez le e-mail du consultant : </label> <input value="" type="text" name="mailConsultant" id="mailConsultant" required class="body"></input>  ';
+                        echo '<form action="php/demandeConsultant.php" method="POST" > <div id="sendmail"><label for="mailConsultant" class="head"> Entrez le e-mail du consultant : </label> <input value="" type="text" name="mailConsultant" id="mailConsultant" required class="body"></input>  ';
                         echo '<label > Selctionnez les engagement validé si dessous que vous souhaitez envoyé au consultant : </label>' ;
-                        echo '<button type="submit" name="envoyer" > Envoyer </button> <br>';
+                        echo '<button type="submit" name="envoyer" > Envoyer </button> <br></div>';
                         foreach ($us["referent"] as $pr ){
                           if(substr($pr["commentaire"], -3) == "té"){
                                 echo '<div id="description">

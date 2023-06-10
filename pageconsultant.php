@@ -144,7 +144,7 @@
 
                     <p class="tete"> Le jeune : </p>
                     <form action="php/referent.php" method="post" >
-                        <div id="description">
+                        <div id="description2">
                             <div id="profil"><table >
                                 <tr><td><label for="nom" class="head">NOM :</label>
                                 <input disabled value="" type="text" name="nomJeune" id="nomJeune" required class="body"></input></td></tr>
