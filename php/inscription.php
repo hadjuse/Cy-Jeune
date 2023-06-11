@@ -39,14 +39,14 @@
       }
     }
    if ( isset ($utilisateurs)){
-      $indice = count($utilisateurs);
+      $kndice = count($utilisateurs);
    }
    else {
-      $indice = 0;
+      $kndice = 0;
    }
     // Crée un tableau associatif avec les données de l'utilisateur
     $utilisateur = array(
-      'indice' => $indice,
+      'indice' => $kndice,
       'prenom' => $prenom,
       'nom' => $nom,
       'date_naissance' => $date_naissance,

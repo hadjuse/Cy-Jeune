@@ -15,9 +15,10 @@ $prenom = $_POST['prenom'];
   $engagement = $_POST['presentation'];
   $reseau = $_POST['reseau'];
   $duree = $_POST['duree'];
-  $idjeune = $_POST['idjeune'];
-  $idreferent = $_POST['idreferent'];
+  $kdjeune = $_POST['idjeune'];
+  $kdreferent = $_POST['idreferent'];
 
+  // Vérifie si la demande a été validé ou non et ajoute a la fin du commentaire 
   if (isset($_POST['confirmer'])){
     $commentaires = $_POST['commentaires']."      Accepté";
   }
@@ -42,10 +43,10 @@ $prenom = $_POST['prenom'];
 
   // Récupérer le tableau des jeunes
   $utilisateurs = $data['utilisateurs'];
-  $utilisateur = $utilisateurs[$idjeune];
+  $utilisateur = $utilisateurs[$kdjeune];
 
-  $utilisateur['referent'][$idreferent] = array( 
-    'indice' => $idreferent,
+  $utilisateur['referent'][$kdreferent] = array( 
+    'indice' => $kdreferent,
     'nom' => $nom,
     'prenom' => $prenom,
     'mail' => $mailj,
@@ -57,7 +58,7 @@ $prenom = $_POST['prenom'];
     'savoir_etre' => $savoir,
     );
   // Convertir le tableau associatif en JSON
-  $utilisateurs[$idjeune] = $utilisateur;
+  $utilisateurs[$kdjeune] = $utilisateur;
   $data['utilisateurs'] = $utilisateurs;
   $json = json_encode($data, JSON_PRETTY_PRINT);
   
@@ -71,7 +72,7 @@ $prenom = $_POST['prenom'];
  $expediteur = 'cyjeune6.4@laposte.net';
  $mot_de_passe = 'Flaviomarioluigi6.4';
  $sujet = '[JEUNE6.4] demande traitée';
- $corps_message = 'Bonjour '.$prenom.', <br> Vous avez une nouvelle réponse concernant votre référent '. $utilisateur['referent'][$idreferent]['nom'].' '.   $utilisateur['referent'][$idreferent]['prenom'].'<br>
+ $corps_message = 'Bonjour '.$prenom.', <br> Vous avez une nouvelle réponse concernant votre référent '. $utilisateur['referent'][$kdreferent]['nom'].' '.   $utilisateur['referent'][$kdreferent]['prenom'].'<br>
  Veuillez vous connecter à l adresse suivante pour voir votre réponse: <a href ="http://localhost/Cy-Jeune/connexion.html">http://localhost/Cy-Jeune/connexion.html</a> <br> Cordialement, l équipe Jeune6.4';
 
          // Configuration de PHPMailer

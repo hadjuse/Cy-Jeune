@@ -28,7 +28,7 @@ class InstalledVersions
      * @var mixed[]|null
      * @psalm-var array{root: array{name: string, version: string, reference: string, pretty_version: string, aliases: string[], dev: bool, install_path: string, type: string}, versions: array<string, array{dev_requirement: bool, pretty_version?: string, version?: string, aliases?: string[], reference?: string, replaced?: string[], provided?: string[], install_path?: string, type?: string}>}|array{}|null
      */
-    private static $installed;
+    private static $knstalled;
 
     /**
      * @var bool|null
@@ -39,7 +39,7 @@ class InstalledVersions
      * @var array[]
      * @psalm-var array<string, array{root: array{name: string, version: string, reference: string, pretty_version: string, aliases: string[], dev: bool, install_path: string, type: string}, versions: array<string, array{dev_requirement: bool, pretty_version?: string, version?: string, aliases?: string[], reference?: string, replaced?: string[], provided?: string[], install_path?: string, type?: string}>}>
      */
-    private static $installedByVendor = array();
+    private static $knstalledByVendor = array();
 
     /**
      * Returns a list of all package names which are present, either by being installed, replaced or provided
@@ -50,8 +50,8 @@ class InstalledVersions
     public static function getInstalledPackages()
     {
         $packages = array();
-        foreach (self::getInstalled() as $installed) {
-            $packages[] = array_keys($installed['versions']);
+        foreach (self::getInstalled() as $knstalled) {
+            $packages[] = array_keys($knstalled['versions']);
         }
 
         if (1 === \count($packages)) {
@@ -72,8 +72,8 @@ class InstalledVersions
     {
         $packagesByType = array();
 
-        foreach (self::getInstalled() as $installed) {
-            foreach ($installed['versions'] as $name => $package) {
+        foreach (self::getInstalled() as $knstalled) {
+            foreach ($knstalled['versions'] as $name => $package) {
                 if (isset($package['type']) && $package['type'] === $type) {
                     $packagesByType[] = $name;
                 }
@@ -89,14 +89,14 @@ class InstalledVersions
      * This also returns true if the package name is provided or replaced by another package
      *
      * @param  string $packageName
-     * @param  bool   $includeDevRequirements
+     * @param  bool   $kncludeDevRequirements
      * @return bool
      */
-    public static function isInstalled($packageName, $includeDevRequirements = true)
+    public static function isInstalled($packageName, $kncludeDevRequirements = true)
     {
-        foreach (self::getInstalled() as $installed) {
-            if (isset($installed['versions'][$packageName])) {
-                return $includeDevRequirements || empty($installed['versions'][$packageName]['dev_requirement']);
+        foreach (self::getInstalled() as $knstalled) {
+            if (isset($knstalled['versions'][$packageName])) {
+                return $kncludeDevRequirements || empty($knstalled['versions'][$packageName]['dev_requirement']);
             }
         }
 
@@ -134,23 +134,23 @@ class InstalledVersions
      */
     public static function getVersionRanges($packageName)
     {
-        foreach (self::getInstalled() as $installed) {
-            if (!isset($installed['versions'][$packageName])) {
+        foreach (self::getInstalled() as $knstalled) {
+            if (!isset($knstalled['versions'][$packageName])) {
                 continue;
             }
 
             $ranges = array();
-            if (isset($installed['versions'][$packageName]['pretty_version'])) {
-                $ranges[] = $installed['versions'][$packageName]['pretty_version'];
+            if (isset($knstalled['versions'][$packageName]['pretty_version'])) {
+                $ranges[] = $knstalled['versions'][$packageName]['pretty_version'];
             }
-            if (array_key_exists('aliases', $installed['versions'][$packageName])) {
-                $ranges = array_merge($ranges, $installed['versions'][$packageName]['aliases']);
+            if (array_key_exists('aliases', $knstalled['versions'][$packageName])) {
+                $ranges = array_merge($ranges, $knstalled['versions'][$packageName]['aliases']);
             }
-            if (array_key_exists('replaced', $installed['versions'][$packageName])) {
-                $ranges = array_merge($ranges, $installed['versions'][$packageName]['replaced']);
+            if (array_key_exists('replaced', $knstalled['versions'][$packageName])) {
+                $ranges = array_merge($ranges, $knstalled['versions'][$packageName]['replaced']);
             }
-            if (array_key_exists('provided', $installed['versions'][$packageName])) {
-                $ranges = array_merge($ranges, $installed['versions'][$packageName]['provided']);
+            if (array_key_exists('provided', $knstalled['versions'][$packageName])) {
+                $ranges = array_merge($ranges, $knstalled['versions'][$packageName]['provided']);
             }
 
             return implode(' || ', $ranges);
@@ -165,16 +165,16 @@ class InstalledVersions
      */
     public static function getVersion($packageName)
     {
-        foreach (self::getInstalled() as $installed) {
-            if (!isset($installed['versions'][$packageName])) {
+        foreach (self::getInstalled() as $knstalled) {
+            if (!isset($knstalled['versions'][$packageName])) {
                 continue;
             }
 
-            if (!isset($installed['versions'][$packageName]['version'])) {
+            if (!isset($knstalled['versions'][$packageName]['version'])) {
                 return null;
             }
 
-            return $installed['versions'][$packageName]['version'];
+            return $knstalled['versions'][$packageName]['version'];
         }
 
         throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
@@ -186,16 +186,16 @@ class InstalledVersions
      */
     public static function getPrettyVersion($packageName)
     {
-        foreach (self::getInstalled() as $installed) {
-            if (!isset($installed['versions'][$packageName])) {
+        foreach (self::getInstalled() as $knstalled) {
+            if (!isset($knstalled['versions'][$packageName])) {
                 continue;
             }
 
-            if (!isset($installed['versions'][$packageName]['pretty_version'])) {
+            if (!isset($knstalled['versions'][$packageName]['pretty_version'])) {
                 return null;
             }
 
-            return $installed['versions'][$packageName]['pretty_version'];
+            return $knstalled['versions'][$packageName]['pretty_version'];
         }
 
         throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
@@ -207,16 +207,16 @@ class InstalledVersions
      */
     public static function getReference($packageName)
     {
-        foreach (self::getInstalled() as $installed) {
-            if (!isset($installed['versions'][$packageName])) {
+        foreach (self::getInstalled() as $knstalled) {
+            if (!isset($knstalled['versions'][$packageName])) {
                 continue;
             }
 
-            if (!isset($installed['versions'][$packageName]['reference'])) {
+            if (!isset($knstalled['versions'][$packageName]['reference'])) {
                 return null;
             }
 
-            return $installed['versions'][$packageName]['reference'];
+            return $knstalled['versions'][$packageName]['reference'];
         }
 
         throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
@@ -228,12 +228,12 @@ class InstalledVersions
      */
     public static function getInstallPath($packageName)
     {
-        foreach (self::getInstalled() as $installed) {
-            if (!isset($installed['versions'][$packageName])) {
+        foreach (self::getInstalled() as $knstalled) {
+            if (!isset($knstalled['versions'][$packageName])) {
                 continue;
             }
 
-            return isset($installed['versions'][$packageName]['install_path']) ? $installed['versions'][$packageName]['install_path'] : null;
+            return isset($knstalled['versions'][$packageName]['install_path']) ? $knstalled['versions'][$packageName]['install_path'] : null;
         }
 
         throw new \OutOfBoundsException('Package "' . $packageName . '" is not installed');
@@ -245,9 +245,9 @@ class InstalledVersions
      */
     public static function getRootPackage()
     {
-        $installed = self::getInstalled();
+        $knstalled = self::getInstalled();
 
-        return $installed[0]['root'];
+        return $knstalled[0]['root'];
     }
 
     /**
@@ -261,17 +261,17 @@ class InstalledVersions
     {
         @trigger_error('getRawData only returns the first dataset loaded, which may not be what you expect. Use getAllRawData() instead which returns all datasets for all autoloaders present in the process.', E_USER_DEPRECATED);
 
-        if (null === self::$installed) {
+        if (null === self::$knstalled) {
             // only require the installed.php file if this file is loaded from its dumped location,
             // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
             if (substr(__DIR__, -8, 1) !== 'C') {
-                self::$installed = include __DIR__ . '/installed.php';
+                self::$knstalled = include __DIR__ . '/installed.php';
             } else {
-                self::$installed = array();
+                self::$knstalled = array();
             }
         }
 
-        return self::$installed;
+        return self::$knstalled;
     }
 
     /**
@@ -305,8 +305,8 @@ class InstalledVersions
      */
     public static function reload($data)
     {
-        self::$installed = $data;
-        self::$installedByVendor = array();
+        self::$knstalled = $data;
+        self::$knstalledByVendor = array();
     }
 
     /**
@@ -319,32 +319,32 @@ class InstalledVersions
             self::$canGetVendors = method_exists('Composer\Autoload\ClassLoader', 'getRegisteredLoaders');
         }
 
-        $installed = array();
+        $knstalled = array();
 
         if (self::$canGetVendors) {
             foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
-                if (isset(self::$installedByVendor[$vendorDir])) {
-                    $installed[] = self::$installedByVendor[$vendorDir];
+                if (isset(self::$knstalledByVendor[$vendorDir])) {
+                    $knstalled[] = self::$knstalledByVendor[$vendorDir];
                 } elseif (is_file($vendorDir.'/composer/installed.php')) {
-                    $installed[] = self::$installedByVendor[$vendorDir] = require $vendorDir.'/composer/installed.php';
-                    if (null === self::$installed && strtr($vendorDir.'/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
-                        self::$installed = $installed[count($installed) - 1];
+                    $knstalled[] = self::$knstalledByVendor[$vendorDir] = require $vendorDir.'/composer/installed.php';
+                    if (null === self::$knstalled && strtr($vendorDir.'/composer', '\\', '/') === strtr(__DIR__, '\\', '/')) {
+                        self::$knstalled = $knstalled[count($knstalled) - 1];
                     }
                 }
             }
         }
 
-        if (null === self::$installed) {
+        if (null === self::$knstalled) {
             // only require the installed.php file if this file is loaded from its dumped location,
             // and not from its source location in the composer/composer package, see https://github.com/composer/composer/issues/9937
             if (substr(__DIR__, -8, 1) !== 'C') {
-                self::$installed = require __DIR__ . '/installed.php';
+                self::$knstalled = require __DIR__ . '/installed.php';
             } else {
-                self::$installed = array();
+                self::$knstalled = array();
             }
         }
-        $installed[] = self::$installed;
+        $knstalled[] = self::$knstalled;
 
-        return $installed;
+        return $knstalled;
     }
 }

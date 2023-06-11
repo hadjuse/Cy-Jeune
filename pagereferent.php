@@ -42,6 +42,7 @@
           .then(data => {
 
             // Extraire la valeur souhaitée du fichier JSON
+                // les valeurs du jeune 
             var prenomj = data['utilisateurs'][idjeune]['prenom'];
             var nomj = data['utilisateurs'][idjeune]['nom'];
             var dateNaissancej = data['utilisateurs'][idjeune]['date_naissance'];
@@ -49,7 +50,7 @@
             var reseauj = data['utilisateurs'][idjeune]['reseau'];
             
 
-
+                // Les valeurs du référents 
             var prenom = data['utilisateurs'][idjeune]['referent'][idreferent]['prenom'];
             var nom = data['utilisateurs'][idjeune]['referent'][idreferent]['nom'];
             var dateNaissance = data['utilisateurs'][idjeune]['referent'][idreferent]['date_naissance'];
@@ -77,6 +78,7 @@
             document.getElementById("idjeune").value = idjeune;
             document.getElementById("idreferent").value = idreferent;
             
+            // Je supprime les champs en trop si il n'y a pas 12 ( valeurs max ) savoir-être 
             if( len < 4 ){
                 for (var j = 4; j > len; j--) {
                     var choixId = "Dchoix" + j;
@@ -84,6 +86,7 @@
                 }
             }
 
+            // Mettre à jour la valeur de l'input
             for (var i = 0; i < len; i++) {
                     var choixId = "choix" + (i + 1);
                     var inputId = "input" + (i + 1);

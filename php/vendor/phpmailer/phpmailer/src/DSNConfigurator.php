@@ -139,9 +139,9 @@ class DSNConfigurator
      */
     private function configureSMTP($mailer, $config)
     {
-        $isSMTPS = 'smtps' === $config['scheme'];
+        $ksSMTPS = 'smtps' === $config['scheme'];
 
-        if ($isSMTPS) {
+        if ($ksSMTPS) {
             $mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         }
 
@@ -149,7 +149,7 @@ class DSNConfigurator
 
         if (isset($config['port'])) {
             $mailer->Port = $config['port'];
-        } elseif ($isSMTPS) {
+        } elseif ($ksSMTPS) {
             $mailer->Port = SMTP::DEFAULT_SECURE_PORT;
         }
 
