@@ -42,7 +42,7 @@ function afficherUtilisateurs(data) {
         // On utilise les informations du référent (referent.indice, par exemple) pour effectuer l'action de suppression
         var id_ref = referent.indice;
         var xhr = new XMLHttpRequest();
-        var url = "../php/suppression.php?f=" + id_ref + "&u=" + id_utilisateur;
+        var url = "../Cy-Jeune/php/suppression.php?f=" + id_ref + "&u=" + id_utilisateur;
         xhr.open("GET", url, true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         
@@ -83,7 +83,7 @@ function afficherUtilisateurs(data) {
     button.addEventListener("click", function () {
       var ind = utilisateur.indice;
       var xhr = new XMLHttpRequest();
-      xhr.open("GET", "../php/suppression.php?q=" + ind, true);
+      xhr.open("GET", "../Cy-Jeune/php/suppression.php?q=" + ind, true);
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
       xhr.onreadystatechange = function () {
@@ -109,7 +109,7 @@ function afficherUtilisateurs(data) {
 }
 
 // Récupérer les données JSON à partir du fichier local
-fetch("../php/utilisateurs.json")
+fetch("../Cy-Jeune/php/utilisateurs.json")
   .then(function (response) {
     return response.json();
   })

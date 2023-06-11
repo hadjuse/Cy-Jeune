@@ -165,6 +165,28 @@
                         "Autonome",
                         "Passion\u00e9"
                     ]
+                },
+                {
+                    "indice": "10",
+                    "nom": "Rabearimanana",
+                    "prenom": "Hadj",
+                    "mail": "rabearimananahadj@gmail.com",
+                    "reseau": "Twitter",
+                    "date_naissance": "2007-07-22",
+                    "commentaire": "trobo      Accept\u00e9",
+                    "duree": "1",
+                    "engagement": "Church",
+                    "savoir_etre": [
+                        "A l'\u00e9coute",
+                        "Fiable",
+                        "Responsable",
+                        "Optimiste",
+                        "Comp\u00e9tent",
+                        "Bienveillant",
+                        "Honnete",
+                        "Juste",
+                        "Impartial"
+                    ]
                 }
             ]
         },
