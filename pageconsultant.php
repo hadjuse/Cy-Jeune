@@ -8,7 +8,11 @@
     <title>Engagement</title>
 </head>
 <link rel="stylesheet" href="css/pageconsultant.css">
-
+<?php 
+if(session_start()){
+    session_destroy();
+}
+?>
     <script>
 
         function referent(u,r){
