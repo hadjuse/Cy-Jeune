@@ -70,8 +70,7 @@
  
      $mail->send();
     
-    header("location : page0.php");
-    exit;
+    echo '<script>window.location.href="../page0.php"</script>'
 ?>
 
 </body></html>
