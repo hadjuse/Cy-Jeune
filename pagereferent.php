@@ -39,8 +39,9 @@
             var dateNaissancej = data['utilisateurs'][idjeune]['date_naissance'];
             var mailj = data['utilisateurs'][idjeune]['mail'];
             var reseauj = data['utilisateurs'][idjeune]['reseau'];
-            if(data['utilisateurs'][idjeune]['referent'][idreferent]['commentaire'].slice(-3) === "té"){
-                
+            if(data['utilisateurs'][idjeune]['referent'][idreferent]['commentaire'].slice(-2) === "té"){
+                window.location.href="php/merci.php";
+                exit;
             }
 
                 // Les valeurs du référents 
