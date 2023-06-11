@@ -70,7 +70,7 @@
  
      $mail->send();
     
-    header("location : page0.php");
+    header("Location:page0.php");
     exit;
 ?>
 
