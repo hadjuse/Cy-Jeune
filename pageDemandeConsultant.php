@@ -1,4 +1,13 @@
-<?php session_start();
+<?php 
+session_start();
+if ($_SESSION['connexion'] == 'visiteur'){
+    header('Location: inscription.html');
+    exit;
+}
+if (empty($_SESSION['referent'])){
+    header('Location: php/jeune.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -81,7 +90,6 @@
             </div>
             <!-- corps de la page avec les informations -->
             <?php
-
             // Php qui me permettra d'afficher toute les demandes de références accépté 
                 // Je récupère les données du fichiers json 
                 $json = file_get_contents('php/utilisateurs.json');
@@ -91,16 +99,11 @@
                     // Parcours de tout les utilisateurs 
                     
                     if ($_SESSION["mail"] == $us["mail"]){
-<<<<<<< HEAD
-                        $i=0;
-                        echo '<form action="php/demandeConsultant.php" method="POST" > <div id="sendmail"><label for="mailConsultant" class="head"> Entrez le e-mail du consultant : </label> <input value="" type="text" name="mailConsultant" id="mailConsultant" required class="body"></input>  ';
-=======
                         
                         $k=0;
-                        echo '<form action="php/demandeConsultant.php" method="POST" > <label for "mailConsultant" class="head"> Entrez le e-mail du consultant : </label> <input value="" type="text" name="mailConsultant" id="mailConsultant" required class="body"></input>  ';
->>>>>>> Théo
-                        echo '<label > Selctionnez les engagement validé si dessous que vous souhaitez envoyé au consultant : </label>' ;
-                        echo '<button type="submit" name="envoyer" > Envoyer </button> <br></div>';
+                        echo '<form action="php/demandeConsultant.php" method="POST" ><div id="sendmail"> <label for "mailConsultant" class="head"> Entrez l'."'".'e-mail du consultant : </label> <input value="" type="text" name="mailConsultant" id="mailConsultant" required class="body"></input>  ';
+                        echo '<label > Selectionnez les engagements validés ci-dessous que vous souhaitez envoyer au consultant : </label>' ;
+                        echo '</div>';
                         foreach ($us["referent"] as $pr ){
                             
                           if(substr($pr["commentaire"], -3) == "té"){
@@ -178,23 +181,14 @@
                                     <input id="indicereferent'.$k.'" type="checkbox" value="" name="engagement[]">
                                         <label id="cliquez" for="cliquez"> Cochez pour envoyez </label>
                                 </div>';
-                                 
+                                
                             // J'appelle pour chaque référence la fonction de remplissage javascript pour remplir le tableau 
                             echo '<script> referent('.$_SESSION["indice"].','.$pr["indice"].','.$k.') </script>';
                             $k++;
                             }
-                       }  echo '</form>';
+                       }  echo '<button type="submit" name="envoyer" id="send" > Envoyer </button> <br></form>';
                   }
-                    }
-                            
-                if ($_SESSION['connexion'] == 'visiteur'){
-                    header('Location: inscription.html');
-                    exit;
-                }
-                if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
-                    header('Location: php/jeune.php');
-                    exit;
-                }    
+                    }   
             ?>
             <div id="contenu">
                 

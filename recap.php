@@ -8,7 +8,17 @@
     <title>Engagement</title>
 </head>
 <link rel="stylesheet" href="css/recap.css">
-
+    <?php 
+    session_start();
+    if ($_SESSION['connexion'] == 'visiteur'){
+        header('Location: inscription.html');
+        exit;
+    }
+    if (empty($_SESSION['referent'])){
+        header('Location: php/jeune.php');
+        exit;
+    }
+    ?>
     <script>
         function referent(u,r){
             // Charger le fichier JSON
@@ -79,8 +89,6 @@
             </div>
             <!-- corps de la page avec les informations -->
             <?php
-                session_start();
-
                 // Menu ou est affiché tout les référents du jeune connecté 
                 echo" <div id=referents> Nom du référent :<br>";
                 $json = file_get_contents('php/utilisateurs.json');
@@ -109,14 +117,6 @@
                 echo"</div>";   
 
                     // Vérification de qui peut accéder au site ou non
-                if ($_SESSION['connexion'] == 'visiteur'){
-                    header('Location: inscription.html');
-                    exit;
-                }
-                if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
-                    header('Location: php/jeune.php');
-                    exit;
-                }
                 echo '<script> referent('.$_SESSION["indice"].',0) </script>';
                 
             ?>

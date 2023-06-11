@@ -17,7 +17,7 @@ body{
 }
 
 #banderole #ref{
-    color: #dde576;
+    color: rgb(34, 140, 186);
     font-size:6em;
     text-decoration: none;
     margin-left: 43vw;
@@ -47,13 +47,13 @@ body{
     padding: 1%;
 }
 #referent{
-    background-color: rgb(19, 202, 19);
-    color:white;
+    color:rgb(19, 202, 19);
     text-decoration: none;
     padding: 1%;
 }
 #consultant{
-    color:rgb(34, 140, 186);
+    background-color: rgb(34, 140, 186);
+    color:white;
     text-decoration: none;
     padding: 1%;
 }
@@ -72,7 +72,6 @@ padding-bottom: 2vw;
 #description>input[type="checkbox"]{
     margin-top: -5vw;
     margin-right: -18vw;
-
 }
 
 #cliquez{
@@ -86,7 +85,7 @@ padding-bottom: 2vw;
     display: flex;
 }
 #description #commentaire .head{
-    background: linear-gradient(0.25turn, #c5d40e,#dde576);
+    background: linear-gradient(0.25turn, rgb(153, 212, 238),rgb(34, 140, 186));
     color: white;
     text-align: center;
     font-size: 1.2em;
@@ -94,7 +93,7 @@ padding-bottom: 2vw;
 
 #description #commentaire .body{
     border: none;
-    background: linear-gradient(0.25turn, #c5d40e,#dde576);
+    background: linear-gradient(0.25turn, rgb(153, 212, 238),rgb(34, 140, 186));
     color: #2a248b;
     font-size: 2em;
     font-family: Arial, Helvetica, sans-serif;
@@ -109,9 +108,9 @@ padding-bottom: 2vw;
     margin-left: -5vw;
     margin-right: -5vw;
     background-color: white;
-    border:#dde576 solid 2px;
+    border:rgb(34, 140, 186) solid 2px;
     border-radius: 7px;
-    color: #dde576;
+    color: rgb(34, 140, 186);
     padding-left: 10px;
     font-size: 1.7em;
     padding:1%;
@@ -122,7 +121,7 @@ padding-bottom: 2vw;
 #description #profil input{
     width: 50%;
     border: none;
-    border-bottom: #dde576 dotted 2px;
+    border-bottom: rgb(34, 140, 186) dotted 2px;
     font-size: 0.5em;
     color: #2a248b;
 }
@@ -132,20 +131,37 @@ padding-bottom: 2vw;
 }
 
 .savoir-etre{
-    color: #13a538;
+    color: rgb(34, 140, 186);
     font-size: 1.5em;
   }
 
   #jesuis{
     color: white;
-    background: linear-gradient(0.25turn, #c5d40e,#13a538);
+    background: linear-gradient(0.25turn, rgb(153, 212, 238),rgb(34, 140, 186));
     text-align: center;
     font-size: 1.3em;
 }
 
 #choix {
 
-    background:linear-gradient(0.25turn, rgba(255, 255, 255, 0.695),#c3d40e87);
+    background:linear-gradient(0.25turn, rgb(153, 212, 238),rgb(34, 140, 186));
     font-size: 1.2em;
     color: black;
+}
+
+#send{
+    margin-left:45vw;
+    background-image: linear-gradient(to right, #7fabee 0%, #4a62e9  51%, #2330e0  100%);
+    padding: 0.2vW 0.2vw;
+    width: 10vw;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;         
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 0.2vw;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
 }
