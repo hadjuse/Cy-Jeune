@@ -3,6 +3,7 @@
 </p>
 
 # Cy-Jeune 6.4
+FORTIER Théo, RABEARIMANANA Hadj, MARTIN SOARES Flavio BENZOUA Zinedine
 Le projet, adressé aux jeunes entre 16 et 30 ans, vise à valoriser toute expérience  comme source d’enrichissement qui puisse être reconnue comme l’expression d’un  savoir faire ou savoir être. 
 
 ## Sommaire:
