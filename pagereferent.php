@@ -8,16 +8,6 @@
     <title>Engagement</title>
 </head>
 <link rel="stylesheet" href="css/pagereferent.css">
-
-<?php
-    session_start();
-    if ($_SESSION['connexion'] == 'visiteur'){
-        header('Location: inscription.html');
-        exit;
-    
-    }
-?>
-
     <script>
         // Fonction pour récupérer les paramètres de requête depuis l'URL
         function getParameterByName(name, url) {
@@ -33,6 +23,7 @@
         // Récupération des paramètres de requête
         var idjeune = getParameterByName('jeune');
         var idreferent = getParameterByName('referent');
+        
         // Récupérer les paramètres de l'URL
         const params = new URLSearchParams(window.location.search);
                  
@@ -48,7 +39,9 @@
             var dateNaissancej = data['utilisateurs'][idjeune]['date_naissance'];
             var mailj = data['utilisateurs'][idjeune]['mail'];
             var reseauj = data['utilisateurs'][idjeune]['reseau'];
-            
+            if(data['utilisateurs'][idjeune]['referent'][idreferent]['commentaire'].slice(-3) === "té"){
+                
+            }
 
                 // Les valeurs du référents 
             var prenom = data['utilisateurs'][idjeune]['referent'][idreferent]['prenom'];

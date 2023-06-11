@@ -50,7 +50,7 @@
      // Configuration de PHPMailer
      $mail = new PHPMailer(true);
      $mail->isSMTP();
-     $mail->SMTPDebug=2;
+     //$mail->SMTPDebug=2;
      $mail->Host = 'smtp.laposte.net';
      $mail->Port = 465;
      $mail->SMTPSecure = 'ssl';
@@ -68,13 +68,8 @@
      $mail->Subject = $sujet;
      $mail->Body = $corps_message;
  
-     try {
-     // Envoi de l'e-mail
      $mail->send();
-     echo "L'e-mail a été envoyé avec succès.";
-     } catch (Exception $e) {
-         echo "Une erreur s'est produite lors de l'envoi de l'e-mail : " . $mail->ErrorInfo;
-     }
+    
     header("location : page0.php");
     exit;
 ?>
