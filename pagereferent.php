@@ -8,6 +8,11 @@
     <title>Engagement</title>
 </head>
 <link rel="stylesheet" href="css/pagereferent.css">
+<?php 
+if(session_start()){
+    session_destroy();
+}
+?>
     <script>
         // Fonction pour récupérer les paramètres de requête depuis l'URL
         function getParameterByName(name, url) {

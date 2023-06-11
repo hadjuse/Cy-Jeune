@@ -1,6 +1,10 @@
 
 <?php
     session_start();
+    if ($_SESSION['connexion'] == NULL){
+        header('Location: ../inscription.html');
+        exit;
+    }
     if ($_SESSION['connexion'] == 'visiteur'){
         header('Location: ../inscription.html');
         exit;
