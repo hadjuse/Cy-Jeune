@@ -10,7 +10,7 @@ $s = (int)$_GET["q"]; // indice de l'utilisateur quand il faut supprimer simplem
 
 $u = (int)$_GET["u"]; // indice de l'utilisateur quand il faut supprimer le referent
 $f = $_GET['f']; // indice du referent
-function supprimer_referent($idUtilisateur, $idReferent){
+function supprimer_referent($idUtilisateur, $idReferent) {
     $jsonData = file_get_contents('utilisateurs.json'); // Charger les données JSON depuis le fichier
     $data = json_decode($jsonData, true); // Décoder les données JSON en un tableau associatif
 
@@ -20,15 +20,16 @@ function supprimer_referent($idUtilisateur, $idReferent){
         if ($utilisateur['indice'] === $idUtilisateur) {
             $referents = &$utilisateur['referent']; // Référence au tableau des référents de l'utilisateur
 
-            foreach ($referents as $index => $referent) {
-                if ($referent['indice'] === $idReferent) {
-                    unset($referents[$index]); // Supprimer le référent du tableau
-                    //echo $referent['nom'];
+            $referentsCount = count($referents);
+            for ($i = 0; $i < $referentsCount; $i++) {
+                if ($referents[$i]['indice'] == $idReferent) {
+                    unset($referents[$i]); // Supprimer le référent du tableau
+                    $referents = array_values($referents); // Réorganiser les indices du tableau des référents
+                    $utilisateur['referent'] = $referents; // Mettre à jour le tableau des référents de l'utilisateur
                     break;
                 }
             }
-
-            $referents = array_values($referents); // Réorganiser les indices du tableau des référents
+            
             break;
         }
     }
@@ -36,6 +37,10 @@ function supprimer_referent($idUtilisateur, $idReferent){
     $jsonData = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents('utilisateurs.json', $jsonData);
 }
+
+
+
+
 
 function supprimer($id)
 {
@@ -59,7 +64,7 @@ function supprimer($id)
 
     $jsonData = json_encode($data, JSON_PRETTY_PRINT); // Encoder les données au format JSON
     file_put_contents('utilisateurs.json', $jsonData); // Enregistrer les modifications dans le fichier
-    while($data['utilisateurs'][$index] !=NULL){
+    while($data['utilisateurs'][$index] !=NULL){// réorganise les indices afin d'évitez les beugues.
         $data['utilisateurs'][$index]['indice']-=1;
         $index++;
     }
