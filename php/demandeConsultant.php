@@ -23,7 +23,7 @@
     $parametresRequete = http_build_query($parametres);
 
     // Construction de l'URL avec les paramètres
-    $url = "http://localhost/Cy-Jeune/pageconsultant.php?" . $parametresRequete;
+    $url = "http://localhost:8080/Cy-Jeune/pageconsultant.php?" . $parametresRequete;
 
      // Construction de l'URL avec les paramètres
      //$url = "http://localhost/Cy-Jeune/pageconsultant.php?jeune=" . urlencode($kndiceJeune) . "&referent=" . urlencode(implode(" ", $kndiceReferent));
@@ -40,9 +40,9 @@
      savoir-être.<br> 
              Afin de compléter leur CV, les jeunes peuvent demander des références qui confirment leur expérience 
      (clubs de sport,bénévolat, services à domiciles, etc.). Ces références pourront être consultées par un recruteur potentiel.
-     Vous avez été sollicité par un de ces jeunes afin de confirmer son engagement. Voici un lien permettant de 
-     consulter et eventuellement confirmer ses experiences et savoir-faire/savoir-etre: <a href="'.$url.'">'.$url.'</a><br>
-     Nous vous remercions par avance de votre participation
+     Vous avez été sollicité par un de ces jeunes afin de consulté ses références.
+      Voici un lien permettant de consulter ses experiences et savoir-faire/savoir-etre: <a href="'.$url.'">'.$url.'</a><br>
+     Nous vous remercions par avance de votre participation.<br>
      Cordialement, l équipe Jeune6.4';
 
 
