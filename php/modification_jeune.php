@@ -53,7 +53,7 @@
     $kdreferent = $kndice;
 
     // Construction de l'URL avec les paramètres
-    $url = "http://localhost/Cy-Jeune/pagereferent.php?jeune=" . urlencode($kdjeune) . "&referent=" . urlencode($kdreferent);
+    $url = "http://localhost:8080/Cy-Jeune/pagereferent.php?jeune=" . urlencode($kdjeune) . "&referent=" . urlencode($kdreferent);
 
         // Paramètres de l'e-mail
         $expediteur = 'cyjeune6.4@laposte.net';
@@ -69,7 +69,7 @@
         (clubs de sport,bénévolat, services à domiciles, etc.). Ces références pourront être consultées par un recruteur potentiel.
         Vous avez été sollicité par un de ces jeunes afin de confirmer son engagement. Voici un lien permettant de 
         consulter et eventuellement confirmer ses experiences et savoir-faire/savoir-etre: <a href="'.$url.'">'.$url.'</a><br>
-        Nous vous remercions par avance de votre participation
+        Nous vous remercions par avance de votre participation.<br>
         Cordialement, l équipe Jeune6.4';
 
 

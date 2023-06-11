@@ -4,15 +4,18 @@ if ($_SESSION['connexion'] == 'visiteur'){
     header('Location: inscription.html');
     exit;
 }
-if (empty($_SESSION['referent'])){
-    header('Location: php/jeune.php');
-    exit;
-}
+// Php qui me permettra d'afficher toute les demandes de références accépté 
+                // Je récupère les données du fichiers json 
+                $json = file_get_contents('php/utilisateurs.json');
+                $data = json_decode($json, true);
+                $utilisateurs = $data['utilisateurs'];
+                if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
+                    header('Location: php/jeune.php');
+                    exit;
+                }
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,11 +93,7 @@ if (empty($_SESSION['referent'])){
             </div>
             <!-- corps de la page avec les informations -->
             <?php
-            // Php qui me permettra d'afficher toute les demandes de références accépté 
-                // Je récupère les données du fichiers json 
-                $json = file_get_contents('php/utilisateurs.json');
-                $data = json_decode($json, true);
-                $utilisateurs = $data['utilisateurs'];
+            
                 foreach ($utilisateurs as $us){
                     // Parcours de tout les utilisateurs 
                     
@@ -187,6 +186,13 @@ if (empty($_SESSION['referent'])){
                             $k++;
                             }
                        }  echo '<button type="submit" name="envoyer" id="send" > Envoyer </button> <br></form>';
+                       echo $k;
+                       if ($k == 0){
+                    echo "<script>alert('aucun referent a validé vos demandes'); window.location.href ='php/Jeune.php'</script>";
+
+                    exit;
+                  }
+                  
                   }
                     }   
             ?>

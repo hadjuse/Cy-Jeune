@@ -57,7 +57,7 @@
                     <tr id="jesuis"><td>Je suis*</td></tr>
                     <tr id="choix"><td>
                         <div>
-                        <input type="checkbox"  id="Autonome" value="Autonome" name="savoir[]">
+                        <input type="checkbox"  id="Autonome" value="Autonome" name="savoir[]" checked>
 
 
                         <label for="Autonome">Autonome</label>
@@ -103,7 +103,7 @@
             <script>
                 // Vérifie que le jeune ne peut séléctionner que 4 savoir-être max
                 const checkboxes = document.querySelectorAll('input[type="checkbox"]')
-                let checkedCount = 0
+                let checkedCount = 1
                 
                 checkboxes.forEach((checkbox) => {
                   checkbox.addEventListener('click', () => {
@@ -112,10 +112,14 @@
                     } else {
                       checkedCount--
                     }
-                
                     if (checkedCount > 4) {
                       checkbox.checked = false
                       checkedCount--
+                    }
+                    if(checkedCount == 0){
+                        alert('choisir au moins une case')
+                        checkbox.checked = true
+                        checkedCount++
                     }
                   })
                 })

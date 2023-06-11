@@ -20,10 +20,10 @@ $prenom = $_POST['prenom'];
 
   // Vérifie si la demande a été validé ou non et ajoute a la fin du commentaire 
   if (isset($_POST['confirmer'])){
-    $commentaires = $_POST['commentaires']."      Accepté";
+    $commentaires = $_POST['commentaires']." Accepté";
   }
   elseif (isset($_POST['refuser'])){
-    $commentaires = $_POST['commentaires']."      Refusé";
+    $commentaires = $_POST['commentaires']." Refusé";
   }
 
 
@@ -72,13 +72,13 @@ $prenom = $_POST['prenom'];
  $expediteur = 'cyjeune6.4@laposte.net';
  $mot_de_passe = 'Flaviomarioluigi6.4';
  $sujet = '[JEUNE6.4] demande traitée';
- $corps_message = 'Bonjour '.$prenom.', <br> Vous avez une nouvelle réponse concernant votre référent '. $utilisateur['referent'][$kdreferent]['nom'].' '.   $utilisateur['referent'][$kdreferent]['prenom'].'<br>
- Veuillez vous connecter à l adresse suivante pour voir votre réponse: <a href ="http://localhost/Cy-Jeune/connexion.html">http://localhost/Cy-Jeune/connexion.html</a> <br> Cordialement, l équipe Jeune6.4';
+ $corps_message = 'Bonjour '.$utilisateur['prenom'].', <br> Vous avez une nouvelle réponse concernant votre référent '. $utilisateur['referent'][$kdreferent]['nom'].' '.   $utilisateur['referent'][$kdreferent]['prenom'].'<br>
+ Veuillez vous connecter à l adresse suivante pour voir votre réponse: <a href ="http://localhost/Cy-Jeune/connexion.html">http://localhost:8080/Cy-Jeune/connexion.html</a> <br> Cordialement, l équipe Jeune6.4';
 
          // Configuration de PHPMailer
          $mail = new PHPMailer(true);
          $mail->isSMTP();
-         $mail->SMTPDebug=2;
+         //$mail->SMTPDebug=2;
          $mail->Host = 'smtp.laposte.net';
          $mail->Port = 465;
          $mail->SMTPSecure = 'ssl';

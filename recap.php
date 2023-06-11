@@ -18,10 +18,7 @@
         header('Location: inscription.html');
         exit;
     }
-    if (empty($_SESSION['referent'])){
-        header('Location: php/jeune.php');
-        exit;
-    }
+    
     ?>
     <script>
         function referent(u,r){
@@ -41,7 +38,7 @@
                 var commentaires = data['utilisateurs'][u]['referent'][r]['commentaire'];
                 var savoiretre = data['utilisateurs'][u]['referent'][r]['savoir_etre'];
                 var len = savoiretre.length;
-
+                
                 // Mettre à jour la valeur de l'input
                 document.getElementById("prenom").value = prenom;
                 document.getElementById("nom").value = nom;
@@ -98,6 +95,10 @@
                 $json = file_get_contents('php/utilisateurs.json');
                 $data = json_decode($json, true);
                 $utilisateurs = $data['utilisateurs'];
+                if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
+                    header('Location: php/jeune.php');
+                    exit;
+                }
                 foreach ($utilisateurs as $us){
                     // parcours de tout les jeunes 
                 if ($_SESSION["mail"] == $us["mail"]){
