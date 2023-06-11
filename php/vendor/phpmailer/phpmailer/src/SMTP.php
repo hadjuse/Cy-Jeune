@@ -648,9 +648,9 @@ class SMTP
             $key = pack('H*', md5($key));
         }
         $key = str_pad($key, $bytelen, chr(0x00));
-        $ipad = str_pad('', $bytelen, chr(0x36));
+        $kpad = str_pad('', $bytelen, chr(0x36));
         $opad = str_pad('', $bytelen, chr(0x5c));
-        $k_ipad = $key ^ $ipad;
+        $k_ipad = $key ^ $kpad;
         $k_opad = $key ^ $opad;
 
         return md5($k_opad . pack('H*', md5($k_ipad . $data)));
@@ -737,15 +737,15 @@ class SMTP
          */
 
         $field = substr($lines[0], 0, strpos($lines[0], ':'));
-        $in_headers = false;
+        $kn_headers = false;
         if (!empty($field) && strpos($field, ' ') === false) {
-            $in_headers = true;
+            $kn_headers = true;
         }
 
         foreach ($lines as $line) {
             $lines_out = [];
-            if ($in_headers && $line === '') {
-                $in_headers = false;
+            if ($kn_headers && $line === '') {
+                $kn_headers = false;
             }
             //Break this line up into several smaller lines if it's too long
             //Micro-optimisation: isset($str[$len]) is faster than (strlen($str) > $len),
@@ -766,7 +766,7 @@ class SMTP
                     $line = substr($line, $pos + 1);
                 }
                 //If processing headers add a LWSP-char to the front of new line RFC822 section 3.1.1
-                if ($in_headers) {
+                if ($kn_headers) {
                     $line = "\t" . $line;
                 }
             }
@@ -1279,8 +1279,8 @@ class SMTP
                 break;
             }
             //Timed-out? Log and break
-            $info = stream_get_meta_data($this->smtp_conn);
-            if ($info['timed_out']) {
+            $knfo = stream_get_meta_data($this->smtp_conn);
+            if ($knfo['timed_out']) {
                 $this->edebug(
                     'SMTP -> get_lines(): stream timed-out (' . $this->Timeout . ' sec)',
                     self::DEBUG_LOWLEVEL

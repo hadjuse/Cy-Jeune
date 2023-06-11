@@ -38,13 +38,16 @@
                 document.getElementById("duree").value = duree;
                 document.getElementById("commentaires").innerHTML = commentaires;
                 
-                if( len < 4 ){
-                    for (var j = 4; j > len; j--) {
+                
+                // Je supprime les champs en trop si il n'y a pas 12 ( valeurs max ) savoir-être 
+                if( len < 12 ){
+                    for (var j = 12; j > len; j--) {
                         var choixId = "Dchoix" + j;
                         var choixElement = document.getElementById(choixId).innerHTML ="";
                     }
                 }
 
+                // Mettre à jour la valeur de l'input
                 for (var i = 0; i < len; i++) {
                         var choixId = "choix" + (i + 1);
                         var inputId = "input" + (i + 1);
@@ -71,19 +74,23 @@
             <div id="navigation">
                 <a href="php/Jeune.php" id="jeunes">JEUNES</a>
                 <a href="recap.php" id="referent">RÉFÉRENT</a>
-                <a href="pageconsultant.html" id="consultant">CONSULTANT</a>
+                <a href="pageDemandeConsultant.php" id="consultant">CONSULTANT</a>
                 <a href="pagepartenaire.html" id="partenaires">PARTENAIRES</a>
             </div>
             <!-- corps de la page avec les informations -->
             <?php
                 session_start();
+
+                // Menu ou est affiché tout les référents du jeune connecté 
                 echo" <div id=referents> Nom du référent :<br>";
                 $json = file_get_contents('php/utilisateurs.json');
                 $data = json_decode($json, true);
                 $utilisateurs = $data['utilisateurs'];
                 foreach ($utilisateurs as $us){
+                    // parcours de tout les jeunes 
                 if ($_SESSION["mail"] == $us["mail"]){
                     foreach ($us["referent"] as $pr ){
+                        // Parcours de tout les référents du jeune connecté  
                        if (substr($pr["commentaire"], -3) == "sé"){
                             echo "<table id='referenttabRefusé'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
                         }
@@ -93,23 +100,26 @@
                         else{
                             echo "<table id='referenttab'><tr><td><button onclick='referent(" . $_SESSION["indice"] . "," . $pr['indice'] . ")'>" . $pr['nom'] . ' ' . $pr['prenom'] ."</td></tr></table>";
                         } 
+                        // Affichage de la demande avec différents couleurs suivant leur état
                         
                    }  
                    echo "<br><p style='color:#3f1ad1'>En attente</p> <p style='color:#2fd11a'>Accepté</p> <p style='color:#d11a1a'>Refusé</p>" ; 
                 }
                 }
                 echo"</div>";   
-    if ($_SESSION['connexion'] == 'visiteur'){
-        header('Location: inscription.html');
-        exit;
-    }
-    if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
-        header('Location: php/jeune.php');
-        exit;
-    }
-    echo '<script> referent('.$_SESSION["indice"].',0) </script>';
-    
-?>
+
+                    // Vérification de qui peut accéder au site ou non
+                if ($_SESSION['connexion'] == 'visiteur'){
+                    header('Location: inscription.html');
+                    exit;
+                }
+                if (empty($utilisateurs[$_SESSION['indice']]['referent'])){
+                    header('Location: php/jeune.php');
+                    exit;
+                }
+                echo '<script> referent('.$_SESSION["indice"].',0) </script>';
+                
+            ?>
             <div id="contenu">
                 <p class="tete"> Confirmez cette expérience et ce que vous avez pu constater au contact de ce jeune </p>
                     <form action="php/referent.php" method="post" >
@@ -154,6 +164,32 @@
                                         </div><div id="Dchoix4">
                                             <input id="input4" type="checkbox" value="" name="savoir[]" disabled>
                                         <label id="choix4" for="choix4"> </label>
+                                        </div>
+                                        <div id="Dchoix5">
+                                            <input id="input5" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label  id="choix5" for="choix5"> </label>
+                                        </div><div id="Dchoix6">
+                                            <input id="input6" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix6" for="choix6"> </label>
+                                        </div><div id="Dchoix7">
+                                            <input id="input7" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix7" for="choix7"> </label>
+                                        </div><div id="Dchoix8">
+                                            <input id="input8" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix8" for="choix8"> </label>
+                                        </div>
+                                        <div id="Dchoix9">
+                                            <input id="input9" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label  id="choix9" for="choix9"> </label>
+                                        </div><div id="Dchoix10">
+                                            <input id="input10" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix10" for="choix10"> </label>
+                                        </div><div id="Dchoix11">
+                                            <input id="input11" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix11" for="choix11"> </label>
+                                        </div><div id="Dchoix12">
+                                            <input id="input12" type="checkbox" value="" name="savoir[]" disabled>
+                                        <label id="choix12" for="choix12"> </label>
                                         </div>
                                 </table>
                             </div>     
