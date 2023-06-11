@@ -73,7 +73,7 @@ $prenom = $_POST['prenom'];
  $mot_de_passe = 'Flaviomarioluigi6.4';
  $sujet = '[JEUNE6.4] demande traitée';
  $corps_message = 'Bonjour '.$utilisateur['prenom'].', <br> Vous avez une nouvelle réponse concernant votre référent '. $utilisateur['referent'][$kdreferent]['nom'].' '.   $utilisateur['referent'][$kdreferent]['prenom'].'<br>
- Veuillez vous connecter à l adresse suivante pour voir votre réponse: <a href ="http://localhost/Cy-Jeune/connexion.html">http://localhost:8080/Cy-Jeune/connexion.html</a> <br> Cordialement, l équipe Jeune6.4';
+ Veuillez vous connecter à l adresse suivante pour voir votre réponse: <a href ="http://localhost:8080/connexion.html">http://localhost:8080/connexion.html</a> <br> Cordialement, l équipe Jeune6.4';
 
          // Configuration de PHPMailer
          $mail = new PHPMailer(true);

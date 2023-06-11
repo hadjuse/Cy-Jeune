@@ -23,7 +23,7 @@
     $parametresRequete = http_build_query($parametres);
 
     // Construction de l'URL avec les paramètres
-    $url = "http://localhost:8080/Cy-Jeune/pageconsultant.php?" . $parametresRequete;
+    $url = "http://localhost:8080/pageconsultant.php?" . $parametresRequete;
 
      // Construction de l'URL avec les paramètres
      //$url = "http://localhost/Cy-Jeune/pageconsultant.php?jeune=" . urlencode($kndiceJeune) . "&referent=" . urlencode(implode(" ", $kndiceReferent));

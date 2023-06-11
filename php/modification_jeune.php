@@ -53,7 +53,7 @@
     $kdreferent = $kndice;
 
     // Construction de l'URL avec les paramètres
-    $url = "http://localhost:8080/Cy-Jeune/pagereferent.php?jeune=" . urlencode($kdjeune) . "&referent=" . urlencode($kdreferent);
+    $url = "http://localhost:8080/pagereferent.php?jeune=" . urlencode($kdjeune) . "&referent=" . urlencode($kdreferent);
 
         // Paramètres de l'e-mail
         $expediteur = 'cyjeune6.4@laposte.net';
