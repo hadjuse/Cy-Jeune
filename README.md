@@ -26,3 +26,11 @@ par
 
 L'exécution est normal il faudra juste taper dans le terminal
 ```php -S localhost:8080```
+En revanche, lorsque vous recevez le mail de referent et que vous êtes sur linux:
+il faut copier le lien allez sur un nouvel onglet:
+et remplacer:
+```http://localhost/Cy-Jeune/pagereferent.php?jeune=0&referent=10```
+par
+```http://localhost:8080/pagereferent.php?jeune=0&referent=10```
+**Attention les valeurs dans les liens sont des exemples**
+Il ne faut pas copier les lignes mais adapter à son code.
