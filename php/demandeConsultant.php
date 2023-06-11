@@ -70,8 +70,7 @@
  
      $mail->send();
     
-    header("Location:page0.php");
-    exit;
+    echo '<script>window.location.href="../pageengagement.php"</script>'
 ?>
 
 </body></html>
