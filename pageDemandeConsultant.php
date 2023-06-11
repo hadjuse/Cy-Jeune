@@ -116,19 +116,19 @@ if ($_SESSION['connexion'] == 'visiteur'){
                                     </div>
                                     <div id="profil"><table >
                                         <tr><td><label for="nom" class="head">NOM : </label>
-                                        <input disabled value="" type="text" name="nom" id="nom'.$k.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="nom" id="nom'.$k.'" checked class="body" checked></input></td></tr>
                                         <tr><td><label for="prenom" class="head">PRENOM :</label>
-                                        <input disabled value="" type="text" name="prenom" id="prenom'.$k.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="prenom" id="prenom'.$k.'" checked class="body"></input></td></tr>
                                         <tr><td><label for="dateNaissance" class="head">DATE DE NAISSANCE :</label>
-                                        <input disabled value="" type="date" name="dateNaissance" id="dateNaissance'.$k.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="date" name="dateNaissance" id="dateNaissance'.$k.'" checked class="body"></input></td></tr>
                                         <tr><td><label for="mail" class="head">MAIL :</label>
-                                        <input disabled value="" type="mail" name="mail" id="mail'.$k.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="mail" name="mail" id="mail'.$k.'" checked class="body"></input></td></tr>
                                         <tr><td><label for="reseau" class="head">Réseau social :</label>
-                                        <input disabled value="" type="text" name="reseau" id="reseau'.$k.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="reseau" id="reseau'.$k.'" checked class="body"></input></td></tr>
                                         <tr><td><label for="presentation" class="head">Presentation :</label>
-                                        <input disabled value="" type="text" name="presentation" id="presentation'.$k.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="presentation" id="presentation'.$k.'" checked class="body"></input></td></tr>
                                         <tr><td><label for="duree" class="head">Durée :</label>
-                                        <input disabled value="" type="text" name="duree" id="duree'.$k.'" required class="body"></input></td></tr>
+                                        <input disabled value="" type="text" name="duree" id="duree'.$k.'" checked class="body"></input></td></tr>
                                     </table>
                                     </div>
                                     <div id="savoiretre"><table>
@@ -201,7 +201,26 @@ if ($_SESSION['connexion'] == 'visiteur'){
             </div>
 
             </div>
-                    
+            <script>
+                // Vérifie que le jeune ne peut séléctionner que 4 savoir-être max
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+                let checkedCount = 0
+                
+                checkboxes.forEach((checkbox) => {
+                  checkbox.addEventListener('click', () => {
+                    if (checkbox.checked) {
+                      checkedCount++
+                    } else {
+                      checkedCount--
+                    }
+                    if(checkedCount == 0){
+                        alert('choisir au moins une case')
+                        checkbox.checked = true
+                        checkedCount++
+                    }
+                  })
+                })
+                </script>
 </body>
 
 </html><form>

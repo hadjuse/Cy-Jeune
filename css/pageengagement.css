@@ -194,7 +194,7 @@ font-size: 1em;
     margin-right: 3vw;
   }
   .inscription:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center;
     color: #fff;
     text-decoration: none;
   }
@@ -217,7 +217,7 @@ font-size: 1em;
   }
 
   .connexion:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center; 
     color: #fff;
     text-decoration: none;
   }
@@ -240,7 +240,7 @@ font-size: 1em;
   }
 
   .deconnexion:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center;
     color: #fff;
     text-decoration: none;
   }

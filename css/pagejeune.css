@@ -131,7 +131,7 @@ h1 {
     margin-top: 2vw;}
 
   .btn-grad:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center;
     color: #fff;
     text-decoration: none;
   }
@@ -202,7 +202,7 @@ table {
   }
 
   .btn-grad2:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center;
     color: #fff;
     text-decoration: none;
   }

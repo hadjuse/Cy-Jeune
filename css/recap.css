@@ -173,7 +173,7 @@ body{
 }
 
 #referenttab:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center;
     color: #fff;
     text-decoration: none;
 }
@@ -194,7 +194,7 @@ body{
 }
 
 #referenttabAccepté:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center; 
     color: #fff;
     text-decoration: none;
 }
@@ -215,7 +215,7 @@ body{
 }
 
 #referenttabRefusé:hover {
-    background-position: right center; /* change the direction of the change here */
+    background-position: right center; 
     color: #fff;
     text-decoration: none;
 }
